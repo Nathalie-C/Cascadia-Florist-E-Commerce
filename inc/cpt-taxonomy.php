@@ -30,17 +30,19 @@ function floral_register_custom_post_types(){
       'capability_type'    => 'post',
       'has_archive'        => false,
       'hierarchical'       => false,
-      'menu_position'      => 7,
+      'menu_position'      => 9,
       'menu_icon'          => 'dashicons-heart',
       'supports'           => array( 'title', 'editor' ),
       'template'           => array( array( 'core/quote' ) ),
-      // Prevent moving, inserting, deleting blocks
       'template_lock' => 'all',
-
-      // Prevent inserting and deleting blocks
-      // 'template_lock' => 'insert',
   );
 
   register_post_type( 'testimonial', $args ); 
 }
 add_action( 'init', 'floral_register_custom_post_types' );
+
+function floral_rewrite_flush() {
+  floral_register_custom_post_types();
+  flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'floral_rewrite_flush' );
