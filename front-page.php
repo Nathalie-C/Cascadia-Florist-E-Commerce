@@ -23,8 +23,8 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'page' );
 			?>
-			<section class="recent-news">
-				<h2><?php esc_html_e('Cascadia Floral');?></h2>
+			<section class="testimonials">
+				<h2><?php esc_html_e('What our customers say about us.');?></h2>
 			
 			<?php
 			$args = array(
