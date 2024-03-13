@@ -17,12 +17,46 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+	<section class="banner">
+    <?php if (function_exists('get_field') && get_field('banner')) : ?>
+        <div class="swiper banner-swiper">
+            <div class="swiper-wrapper">
+                <?php while (have_rows('banner')) : the_row();
+                    $heading = get_sub_field('heading');
+                    $description = get_sub_field('description');
+                    $view_all = get_sub_field('view_all');
+										$image = get_sub_field('image');
+                ?>
+                    <div class="swiper-slide">
+                        <?php if ($heading) : ?>
+                            <h2><?php echo esc_html($heading); ?></h2>
+                        <?php endif; ?>
+                        <?php if ($description) : ?>
+                            <p><?php echo esc_html($description); ?></p>
+                        <?php endif; ?>
+												<?php if ($image) : ?>
+                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                        <?php endif; ?>
 
-			get_template_part( 'template-parts/content', 'page' );
-			?>
+                        <?php if ($view_all) : ?>
+                            <a href="<?php echo esc_url($view_all); ?>">View All</a>
+                        <?php endif; ?>
+                    </div>
+                <?php endwhile; ?>
+							</div>
+							<div class="swiper-pagination"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+        </div>
+    <?php endif; ?>
+</section>
+
+			<?php
+			while ( have_posts() ) :
+				the_post();
+	
+				get_template_part( 'template-parts/content', 'page' );
+				?>
 			<section class="testimonials">
 				<h2><?php esc_html_e('What our customers say about us.');?></h2>
 			
