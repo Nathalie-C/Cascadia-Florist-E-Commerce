@@ -146,6 +146,28 @@ function cascadia_floral_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	if ( is_front_page() ) {
+    wp_enqueue_style(
+			 'swiper-styles',
+			  get_template_directory_uri() .'/swiper-bundle.css',
+				array(),
+				'11.0.5' 
+			);
+    wp_enqueue_script(
+			 'swiper-scripts', 
+			 get_template_directory_uri() .'/js/swiper-bundle.min.js', 
+			 array(), 
+			 '11.0.5', 
+			 array( 'strategy' => 'defer' )  
+			);
+    wp_enqueue_script( 
+			'swiper-settings', 
+			get_template_directory_uri() .'/js/swiper-settings.js', 
+			array( 'swiper-scripts' ), 
+			_S_VERSION, 
+			array( 'strategy' => 'defer' )  
+		);
+  }
 }
 add_action( 'wp_enqueue_scripts', 'cascadia_floral_scripts' );
 
