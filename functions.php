@@ -23,29 +23,30 @@ if (!defined('_S_VERSION')) {
 function cascadia_floral_setup()
 {
 	/*
-		* Make theme available for translation.
-		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on Cascadia Floral, use a find and replace
-		* to change 'cascadia-floral' to the name of your theme in all the template files.
-		*/
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on Cascadia Floral, use a find and replace
+	 * to change 'cascadia-floral' to the name of your theme in all the template files.
+	 */
+
 	load_theme_textdomain('cascadia-floral', get_template_directory() . '/languages');
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support('automatic-feed-links');
 
 	/*
-		* Let WordPress manage the document title.
-		* By adding theme support, we declare that this theme does not use a
-		* hard-coded <title> tag in the document head, and expect WordPress to
-		* provide it for us.
-		*/
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
 	add_theme_support('title-tag');
 
 	/*
-		* Enable support for Post Thumbnails on posts and pages.
-		*
-		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		*/
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
 	add_theme_support('post-thumbnails');
 
 	// This theme uses wp_nav_menu() in one location.
@@ -57,9 +58,9 @@ function cascadia_floral_setup()
 	);
 
 	/*
-		* Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
 	add_theme_support(
 		'html5',
 		array(
@@ -96,9 +97,9 @@ function cascadia_floral_setup()
 	add_theme_support(
 		'custom-logo',
 		array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
+			'height' => 250,
+			'width' => 250,
+			'flex-width' => true,
 			'flex-height' => true,
 		)
 	);
@@ -127,13 +128,13 @@ function cascadia_floral_widgets_init()
 {
 	register_sidebar(
 		array(
-			'name'          => esc_html__('Sidebar', 'cascadia-floral'),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__('Add widgets here.', 'cascadia-floral'),
+			'name' => esc_html__('Sidebar', 'cascadia-floral'),
+			'id' => 'sidebar-1',
+			'description' => esc_html__('Add widgets here.', 'cascadia-floral'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'after_widget' => '</section>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>',
 		)
 	);
 }
@@ -152,6 +153,32 @@ function cascadia_floral_scripts()
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
+	if (is_front_page()) {
+		wp_enqueue_style(
+			'swiper-styles',
+			get_template_directory_uri() . '/swiper-bundle.css',
+			array(),
+			'11.0.5'
+		);
+		wp_enqueue_script(
+			'swiper-scripts',
+			get_template_directory_uri() . '/js/swiper-bundle.min.js',
+			array(),
+			'11.0.5',
+			array('strategy' => 'defer')
+		);
+		wp_enqueue_script(
+			'swiper-settings',
+			get_template_directory_uri() . '/js/swiper-settings.js',
+			array('swiper-scripts'),
+			_S_VERSION,
+			array('strategy' => 'defer')
+		);
+	}
+
+	// Enqueue wedding form JavaScript & css
+	wp_enqueue_script('wedding-form-script', get_template_directory_uri() . '/js/wedding-form.js', array('jquery'), _S_VERSION, true);
+	wp_enqueue_style('wedding-page-style', get_template_directory_uri() . '/wedding-page.css', array('cascadia-floral-style'), _S_VERSION);
 }
 add_action('wp_enqueue_scripts', 'cascadia_floral_scripts');
 
@@ -174,6 +201,10 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+/**
+ * Custom Post Types & Taxonomies
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -188,3 +219,93 @@ if (defined('JETPACK__VERSION')) {
 if (class_exists('WooCommerce')) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+function wedding_form_toggle_shortcode_A()
+{
+	ob_start();
+?>
+	<button class="toggleFormButton">Inquire for Packages</button>
+	<div class="formContainer hidden">
+		<?php echo do_shortcode('[gravityform id="1" title="true"]'); ?>
+	</div>
+	<style>
+		.formContainer.hidden {
+			display: none;
+		}
+	</style>
+<?php
+	return ob_get_clean();
+}
+add_shortcode('wedding_form_toggle_A', 'wedding_form_toggle_shortcode_A');
+
+function wedding_form_toggle_shortcode_B()
+{
+	ob_start();
+?>
+	<button class="toggleFormButton">Inquire for Packages</button>
+	<div class="formContainer hidden">
+		<?php echo do_shortcode('[gravityform id="2" title="true"]'); ?>
+	</div>
+	<style>
+		.formContainer.hidden {
+			display: none;
+		}
+	</style>
+<?php
+	return ob_get_clean();
+}
+add_shortcode('wedding_form_toggle_B', 'wedding_form_toggle_shortcode_B');
+
+function wedding_form_toggle_shortcode_C()
+{
+	ob_start();
+?>
+	<button class="toggleFormButton">Inquire for Packages</button>
+	<div class="formContainer hidden">
+		<?php echo do_shortcode('[gravityform id="3" title="true"]'); ?>
+	</div>
+	<style>
+		.formContainer.hidden {
+			display: none;
+		}
+	</style>
+<?php
+	return ob_get_clean();
+}
+add_shortcode('wedding_form_toggle_C', 'wedding_form_toggle_shortcode_C');
+
+function wedding_form_toggle_shortcode_D()
+{
+	ob_start();
+?>
+	<button class="toggleFormButton">Inquire for Packages</button>
+	<div class="formContainer hidden">
+		<?php echo do_shortcode('[gravityform id="4" title="true"]'); ?>
+	</div>
+	<style>
+		.formContainer.hidden {
+			display: none;
+		}
+	</style>
+<?php
+	return ob_get_clean();
+}
+add_shortcode('wedding_form_toggle_D', 'wedding_form_toggle_shortcode_D');
+
+function wedding_form_toggle_shortcode_CUSTOM()
+{
+	ob_start();
+?>
+	<button class="toggleFormButton">Inquire for Packages</button>
+	<div class="formContainer hidden">
+		<?php echo do_shortcode('[gravityform id="5" title="true"]'); ?>
+	</div>
+	<style>
+		.formContainer.hidden {
+			display: none;
+		}
+	</style>
+<?php
+	return ob_get_clean();
+}
+add_shortcode('wedding_form_toggle_CUSTOM', 'wedding_form_toggle_shortcode_CUSTOM');
