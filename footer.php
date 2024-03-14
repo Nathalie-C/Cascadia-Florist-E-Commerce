@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -11,24 +12,47 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'cascadia-floral' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'cascadia-floral' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'cascadia-floral' ), 'cascadia-floral', '<a href="https://cascadiafloral.bcitwebdeveloper.ca/">FWD35</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+<footer id="colophon" class="site-footer">
+	<div class="site-logo">
+		<?php
+		wp_nav_menu(array('menu' => 'Footer Menu', 'theme_location' => 'footer'));
+		?>
+		<h2>Cascadia Floral Co.</h2>
+	</div>
+	<nav class="footer-navigation">
+		<h2>Menu</h2>
+		<?php
+		wp_nav_menu(array('theme_location' => 'footer'));
+		?>
+	</nav>
+	<div>
+		<h2>Opening Hours</h2>
+		<p>Monday – Sunday: 9AM – 9PM</p>
+	</div>
+	<div>
+		<h2>Contact Us</h2>
+		<p>hello@cascadiafloral.com</p>
+		<p>(604) 777-1234</p>
+		<p>555 Seymour St, Vancouver, BC V6B 3H6</p>
+	</div>
+	<div class="site-info">
+		<a href="<?php echo esc_url(__('https://wordpress.org/', 'cascadia-floral')); ?>">
+			<?php
+			/* translators: %s: CMS name, i.e. WordPress. */
+			printf(esc_html__('Proudly powered by %s', 'cascadia-floral'), 'WordPress');
+			?>
+		</a>
+		<span class="sep"> | </span>
+		<?php
+		/* translators: 1: Theme name, 2: Theme author. */
+		printf(esc_html__('Theme: %1$s by %2$s.', 'cascadia-floral'), 'cascadia-floral', '<a href="https://cascadiafloral.bcitwebdeveloper.ca/">FWD35</a>');
+		?>
+	</div><!-- .site-info -->
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

@@ -309,3 +309,24 @@ function wedding_form_toggle_shortcode_CUSTOM()
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_CUSTOM', 'wedding_form_toggle_shortcode_CUSTOM');
+
+// add ACF img to footer menu
+function my_wp_nav_menu_items($items, $args)
+{
+	// get menu
+	$menu = wp_get_nav_menu_object($args->menu);
+
+	// modify primary only
+	if ($args->menu == 'Footer Menu') {
+		// vars
+		$logo = get_field('footer_logo', $menu);
+
+		// prepend logo
+		$html_logo = '<a href="' . home_url() . '"><img src="' . $logo['url'] . '" alt="' . $logo['alt'] . '" /></a>';
+
+		// append html
+		$items = $html_logo;
+	}
+	return $items;
+}
+add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
