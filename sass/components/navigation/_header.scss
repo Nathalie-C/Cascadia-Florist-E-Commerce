@@ -1,2 +1,50 @@
 .site .site-header {
+  background-color: rgb(234, 213, 191);
+  padding: 1rem 3rem;
+  ul,
+  li {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  a {
+    color: #462626;
+    text-decoration: none;
+  }
+
+  .first-layer {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr minmax(10rem, auto) 1fr;
+    // justify-content: end;
+    // gap: 23rem;
+
+    .site-logo {
+      img {
+        max-width: 5rem;
+      }
+      ul {
+        margin-bottom: 0;
+      }
+      h3.company-name {
+        margin-top: 0;
+        color: #462626;
+      }
+    }
+
+    .login-cart-menu {
+      width: auto;
+      li {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .second-layer {
+    margin: 0.3rem auto;
+    #primary-menu {
+      justify-content: center;
+      gap: 1.5rem;
+    }
+  }
 }

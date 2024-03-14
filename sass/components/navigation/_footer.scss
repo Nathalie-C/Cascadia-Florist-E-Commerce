@@ -2,7 +2,7 @@
   text-align: center;
   padding-top: 3rem;
   margin-top: 3rem;
-  background-color: black;
+  background-color: rgb(49, 36, 36);
   color: white;
   ul,
   li {
@@ -10,12 +10,19 @@
     padding-left: 0;
     list-style-type: none;
   }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
   .site-logo {
     ul {
       margin-bottom: 0;
     }
     img {
       max-width: 6rem;
+			color: white:
     }
     h4 {
       margin-top: 0;

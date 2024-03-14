@@ -312,7 +312,7 @@ function wedding_form_toggle_shortcode_CUSTOM()
 add_shortcode('wedding_form_toggle_CUSTOM', 'wedding_form_toggle_shortcode_CUSTOM');
 
 // add ACF img to footer menu
-function my_wp_nav_menu_items($items, $args)
+function footer_nav_menu_items($items, $args)
 {
 	// get menu
 	$menu = wp_get_nav_menu_object($args->menu);
@@ -330,4 +330,25 @@ function my_wp_nav_menu_items($items, $args)
 	}
 	return $items;
 }
-add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
+add_filter('wp_nav_menu_items', 'footer_nav_menu_items', 10, 2);
+
+// add ACF img to header menu
+function header_nav_menu_items($items, $args)
+{
+	// get menu
+	$menu = wp_get_nav_menu_object($args->menu);
+
+	// modify primary only
+	if ($args->menu == 'Header Right Menu') {
+		// vars
+		$logo = get_field('header_logo', $menu);
+
+		// prepend logo
+		$html_logo = '<a href="' . home_url() . '"><img src="' . $logo['url'] . '" alt="' . $logo['alt'] . '" /></a>';
+
+		// append html
+		$items = $html_logo;
+	}
+	return $items;
+}
+add_filter('wp_nav_menu_items', 'header_nav_menu_items', 10, 2);

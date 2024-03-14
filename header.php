@@ -27,13 +27,28 @@
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'cascadia-floral'); ?></a>
 		<header id="masthead" class="site-header">
-			<div class="site-logo">
-				<?php
-				wp_nav_menu(array('menu' => 'Footer Menu', 'theme_location' => 'footer'));
-				?>
-				<h2>Cascadia Floral Co.</h2>
+			<div class="first-layer">
+				<div class="site-logo">
+					<?php
+					wp_nav_menu(array('menu' => 'Header Right Menu', 'theme_location' => 'login-cart'));
+					?>
+					<h3 class="company-name">Cascadia Floral</h3>
+				</div>
+				<nav class="main-navigation login-cart-menu">
+					<!-- right(login/cart) -->
+					<button class="menu-toggle" aria-controls="secondary-menu" aria-expanded="false"><?php esc_html_e('Secondary Menu', 'cascadia-floral'); ?></button>
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'login-cart',
+							'menu_id'        => 'secondary-menu',
+						)
+					);
+					?>
+				</nav>
 			</div>
-			<nav id="site-navigation" class="main-navigation primary-menu">
+
+			<nav id="site-navigation" class="main-navigation second-layer">
 				<!-- left(menu) -->
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'cascadia-floral'); ?></button>
 				<?php
@@ -45,16 +60,5 @@
 				);
 				?>
 			</nav><!-- #site-navigation -->
-			<nav class="main-navigation login-cart-menu">
-				<!-- right(login/cart) -->
-				<button class="menu-toggle" aria-controls="secondary-menu" aria-expanded="false"><?php esc_html_e('Secondary Menu', 'cascadia-floral'); ?></button>
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'login-cart',
-						'menu_id'        => 'secondary-menu',
-					)
-				);
-				?>
-			</nav>
+
 		</header><!-- #masthead -->
