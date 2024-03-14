@@ -1,6 +1,7 @@
 .site .site-header {
   background-color: rgb(234, 213, 191);
   padding: 1rem 3rem;
+  color: #462626;
   ul,
   li {
     margin-left: 0;
@@ -8,16 +9,16 @@
   }
 
   a {
-    color: #462626;
     text-decoration: none;
   }
 
   .first-layer {
-    display: grid;
+    // display: grid;
     align-items: center;
-    grid-template-columns: 1fr minmax(10rem, auto) 1fr;
-    // justify-content: end;
-    // gap: 23rem;
+    // grid-template-columns: 1fr minmax(10rem, auto) 1fr;
+    display: flex;
+    justify-content: end;
+    gap: 23rem;
 
     .site-logo {
       img {
@@ -26,9 +27,8 @@
       ul {
         margin-bottom: 0;
       }
-      h3.company-name {
+      h3 {
         margin-top: 0;
-        color: #462626;
       }
     }
 

@@ -25,6 +25,7 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
+		<!-- for screen reader -->
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'cascadia-floral'); ?></a>
 		<header id="masthead" class="site-header">
 			<div class="first-layer">
@@ -32,7 +33,7 @@
 					<?php
 					wp_nav_menu(array('menu' => 'Header Right Menu', 'theme_location' => 'login-cart'));
 					?>
-					<h3 class="company-name">Cascadia Floral</h3>
+					<h3>Cascadia Floral</h3>
 				</div>
 				<nav class="main-navigation login-cart-menu">
 					<!-- right(login/cart) -->
