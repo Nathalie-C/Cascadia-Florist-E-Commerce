@@ -70,7 +70,7 @@ get_header();
 		
 		if ( $query -> have_posts() ):
 			?>
-			<div class="swiper">
+			<div class="swiper testimonial-swiper">
 				<div class="swiper-wrapper">
 					<?php
 						while ( $query -> have_posts() ) :

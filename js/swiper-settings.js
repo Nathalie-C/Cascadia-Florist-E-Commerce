@@ -1,4 +1,4 @@
-const swiper = new Swiper(".swiper", {
+const swiper = new Swiper(".testimonial-swiper", {
   loop: true,
   autoHeight: true,
   pagination: {
