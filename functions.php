@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Cascadia Floral functions and definitions
  *
@@ -27,6 +28,7 @@ function cascadia_floral_setup()
 	 * If you're building a theme based on Cascadia Floral, use a find and replace
 	 * to change 'cascadia-floral' to the name of your theme in all the template files.
 	 */
+
 	load_theme_textdomain('cascadia-floral', get_template_directory() . '/languages');
 
 	// Add default posts and comments RSS feed links to head.
@@ -50,7 +52,8 @@ function cascadia_floral_setup()
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__('Primary', 'cascadia-floral'),
+			'header' => esc_html__('Primary', 'cascadia-floral'),
+			'footer' => esc_html__('Footer', 'cascadia-floral'),
 		)
 	);
 
@@ -176,7 +179,6 @@ function cascadia_floral_scripts()
 	// Enqueue wedding form JavaScript & css
 	wp_enqueue_script('wedding-form-script', get_template_directory_uri() . '/js/wedding-form.js', array('jquery'), _S_VERSION, true);
 	wp_enqueue_style('wedding-page-style', get_template_directory_uri() . '/wedding-page.css', array('cascadia-floral-style'), _S_VERSION);
-
 }
 add_action('wp_enqueue_scripts', 'cascadia_floral_scripts');
 
@@ -221,7 +223,7 @@ if (class_exists('WooCommerce')) {
 function wedding_form_toggle_shortcode_A()
 {
 	ob_start();
-	?>
+?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="1" title="true"]'); ?>
@@ -231,7 +233,7 @@ function wedding_form_toggle_shortcode_A()
 			display: none;
 		}
 	</style>
-	<?php
+<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_A', 'wedding_form_toggle_shortcode_A');
@@ -239,7 +241,7 @@ add_shortcode('wedding_form_toggle_A', 'wedding_form_toggle_shortcode_A');
 function wedding_form_toggle_shortcode_B()
 {
 	ob_start();
-	?>
+?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="2" title="true"]'); ?>
@@ -249,7 +251,7 @@ function wedding_form_toggle_shortcode_B()
 			display: none;
 		}
 	</style>
-	<?php
+<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_B', 'wedding_form_toggle_shortcode_B');
@@ -257,7 +259,7 @@ add_shortcode('wedding_form_toggle_B', 'wedding_form_toggle_shortcode_B');
 function wedding_form_toggle_shortcode_C()
 {
 	ob_start();
-	?>
+?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="3" title="true"]'); ?>
@@ -267,7 +269,7 @@ function wedding_form_toggle_shortcode_C()
 			display: none;
 		}
 	</style>
-	<?php
+<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_C', 'wedding_form_toggle_shortcode_C');
@@ -275,7 +277,7 @@ add_shortcode('wedding_form_toggle_C', 'wedding_form_toggle_shortcode_C');
 function wedding_form_toggle_shortcode_D()
 {
 	ob_start();
-	?>
+?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="4" title="true"]'); ?>
@@ -285,7 +287,7 @@ function wedding_form_toggle_shortcode_D()
 			display: none;
 		}
 	</style>
-	<?php
+<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_D', 'wedding_form_toggle_shortcode_D');
@@ -293,7 +295,7 @@ add_shortcode('wedding_form_toggle_D', 'wedding_form_toggle_shortcode_D');
 function wedding_form_toggle_shortcode_CUSTOM()
 {
 	ob_start();
-	?>
+?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="5" title="true"]'); ?>
@@ -303,7 +305,7 @@ function wedding_form_toggle_shortcode_CUSTOM()
 			display: none;
 		}
 	</style>
-	<?php
+<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_CUSTOM', 'wedding_form_toggle_shortcode_CUSTOM');
