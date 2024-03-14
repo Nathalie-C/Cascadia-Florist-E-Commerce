@@ -53,6 +53,7 @@ function cascadia_floral_setup()
 	register_nav_menus(
 		array(
 			'header' => esc_html__('Primary', 'cascadia-floral'),
+			'login-cart' => esc_html__('Secondary', 'cascadia-floral'),
 			'footer' => esc_html__('Footer', 'cascadia-floral'),
 		)
 	);
