@@ -33,7 +33,8 @@
 				?>
 				<h2>Cascadia Floral Co.</h2>
 			</div>
-			<nav id="site-navigation" class="main-navigation">
+			<nav id="site-navigation" class="main-navigation primary-menu">
+				<!-- left(menu) -->
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'cascadia-floral'); ?></button>
 				<?php
 				wp_nav_menu(
@@ -44,4 +45,16 @@
 				);
 				?>
 			</nav><!-- #site-navigation -->
+			<nav class="main-navigation login-cart-menu">
+				<!-- right(login/cart) -->
+				<button class="menu-toggle" aria-controls="secondary-menu" aria-expanded="false"><?php esc_html_e('Secondary Menu', 'cascadia-floral'); ?></button>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'login-cart',
+						'menu_id'        => 'secondary-menu',
+					)
+				);
+				?>
+			</nav>
 		</header><!-- #masthead -->
