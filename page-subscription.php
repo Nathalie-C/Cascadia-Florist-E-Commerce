@@ -22,16 +22,28 @@ get_header();
 			the_post();
 
 			get_template_part( 'template-parts/content', 'page' );
+        ?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+        <?php
+        // Check rows exists.
+        if( have_rows('how_it_works') ):
 
+            // Loop through rows.
+            while( have_rows('how_it_works') ) : the_row();?>
+
+                <h1><?php the_sub_field('instruction_number');?></h1>
+                <h2><?php the_sub_field('instruction_heading');?></h2>
+                <p><?php the_sub_field('instruction_text');?></p>
+
+        <?php endwhile; 
+        else :
+        endif;
+        ?>
+
+        <?php
 		endwhile; // End of the loop.
 		?>
 
-        <p>test</p>
 	</main><!-- #main -->
 
 <?php
