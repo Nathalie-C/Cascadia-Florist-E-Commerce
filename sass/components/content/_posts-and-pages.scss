@@ -25,3 +25,13 @@
 .formContainer.hidden {
     display: none;
 }
+
+.delivery-info{
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 1rem;
+
+	img {
+		margin-right: 1rem;
+	}
+}
