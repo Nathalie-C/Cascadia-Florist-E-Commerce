@@ -1,0 +1,48 @@
+.single-product .site .site-main {
+  .wc-pao-addon-392-0 {
+    a:first-child {
+      display: none;
+    }
+  }
+
+  .woocommerce-product-gallery--with-images {
+    .flex-viewport {
+    }
+
+    .flex-control-thumbs {
+      li {
+        max-width: 120px;
+        line-height: 3.5;
+      }
+    }
+  }
+
+  .variations_form {
+    table {
+      text-align: left;
+      th.label {
+        max-width: 34px;
+      }
+    }
+
+    .single_variation_wrap {
+      .woocommerce-variation-price {
+      }
+    }
+  }
+
+  .product_meta {
+    .sku_wrapper {
+      display: none;
+    }
+  }
+
+  .woocommerce-tabs {
+    ul.tabs {
+      li:first-child,
+      li:last-child {
+        display: none;
+      }
+    }
+  }
+}
