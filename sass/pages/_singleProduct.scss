@@ -1,18 +1,53 @@
 .single-product .site .site-main {
+  .woocommerce-breadcrumb {
+    display: none;
+  }
+  //vase options
   .wc-pao-addon-392-0 {
     a:first-child {
       display: none;
     }
   }
 
+  // product details
+  .entry-summary {
+    width: 60%;
+  }
+
+  //galery
   .woocommerce-product-gallery--with-images {
+    width: 40%;
+    padding-left: 5rem;
+    padding-top: 3.7rem;
+
     .flex-viewport {
+      height: 500px;
+      margin-bottom: 3rem;
+      .woocommerce-product-gallery__wrapper {
+        img {
+          width: auto;
+          height: 500px;
+        }
+      }
     }
 
+    // gallery thumbnails
     .flex-control-thumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
       li {
-        max-width: 120px;
-        line-height: 3.5;
+        width: 108px;
+        // line-height: 3.5;
+
+        // &:nth-child(4) img {
+        //   margin-right: 0;
+        // }
+
+        img {
+          width: 108px;
+        }
       }
     }
   }
@@ -21,7 +56,7 @@
     table {
       text-align: left;
       th.label {
-        max-width: 34px;
+        // max-width: 34px;
       }
     }
 
@@ -31,17 +66,23 @@
     }
   }
 
-  .product_meta {
-    .sku_wrapper {
-      display: none;
-    }
-  }
-
   .woocommerce-tabs {
+    // reviews, description
     ul.tabs {
-      li:first-child,
-      li:last-child {
+      li {
         display: none;
+      }
+    }
+
+    //delivery
+    .woocommerce-Tabs-panel--description {
+      .delivery-info {
+        flex-direction: column;
+
+        img {
+          width: 50%;
+          height: auto;
+        }
       }
     }
   }
