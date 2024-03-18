@@ -225,12 +225,14 @@ if (class_exists('WooCommerce')) {
 function wedding_form_toggle_shortcode_A()
 {
 	ob_start();
-?>
+	?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
-		<?php echo do_shortcode('[gravityform id="1" title="true"]'); ?>
+		<!-- <button class="closeButton">X</button> -->
+		<?php echo do_shortcode('[gravityform id="1" title="true" ajax="true"]'); ?>
+		<button class="closeButton close-bottom">X</button>
 	</div>
-<?php
+	<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_A', 'wedding_form_toggle_shortcode_A');
@@ -238,12 +240,13 @@ add_shortcode('wedding_form_toggle_A', 'wedding_form_toggle_shortcode_A');
 function wedding_form_toggle_shortcode_B()
 {
 	ob_start();
-?>
+	?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
-		<?php echo do_shortcode('[gravityform id="2" title="true"]'); ?>
+		<?php echo do_shortcode('[gravityform id="2" title="true" ajax="true"]'); ?>
+		<button class="closeButton close-bottom">X</button>
 	</div>
-<?php
+	<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_B', 'wedding_form_toggle_shortcode_B');
@@ -251,12 +254,13 @@ add_shortcode('wedding_form_toggle_B', 'wedding_form_toggle_shortcode_B');
 function wedding_form_toggle_shortcode_C()
 {
 	ob_start();
-?>
+	?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
-		<?php echo do_shortcode('[gravityform id="3" title="true"]'); ?>
+		<?php echo do_shortcode('[gravityform id="3" title="true" ajax="true"]'); ?>
+		<button class="closeButton close-bottom">X</button>
 	</div>
-<?php
+	<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_C', 'wedding_form_toggle_shortcode_C');
@@ -264,12 +268,13 @@ add_shortcode('wedding_form_toggle_C', 'wedding_form_toggle_shortcode_C');
 function wedding_form_toggle_shortcode_D()
 {
 	ob_start();
-?>
+	?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
-		<?php echo do_shortcode('[gravityform id="4" title="true"]'); ?>
+		<?php echo do_shortcode('[gravityform id="4" title="true" ajax="true"]'); ?>
+		<button class="closeButton close-bottom">X</button>
 	</div>
-<?php
+	<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_D', 'wedding_form_toggle_shortcode_D');
@@ -277,12 +282,13 @@ add_shortcode('wedding_form_toggle_D', 'wedding_form_toggle_shortcode_D');
 function wedding_form_toggle_shortcode_CUSTOM()
 {
 	ob_start();
-?>
+	?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
-		<?php echo do_shortcode('[gravityform id="5" title="true"]'); ?>
+		<?php echo do_shortcode('[gravityform id="5" title="true" ajax="true"]'); ?>
+		<button class="closeButton close-bottom">X</button>
 	</div>
-<?php
+	<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_CUSTOM', 'wedding_form_toggle_shortcode_CUSTOM');
