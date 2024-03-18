@@ -21,6 +21,10 @@
 
       .flex-viewport {
         margin-bottom: 1em;
+        img {
+          width: 85%;
+          border-radius: 10px;
+        }
       }
 
       .flex-control-thumbs {
@@ -64,6 +68,14 @@
             }
           }
         }
+      }
+    }
+    .product_meta {
+      display: none;
+    }
+    .woocommerce-tabs.wc-tabs-wrapper {
+      .tabs.wc-tabs {
+        display: none;
       }
     }
   }

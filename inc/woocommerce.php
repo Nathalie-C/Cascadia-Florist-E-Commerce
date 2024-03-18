@@ -237,4 +237,6 @@ if (!function_exists('cascadia_floral_woocommerce_header_cart')) {
 }
 
 //single-product.php
-// remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+//price
+// remove_action('woocommerce_single_product_summary','woocommerce_template_single_price',10);
+// add_action('woocommerce_single_product_summary','woocommerce_template_single_price',3);
