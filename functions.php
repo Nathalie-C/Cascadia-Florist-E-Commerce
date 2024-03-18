@@ -229,11 +229,6 @@ function wedding_form_toggle_shortcode_A()
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="1" title="true"]'); ?>
 	</div>
-	<style>
-		.formContainer.hidden {
-			display: none;
-		}
-	</style>
 <?php
 	return ob_get_clean();
 }
@@ -247,11 +242,6 @@ function wedding_form_toggle_shortcode_B()
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="2" title="true"]'); ?>
 	</div>
-	<style>
-		.formContainer.hidden {
-			display: none;
-		}
-	</style>
 <?php
 	return ob_get_clean();
 }
@@ -265,11 +255,6 @@ function wedding_form_toggle_shortcode_C()
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="3" title="true"]'); ?>
 	</div>
-	<style>
-		.formContainer.hidden {
-			display: none;
-		}
-	</style>
 <?php
 	return ob_get_clean();
 }
@@ -283,11 +268,6 @@ function wedding_form_toggle_shortcode_D()
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="4" title="true"]'); ?>
 	</div>
-	<style>
-		.formContainer.hidden {
-			display: none;
-		}
-	</style>
 <?php
 	return ob_get_clean();
 }
@@ -301,11 +281,6 @@ function wedding_form_toggle_shortcode_CUSTOM()
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="5" title="true"]'); ?>
 	</div>
-	<style>
-		.formContainer.hidden {
-			display: none;
-		}
-	</style>
 <?php
 	return ob_get_clean();
 }
