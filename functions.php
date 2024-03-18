@@ -221,6 +221,7 @@ if (class_exists('WooCommerce')) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 
+// gravity forms
 function wedding_form_toggle_shortcode_A()
 {
 	ob_start();
