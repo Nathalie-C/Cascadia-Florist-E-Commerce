@@ -33,7 +33,7 @@
 					<?php
 					wp_nav_menu(array('menu' => 'Header Right Menu', 'theme_location' => 'login-cart'));
 					?>
-					<h3>Cascadia Floral</h3>
+					<!-- <h3>Cascadia Floral</h3> -->
 				</div>
 				<nav class="main-navigation login-cart-menu">
 					<!-- right(login/cart) -->
