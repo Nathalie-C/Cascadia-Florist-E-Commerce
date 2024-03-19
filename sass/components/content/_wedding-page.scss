@@ -1,3 +1,67 @@
 .formContainer.hidden {
-    display: none;
+  display: none;
 }
+
+.page-id-2 .wp-block-media-text {
+  position: relative;
+  margin: 2.2rem 0.8rem;
+}
+
+.formContainer {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  background-color: white;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  //   border: solid .1rem black;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+button.closeButton {
+  align-self: self-end;
+  background-color: red;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 0.4rem;
+  color: white;
+  border: none;
+
+  // .close-bottom{
+  //     margin-bottom: 2.5rem;
+  // }
+}
+
+button.toggleFormButton {
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  border: none;
+  padding: 0.8rem 0;
+  width: 15rem;
+}
+
+.page-id-2 .wp-block-media-text__content {
+  display: flex;
+  flex-direction: column;
+
+  button.toggleFormButton {
+      width: 100%;
+      flex: content;
+  }
+}
+
+// @media (min-width: 700px) {
+//   .page-id-2 .wp-block-media-text__content {
+//     button.toggleFormButton {
+//         width: 15rem;
+//     }
+//   }
+// }
