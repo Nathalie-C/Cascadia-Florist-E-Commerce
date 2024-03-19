@@ -78,6 +78,52 @@
         display: none;
       }
     }
+
+    // workshop btn text
+    .entry-summary {
+      form.cart {
+        button.wc-bookings-booking-form-button {
+          visibility: hidden;
+          padding-left: 0;
+
+          &::after {
+            content: "Add to cart";
+            visibility: visible;
+            display: block;
+            // position: absolute;
+            background-color: rgb(203, 203, 203);
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            // top: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  // subscription btn text
+  div.product_cat-subscription {
+    .entry-summary {
+      form.cart {
+        button.single_add_to_cart_button {
+          visibility: hidden;
+          padding-left: 0;
+
+          &::after {
+            content: "Sign up & Add to cart";
+            visibility: visible;
+            display: block;
+            // position: absolute;
+            background-color: rgb(203, 203, 203);
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            // top: 2px;
+          }
+        }
+      }
+    }
   }
 }
 
