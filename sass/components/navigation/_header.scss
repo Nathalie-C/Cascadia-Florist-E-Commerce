@@ -68,18 +68,9 @@
     }
   }
 
-  // nav.main-navigation .login-cart-menu .mobile-second-nav {
-  //   display: none;
-  // }
-
   // MOBILE PRIMARY MENU STYLING below
 
   @media screen and (max-width: 430px) {
-    // header#masthead.site-header,
-    // .site .site-header{
-    //   padding: 1rem 1.5rem;
-    // }
-
     nav.main-navigation#site-navigation {
       display: block;
       width: 100%;
@@ -155,7 +146,7 @@
           display: flex;
           padding: 0;
           margin: 0 3rem 0 0;
-          font-size: .8rem;
+          font-size: 0.8rem;
 
           li {
             color: black;
@@ -170,41 +161,5 @@
         }
       }
     }
-
-    // header#masthead.site-header {
-    //   padding: 1rem 2rem;
-
-    //   .first-layer .site-logo {
-    //     margin-right: 1rem;
-    //   }
-
-    //   nav.main-navigation .login-cart-menu {
-
-    //     div.menu-header-right-menu-container {
-    //       margin: 0 10rem 0 0;
-    //     }
-
-    //     button.menu-toggle {
-    //       display: none;
-    //     }
-
-    //     #secondary-menu ul {
-    //       display: flex;
-    //       padding: 0;
-    //       margin: 0;
-
-    //       li {
-    //         color: black;
-    //         margin: 0 0.4rem;
-    //       }
-
-    //       a {
-    //         color: black;
-    //         padding: 0;
-    //         margin: 0;
-    //       }
-    //     }
-    //   }
-    // }
   }
 }
