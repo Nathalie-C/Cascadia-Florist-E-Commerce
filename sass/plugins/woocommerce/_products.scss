@@ -1,6 +1,8 @@
 ul.products {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 
   li.product {
     list-style: none;
@@ -41,7 +43,8 @@ ul.products {
   ul.products {
     li.product {
       @include column-width(3);
-      float: left;
+      display: flex;
+      // float: left;
       margin-right: $columns__margin;
 
       &.first {
@@ -65,8 +68,6 @@ ul.products {
     ul.products.columns-#{$i} {
       li.product {
         @include column-width($i);
-        height: 25rem;
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -108,15 +109,13 @@ nav.woocommerce-pagination ul.page-numbers {
   }
 }
 
-
 .page-id-32 a.wc-block-grid__product-link,
-div .wc-block-grid__product-title{
+div .wc-block-grid__product-title {
   color: black;
-
 }
 
 .page-id-32 wp-block-button .wc-block-grid__product-add-to-cart,
-.wp-block-button__link  .add_to_cart_button{
+.wp-block-button__link .add_to_cart_button {
   color: white;
 
   a,
