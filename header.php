@@ -26,7 +26,9 @@
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
 		<!-- for screen reader -->
-		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'cascadia-floral'); ?></a>
+		<a class="skip-link screen-reader-text" href="#primary">
+			<?php esc_html_e('Skip to content', 'cascadia-floral'); ?>
+		</a>
 		<header id="masthead" class="site-header">
 			<div class="first-layer">
 				<div class="site-logo">
@@ -37,12 +39,14 @@
 				</div>
 				<nav class="main-navigation login-cart-menu">
 					<!-- right(login/cart) -->
-					<button class="menu-toggle" aria-controls="secondary-menu" aria-expanded="false"><?php esc_html_e('Secondary Menu', 'cascadia-floral'); ?></button>
+					<button class="menu-toggle" aria-controls="secondary-menu" aria-expanded="false">
+						<?php esc_html_e('Secondary Menu', 'cascadia-floral'); ?>
+					</button>
 					<?php
 					wp_nav_menu(
 						array(
 							'theme_location' => 'login-cart',
-							'menu_id'        => 'secondary-menu',
+							'menu_id' => 'secondary-menu',
 						)
 					);
 					?>
@@ -51,12 +55,16 @@
 
 			<nav id="site-navigation" class="main-navigation second-layer">
 				<!-- left(menu) -->
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'cascadia-floral'); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+						<path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" fill="#000000"></path>
+					</svg>
+				</button>
 				<?php
 				wp_nav_menu(
 					array(
 						'theme_location' => 'header',
-						'menu_id'        => 'primary-menu',
+						'menu_id' => 'primary-menu',
 					)
 				);
 				?>

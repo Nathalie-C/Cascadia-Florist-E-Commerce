@@ -1,7 +1,23 @@
 .site .site-header {
   background-color: #ffffff;
-  padding: 1rem 3rem;
+  padding: 1rem;
   color: #462626;
+  font-weight: 550;
+
+  border-bottom: 0.1rem solid black;
+
+  display: flex;
+  flex-direction: column;
+
+  .sub-menu {
+    flex-direction: column;
+
+    li {
+      padding: 0.5rem;
+      background-color: white;
+    }
+  }
+
   ul,
   li {
     margin-left: 0;
@@ -10,6 +26,7 @@
 
   a {
     text-decoration: none;
+    color: black;
   }
 
   .first-layer {
@@ -17,10 +34,13 @@
     align-items: center;
     // grid-template-columns: 1fr minmax(10rem, auto) 1fr;
     display: flex;
-    justify-content: end;
-    gap: 23rem;
+    // Getting the logo to center with the secondary navigation is a nightmare.
+    // Put it in the left instead.
+    justify-content: space-between;
+    // gap: 23rem;
 
     .site-logo {
+      margin-right: 30%;
       img {
         max-width: 5rem;
       }
@@ -46,5 +66,145 @@
       justify-content: center;
       gap: 1.5rem;
     }
+  }
+
+  // nav.main-navigation .login-cart-menu .mobile-second-nav {
+  //   display: none;
+  // }
+
+  // MOBILE PRIMARY MENU STYLING below
+
+  @media screen and (max-width: 430px) {
+    // header#masthead.site-header,
+    // .site .site-header{
+    //   padding: 1rem 1.5rem;
+    // }
+
+    nav.main-navigation#site-navigation {
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 52px;
+      right: 0;
+      z-index: 1000;
+
+      button.menu-toggle {
+        display: block;
+        width: 46px;
+        height: 46px;
+        margin: 0.5rem 0;
+        padding: 0;
+        font-size: 0.9em;
+        position: absolute;
+        right: 1rem;
+        z-index: 1100;
+        top: -2.5rem;
+        border: none;
+        box-shadow: none;
+        text-shadow: none;
+        text-decoration: none;
+        cursor: pointer;
+        background: transparent;
+      }
+
+      div.menu-header-menu-container {
+        background-color: #32373c;
+        margin: 2.5rem 0;
+        text-align: center;
+
+        ul#primary-menu {
+          padding: 1rem 0;
+        }
+
+        li {
+          padding: 0.8rem 0;
+
+          a {
+            color: white;
+          }
+        }
+      }
+
+      .sub-menu {
+        width: 100%;
+
+        li {
+          background-color: #3d3d3d;
+
+          a {
+            color: white;
+            width: auto;
+          }
+        }
+      }
+    }
+
+    // SECONDARY MENU below
+
+    div.first-layer {
+      .site-logo {
+        margin-right: 0;
+      }
+
+      button.menu-toggle {
+        display: none;
+      }
+
+      div.menu-header-right-menu-container {
+        ul#secondary-menu {
+          display: flex;
+          padding: 0;
+          margin: 0 3rem 0 0;
+          font-size: .8rem;
+
+          li {
+            color: black;
+            margin: 0 0.4rem;
+          }
+
+          a {
+            color: black;
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    // header#masthead.site-header {
+    //   padding: 1rem 2rem;
+
+    //   .first-layer .site-logo {
+    //     margin-right: 1rem;
+    //   }
+
+    //   nav.main-navigation .login-cart-menu {
+
+    //     div.menu-header-right-menu-container {
+    //       margin: 0 10rem 0 0;
+    //     }
+
+    //     button.menu-toggle {
+    //       display: none;
+    //     }
+
+    //     #secondary-menu ul {
+    //       display: flex;
+    //       padding: 0;
+    //       margin: 0;
+
+    //       li {
+    //         color: black;
+    //         margin: 0 0.4rem;
+    //       }
+
+    //       a {
+    //         color: black;
+    //         padding: 0;
+    //         margin: 0;
+    //       }
+    //     }
+    //   }
+    // }
   }
 }
