@@ -53,14 +53,17 @@
       }
     }
 
+    //secondary menu
     .login-cart-menu {
       width: auto;
       margin-right: 2rem;
+      display: none;
+
       li {
         margin-left: 1rem;
       }
 
-      svg{
+      svg {
         width: 1.2rem;
         height: 1.2rem;
       }
@@ -69,9 +72,18 @@
 
   .second-layer {
     margin: 0.3rem auto;
+
     #primary-menu {
       justify-content: center;
       gap: 1.5rem;
+    }
+  }
+
+  .nav.main-navigation#site-navigation div.menu-header-menu-container {
+    ul {
+      // #menu-item-507 a {
+      //   color: aqua;
+      // }
     }
   }
 
