@@ -146,6 +146,14 @@ add_action('widgets_init', 'cascadia_floral_widgets_init');
  */
 function cascadia_floral_scripts()
 {
+
+	wp_enqueue_style( 
+		'cascadia-floral-googlefonts', //handle (a unique name)
+		'https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Outfit:wght@100..900&display=swap" rel="stylesheet',
+		array(), //dependencies
+		null // Set null if loading multiple Google Fonts from their CDN
+		);
+
 	wp_enqueue_style('cascadia-floral-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_style_add_data('cascadia-floral-style', 'rtl', 'replace');
 
