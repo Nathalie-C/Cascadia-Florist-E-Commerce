@@ -129,34 +129,6 @@
         }
       }
 
-      form
-        div.woocommerce-variation-add-to-cart
-        .variations_button
-        .woocommerce-variation-add-to-cart-enabled {
-        display: grid;
-        grid-template-areas:
-          "quantity cartBtn "
-          ".        wishlist";
-
-        div.quantity {
-          grid-area: quantity;
-        }
-
-        button.single_add_to_cart_button button {
-          grid-area: cartBtn;
-          background-color: #32373c;
-          color: white;
-        }
-
-        div.woocommerce wl-button-wrap.wl-row.wl-clear {
-          grid-area: wishlist;
-          background-color: #32373c;
-
-          a.wl-add-to.wl-add-to-single.wl-add-but button.present {
-            color: white;
-          }
-        }
-      }
     }
   }
   //single_variation_wrap
@@ -164,12 +136,17 @@
   div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
     display: grid;
     grid-template-areas:
-      "quantity cartBtn"
-      ". wishlist";
+      " quantity cartBtn cartBtn"
+      ". . wishlist";
   }
 
   .quantity {
     grid-area: quantity;
+  }
+
+  input.input-text.qty.text {
+    width: 5rem;
+    margin-left: 1rem;
   }
 
   .single_add_to_cart_button {
@@ -194,7 +171,7 @@
   }
 
   main li {
-    width: 320px;
+    width: 300px;
   }
   ul.products {
     justify-content: center;
