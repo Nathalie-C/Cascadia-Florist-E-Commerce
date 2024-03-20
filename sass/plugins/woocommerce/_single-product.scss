@@ -3,7 +3,8 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    margin: 3rem 10rem;
+    margin: 3rem 1rem;
+    justify-content: center;
 
     .woocommerce-product-gallery {
       position: relative;
@@ -127,7 +128,76 @@
           }
         }
       }
+
+      form
+        div.woocommerce-variation-add-to-cart
+        .variations_button
+        .woocommerce-variation-add-to-cart-enabled {
+        display: grid;
+        grid-template-areas:
+          "quantity cartBtn "
+          ".        wishlist";
+
+        div.quantity {
+          grid-area: quantity;
+        }
+
+        button.single_add_to_cart_button button {
+          grid-area: cartBtn;
+          background-color: #32373c;
+          color: white;
+        }
+
+        div.woocommerce wl-button-wrap.wl-row.wl-clear {
+          grid-area: wishlist;
+          background-color: #32373c;
+
+          a.wl-add-to.wl-add-to-single.wl-add-but button.present {
+            color: white;
+          }
+        }
+      }
     }
+  }
+  //single_variation_wrap
+  // woocommerce-variation-add-to-cart variations_button woocommerce-variation-add-to-cart-enabled
+  div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
+    display: grid;
+    grid-template-areas:
+      "quantity cartBtn"
+      ". wishlist";
+  }
+
+  .quantity {
+    grid-area: quantity;
+  }
+
+  .single_add_to_cart_button {
+    grid-area: cartBtn;
+    background-color: #32373c;
+    color: white;
+    padding: 14px 0;
+  }
+
+  div.woocommerce.wl-button-wrap.wl-row.wl-clear {
+    grid-area: wishlist;
+    background-color: #32373c;
+    color: white;
+    margin: 1rem 0;
+    text-align: center;
+
+    a.wl-add-to.wl-add-to-single.wl-add-but.button.present {
+      color: white;
+      border: solid 0.08rem #32373c;
+      border-radius: 0.3rem;
+    }
+  }
+
+  main li {
+    width: 320px;
+  }
+  ul.products {
+    justify-content: center;
   }
 }
 
@@ -143,4 +213,7 @@
   &.out-of-stock {
     color: $woocommerce__color-error;
   }
+
+  // @media screen and (min-width: 700px) {
+  // }
 }

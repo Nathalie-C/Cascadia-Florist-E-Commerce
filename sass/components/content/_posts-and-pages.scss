@@ -17,8 +17,8 @@
   margin: 1.5em 0 0;
 }
 .entry-summary {
-  width: 45%;
-  margin-left: 1rem;
+  // width: 45%;
+  // margin-left: 1rem;
 }
 .single-product .entry-summary {
   p.price {
@@ -33,13 +33,31 @@
 
 .delivery-info {
   display: flex;
-  flex-wrap: nowrap;
-  margin: 1rem;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
 
   img {
     margin-right: 1rem;
   }
+
+  @media screen and (min-width: 760px) {
+    display: grid;
+    grid-template-areas: "image image image text";
+
+    img {
+      grid-area: image;
+      margin-right: 1rem;
+    }
+
+    div {
+      margin: 0 0 0 1rem;
+    }
+  }
 }
+
 .woocommerce-breadcrumb {
   display: none;
 }
+
+
