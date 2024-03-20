@@ -28,19 +28,21 @@ get_header();
 										$image = get_sub_field('image');
                 ?>
                     <div class="swiper-slide">
+											<div class="content-background">
                         <?php if ($heading) : ?>
                             <h2><?php echo esc_html($heading); ?></h2>
                         <?php endif; ?>
                         <?php if ($description) : ?>
                             <p><?php echo esc_html($description); ?></p>
                         <?php endif; ?>
+												<?php if ($view_all) : ?>
+														<a href="<?php echo esc_url($view_all); ?>">View All</a>
+												<?php endif; ?>
+												</div>
 												<?php if ($image) : ?>
                             <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
                         <?php endif; ?>
 
-                        <?php if ($view_all) : ?>
-                            <a href="<?php echo esc_url($view_all); ?>">View All</a>
-                        <?php endif; ?>
                     </div>
                 <?php endwhile; ?>
 							</div>
