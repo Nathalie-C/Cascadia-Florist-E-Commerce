@@ -42,19 +42,53 @@
           transform: translate(-50%, -50%);
           z-index: 1;
           color: #000000;
+          text-align: center;
         }
-
-        p {
-          top: 45%;
+        h2 {
           font-size: 1.25rem;
-          width: 25rem;
         }
-
+        p {
+          display: none;
+        }
         a {
           top: 65%;
           background-color: #000000;
           padding: 0.5rem 2rem;
           color: #fff;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .banner {
+    .banner-swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          img {
+            min-height: 30rem;
+          }
+
+          h2,
+          p,
+          a {
+            top: 35%;
+          }
+          h2 {
+            font-size: 2rem;
+          }
+          p {
+            top: 47%;
+            font-size: 1.25rem;
+            width: 25rem;
+            display: block;
+          }
+          a {
+            top: 65%;
+            background-color: #000000;
+            padding: 0.5rem 2rem;
+            color: #fff;
+          }
         }
       }
     }

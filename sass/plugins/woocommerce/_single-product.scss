@@ -24,7 +24,7 @@
         margin-bottom: 1em;
         img {
           width: 88%;
-          border-radius: 10px;
+          border-radius: 3px;
         }
       }
 
@@ -177,11 +177,11 @@
     justify-content: center;
   }
 
-  .price .woocommerce-Price-amount.amount{
+  .price .woocommerce-Price-amount.amount {
     font-weight: bolder;
   }
 
-  div.product-addon-totals ul li{
+  div.product-addon-totals ul li {
     width: 100%;
   }
 
@@ -190,8 +190,8 @@
     // wc-pao-addons-container
     // wc-pao-addon-container  wc-pao-addon wc-pao-addon-381-0 wc-pao-addon-id-1710522084
     .single_variation_wrap
-    .wc-pao-addons-container
-    div.wc-pao-addon-container.wc-pao-addon.wc-pao-addon-381-0.wc-pao-addon-id-1710522084 {
+      .wc-pao-addons-container
+      div.wc-pao-addon-container.wc-pao-addon.wc-pao-addon-381-0.wc-pao-addon-id-1710522084 {
       margin: 1.5rem 0;
     }
   }
@@ -209,5 +209,4 @@
   &.out-of-stock {
     color: $woocommerce__color-error;
   }
-
 }
