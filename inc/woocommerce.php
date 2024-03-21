@@ -48,19 +48,6 @@ function cascadia_floral_woocommerce_scripts()
 {
 	wp_enqueue_style('cascadia-floral-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _S_VERSION);
 
-	$font_path   = WC()->plugin_url() . '/assets/fonts/';
-	$inline_font = '@font-face {
-			font-family: "star";
-			src: url("' . $font_path . 'star.eot");
-			src: url("' . $font_path . 'star.eot?#iefix") format("embedded-opentype"),
-				url("' . $font_path . 'star.woff") format("woff"),
-				url("' . $font_path . 'star.ttf") format("truetype"),
-				url("' . $font_path . 'star.svg#star") format("svg");
-			font-weight: normal;
-			font-style: normal;
-		}';
-
-	wp_add_inline_style('cascadia-floral-woocommerce-style', $inline_font);
 }
 add_action('wp_enqueue_scripts', 'cascadia_floral_woocommerce_scripts');
 
@@ -240,3 +227,10 @@ if (!function_exists('cascadia_floral_woocommerce_header_cart')) {
 //price
 // remove_action('woocommerce_single_product_summary','woocommerce_template_single_price',10);
 // add_action('woocommerce_single_product_summary','woocommerce_template_single_price',3);
+
+add_filter( 'woocommerce_product_addons_no_image_select_placeholder_src', 'custom_product_addons_placeholder_image' );
+function custom_product_addons_placeholder_image( $src ) {
+    $custom_src = get_stylesheet_directory_uri() . '/woocommerce/product-add-ons/assets/no-image-select-placeholder.png';
+    
+    return $custom_src;
+}

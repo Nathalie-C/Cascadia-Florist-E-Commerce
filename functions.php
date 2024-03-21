@@ -75,17 +75,6 @@ function cascadia_floral_setup()
 		)
 	);
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters(
-			'cascadia_floral_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			)
-		)
-	);
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support('customize-selective-refresh-widgets');
@@ -125,21 +114,7 @@ add_action('after_setup_theme', 'cascadia_floral_content_width', 0);
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function cascadia_floral_widgets_init()
-{
-	register_sidebar(
-		array(
-			'name' => esc_html__('Sidebar', 'cascadia-floral'),
-			'id' => 'sidebar-1',
-			'description' => esc_html__('Add widgets here.', 'cascadia-floral'),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget' => '</section>',
-			'before_title' => '<h2 class="widget-title">',
-			'after_title' => '</h2>',
-		)
-	);
-}
-add_action('widgets_init', 'cascadia_floral_widgets_init');
+
 
 /**
  * Enqueue scripts and styles.
@@ -343,10 +318,4 @@ function header_nav_menu_items($items, $args)
 }
 add_filter('wp_nav_menu_items', 'header_nav_menu_items', 10, 2);
 
-add_filter( 'woocommerce_product_addons_no_image_select_placeholder_src', 'custom_product_addons_placeholder_image' );
-function custom_product_addons_placeholder_image( $src ) {
-    $custom_src = get_stylesheet_directory_uri() . '/woocommerce/product-add-ons/assets/no-image-select-placeholder.png';
-    
-    return $custom_src;
-}
 

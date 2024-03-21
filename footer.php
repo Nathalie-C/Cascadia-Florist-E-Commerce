@@ -14,30 +14,30 @@
 
 <footer id="colophon" class="site-footer">
 	<div class="site-info">
-		<div class="site-logo">
+		<nav class="site-logo">
 			<?php
 			wp_nav_menu(array('menu' => 'Footer Menu', 'theme_location' => 'footer'));
 			?>
 			<!-- <h4>Cascadia Floral Co.</h4> -->
-		</div>
+		</nav>
 		<nav class="footer-navigation">
-			<h4>Menu</h4>
+			<h2>Menu</h2>
 			<?php
 			wp_nav_menu(array('theme_location' => 'footer'));
 			?>
 		</nav>
-		<div class="open-hr">
-			<h4>Opening Hours</h4>
+		<section class="open-hr">
+			<h2>Opening Hours</h2>
 			<p class="open-hr-weekdays">Monday – Friday: 9AM – 9PM</p>
 			<p class="open-hr-weekend">Weekend: 10AM – 5PM</p>
-		</div>
-		<div class="contact-us">
-			<h4>Contact Us</h4>
+		</section>
+		<section class="contact-us">
+			<h2>Contact Us</h2>
 			<p>hello@cascadiafloral.com</p>
 			<p>(604) 777-1234</p>
 			<p class="address-1">555 Seymour St, </p>
 			<p class="address-2">Vancouver, BC V6B 3H6</p>
-		</div>
+		</section>
 	</div>
 	<div class="site-policy">
 		<p>&#169; 2024 Cascadia Floral Company</p>

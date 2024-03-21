@@ -115,22 +115,24 @@
   //         visibility: hidden;
   //         padding-left: 0;
 
-  //         &::after {
-  //           content: "Sign up & Add to cart";
-  //           visibility: visible;
-  //           display: block;
-  //           // position: absolute;
-  //           background-color: rgb(203, 203, 203);
-  //           padding: 15px 20px;
-  //           border-radius: 10px;
-  //           cursor: pointer;
-  //           // top: 2px;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+          &::after {
+            content: "Sign up & Add to cart";
+            visibility: visible;
+            display: block;
+            // position: absolute;
+            background-color: rgb(203, 203, 203);
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            // top: 2px;
+          }
+        }
+      }
 
+    }
+  }
+  //single_variation_wrap
+  // woocommerce-variation-add-to-cart variations_button woocommerce-variation-add-to-cart-enabled
   div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
     display: grid;
     grid-template-areas:

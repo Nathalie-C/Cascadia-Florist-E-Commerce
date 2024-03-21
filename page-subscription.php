@@ -30,10 +30,14 @@ get_header();
 
             // Loop through rows.
             while( have_rows('how_it_works') ) : the_row();?>
+            <section>
 
-                <h1><?php the_sub_field('instruction_number');?></h1>
-                <h2><?php the_sub_field('instruction_heading');?></h2>
+                <h2>
+                    <span><?php the_sub_field('instruction_number');?></span>
+                <span><?php the_sub_field('instruction_heading');?></span>
+            </h2>
                 <p><?php the_sub_field('instruction_text');?></p>
+                </section>
 
         <?php endwhile; 
         else :
