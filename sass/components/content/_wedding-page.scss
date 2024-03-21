@@ -4,7 +4,12 @@
 
 .page-id-2 .wp-block-media-text {
   position: relative;
-  margin: 2.2rem 0.8rem;
+  margin: 2.2rem auto;
+}
+
+.page-id-2 .wp-block-media-text.is-stacked-on-mobile.is-vertically-aligned-center,
+.page-id-2 .wp-block-media-text.has-media-on-the-right.is-stacked-on-mobile.is-vertically-aligned-center {
+  max-width: 900px;
 }
 
 .formContainer {
@@ -53,8 +58,8 @@ button.toggleFormButton {
   flex-direction: column;
 
   button.toggleFormButton {
-      width: 100%;
-      flex: content;
+    width: 100%;
+    flex: content;
   }
 }
 

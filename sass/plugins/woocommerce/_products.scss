@@ -21,21 +21,6 @@ ul.products {
       width: 100%;
     }
 
-    .button {
-      display: block;
-      color: white;
-      background-color: #3683d0;
-      margin: 0.8rem;
-      padding: 0.5rem 0;
-      border: black 0.1rem;
-      border-radius: 2.5rem;
-
-      a,
-      a:visited,
-      a:hover {
-        color: white;
-      }
-    }
   }
 }
 
@@ -82,11 +67,15 @@ form.woocommerce-ordering {
   margin: 0 0 1.2rem 0;
 }
 
+.wp-block-button__link.add_to_cart_button,
+a.wp-block-button__link.wp-element-button,
 a .wp-block-button__link .add_to_cart_button,
 button .product_type_variable .add_to_cart_button,
 div .wp-block-button .wc-block-grid__product-add-to-cart,
 div wp-block-button .wc-block-grid__product-add-to-cart {
   color: white;
+  background-color: black;
+  border-radius: 3px;
   a,
   a:visited,
   a:hover {
