@@ -342,3 +342,11 @@ function header_nav_menu_items($items, $args)
 	return $items;
 }
 add_filter('wp_nav_menu_items', 'header_nav_menu_items', 10, 2);
+
+add_filter( 'woocommerce_product_addons_no_image_select_placeholder_src', 'custom_product_addons_placeholder_image' );
+function custom_product_addons_placeholder_image( $src ) {
+    $custom_src = get_stylesheet_directory_uri() . '/woocommerce/product-add-ons/assets/no-image-select-placeholder.png';
+    
+    return $custom_src;
+}
+
