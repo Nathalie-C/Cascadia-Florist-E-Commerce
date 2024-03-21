@@ -258,10 +258,19 @@
             color: $color__text-input-focus;
           }
 
-          ul.sub-menu li {
-            background-color: $color__background-body;
-            padding-left: 0.7rem;
-            padding-right: 0.7rem;
+          ul.sub-menu {
+            box-shadow: none;
+
+            li {
+              background-color: $color__background-body;
+              padding-left: 0.7rem;
+              padding-right: 0.7rem;
+            }
+
+            li#menu-item-331 {
+              // border-bottom: 1px solid #bbb;
+              // border-bottom-width: medium;
+            }
           }
         }
       }
