@@ -8,6 +8,8 @@
           width: 100%;
           height: auto;
           display: block;
+          min-height: 25rem;
+          object-fit: cover;
         }
 
         .content-background {
@@ -20,11 +22,11 @@
           &::before {
             content: "";
             position: absolute;
-            top: 60%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 60%;
-            height: 60%;
+            width: 50%;
+            height: 50%;
             background-color: #ffffff86;
             backdrop-filter: blur(10px);
             z-index: 1;
@@ -35,22 +37,58 @@
         p,
         a {
           position: absolute;
-          top: 50%;
+          top: 35%;
           left: 50%;
           transform: translate(-50%, -50%);
           z-index: 1;
-          color: $color__text-screen;
+          color: #000000;
+          text-align: center;
         }
-
+        h2 {
+          font-size: 1.25rem;
+        }
         p {
-          top: 60%;
+          display: none;
         }
-
         a {
-          top: 80%;
+          top: 65%;
           background-color: #000000;
-          padding: 1rem 4rem;
+          padding: 0.5rem 2rem;
           color: #fff;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .banner {
+    .banner-swiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          img {
+            min-height: 30rem;
+          }
+
+          h2,
+          p,
+          a {
+            top: 35%;
+          }
+          h2 {
+            font-size: 2rem;
+          }
+          p {
+            top: 47%;
+            font-size: 1.25rem;
+            width: 25rem;
+            display: block;
+          }
+          a {
+            top: 65%;
+            background-color: #000000;
+            padding: 0.5rem 2rem;
+            color: #fff;
+          }
         }
       }
     }

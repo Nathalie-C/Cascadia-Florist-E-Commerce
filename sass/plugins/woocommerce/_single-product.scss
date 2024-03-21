@@ -24,7 +24,7 @@
         margin-bottom: 1em;
         img {
           width: 88%;
-          border-radius: 10px;
+          border-radius: 3px;
         }
       }
 
@@ -81,56 +81,56 @@
     }
 
     // workshop btn text
-    .entry-summary {
-      form.cart {
-        button.wc-bookings-booking-form-button {
-          visibility: hidden;
-          padding-left: 0;
+    // .entry-summary {
+    //   form.cart {
+    //     button.wc-bookings-booking-form-button {
+    //       visibility: hidden;
+    //       padding-left: 0;
 
-          &::after {
-            content: "Add to cart";
-            visibility: visible;
-            display: block;
-            // position: absolute;
-            background-color: rgb(203, 203, 203);
-            padding: 15px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            // top: 2px;
-          }
-        }
-        // hide wishlist reminder text
-        .wl-already-in {
-          display: none;
-        }
-      }
-    }
+    //       &::after {
+    //         content: "Add to cart";
+    //         visibility: visible;
+    //         display: block;
+    //         // position: absolute;
+    //         background-color: rgb(203, 203, 203);
+    //         padding: 15px 20px;
+    //         border-radius: 10px;
+    //         cursor: pointer;
+    //         // top: 2px;
+    //       }
+    //     }
+    //     // hide wishlist reminder text
+    //     .wl-already-in {
+    //       display: none;
+    //     }
+    //   }
+    // }
   }
 
   // subscription btn text
-  div.product_cat-subscription {
-    .entry-summary {
-      form.cart {
-        button.single_add_to_cart_button {
-          visibility: hidden;
-          padding-left: 0;
+  // div.product_cat-subscription {
+  //   .entry-summary {
+  //     form.cart {
+  //       button.single_add_to_cart_button {
+  //         visibility: hidden;
+  //         padding-left: 0;
 
-          &::after {
-            content: "Sign up & Add to cart";
-            visibility: visible;
-            display: block;
-            // position: absolute;
-            background-color: rgb(203, 203, 203);
-            padding: 15px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            // top: 2px;
-          }
-        }
-      }
+  //         &::after {
+  //           content: "Sign up & Add to cart";
+  //           visibility: visible;
+  //           display: block;
+  //           // position: absolute;
+  //           background-color: rgb(203, 203, 203);
+  //           padding: 15px 20px;
+  //           border-radius: 10px;
+  //           cursor: pointer;
+  //           // top: 2px;
+  //         }
+  //       }
+  //     }
 
-    }
-  }
+  //   }
+  // }
   //single_variation_wrap
   // woocommerce-variation-add-to-cart variations_button woocommerce-variation-add-to-cart-enabled
   div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
@@ -176,6 +176,25 @@
   ul.products {
     justify-content: center;
   }
+
+  .price .woocommerce-Price-amount.amount {
+    font-weight: bolder;
+  }
+
+  div.product-addon-totals ul li {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 700px) {
+    // single_variation_wrap
+    // wc-pao-addons-container
+    // wc-pao-addon-container  wc-pao-addon wc-pao-addon-381-0 wc-pao-addon-id-1710522084
+    .single_variation_wrap
+      .wc-pao-addons-container
+      div.wc-pao-addon-container.wc-pao-addon.wc-pao-addon-381-0.wc-pao-addon-id-1710522084 {
+      margin: 1.5rem 0;
+    }
+  }
 }
 
 .stock {
@@ -190,7 +209,4 @@
   &.out-of-stock {
     color: $woocommerce__color-error;
   }
-
-  // @media screen and (min-width: 700px) {
-  // }
 }

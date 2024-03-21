@@ -2,20 +2,39 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, 0.8);
-	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+  border: 1px solid;
+  border-color: $color__border-button;
+  border-radius: 3px;
+  background: $color__background-button;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  padding: 0.6em 1em 0.4em;
 
-	&:hover {
-		border-color: $color__border-button-hover;
-	}
+  &:hover {
+    border-color: $color__border-button-hover;
+  }
 
-	&:active,
-	&:focus {
-		border-color: $color__border-button-focus;
-	}
+  &:active,
+  &:focus {
+    border-color: $color__border-button-focus;
+  }
+}
+
+a.button.product_type_variable.add_to_cart_button,
+a:visited.button.product_type_variable.add_to_cart_button,
+a:hover.button.product_type_variable.add_to_cart_button,
+.button.product_type_variable.add_to_cart_button {
+  display: block;
+  color: white;
+  background-color: black;
+  margin: 0.8rem 0;
+  padding: 0.5rem 0;
+  border: black 0.1rem;
+  border-radius: 3px;
+
+//   a,
+//   a:visited,
+//   a:hover {
+//     color: white;
+//   }
 }
