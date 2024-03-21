@@ -16,6 +16,10 @@
     text-decoration: none;
   }
 
+  h2 {
+    font-size: 1.2rem;
+  }
+
   .site-logo {
     ul {
       margin-bottom: 0;
@@ -23,16 +27,20 @@
     img {
       max-width: 10rem;
     }
-    h4 {
-      margin-top: 0;
-      margin-bottom: 4rem;
-    }
   }
 
   .footer-navigation,
   .open-hr,
   .contact-us {
     margin-bottom: 4rem;
+  }
+
+  .footer-navigation {
+    .menu-footer-menu-container {
+      ul#menu-footer-menu-1 li {
+        margin-bottom: 0.7rem;
+      }
+    }
   }
 
   .open-hr {
@@ -45,13 +53,21 @@
   }
 
   .contact-us {
-    .address-1 {
+    p {
       margin-bottom: 0;
     }
-    .address-2 {
-      margin-top: 0;
+
+    .footer-address {
+      margin: 1rem auto 2rem auto;
+      width: 250px;
     }
   }
+
+  p.footer-copyright {
+    padding-bottom: 2rem;
+    margin-bottom: 0;
+  }
+
   //500px
   @media screen and (min-width: 31.25em) {
     .site-info {
@@ -84,11 +100,9 @@
       margin: 0 3rem;
     }
   }
-  //736
+  //736px
   @media screen and (min-width: 46em) {
     .site-info {
-      gap: 3rem;
-
       .site-logo,
       .footer-navigation,
       .open-hr,
@@ -97,6 +111,14 @@
       }
     }
   }
+
+  //802px
+  @media screen and (min-width: 50.125em) {
+    .site-info {
+      gap: 2rem;
+    }
+  }
+
   //949px
   @media screen and (min-width: 59.3125em) {
     .site-info {
