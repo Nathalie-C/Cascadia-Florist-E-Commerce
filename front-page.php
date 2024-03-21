@@ -16,7 +16,10 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+	<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 	<section class="banner">
     <?php if (function_exists('get_field') && get_field('banner')) : ?>
         <div class="swiper banner-swiper">
@@ -53,9 +56,7 @@ get_header();
     <?php endif; ?>
 </section>
 
-			<?php
-			while ( have_posts() ) :
-				the_post();
+<?php
 	
 				get_template_part( 'template-parts/content', 'page' );
 				?>
