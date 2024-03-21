@@ -1,10 +1,9 @@
 .site .site-header {
-  background-color: #ffffff;
-  padding: 1rem;
-  color: #462626;
+  background-color: $color__background-body;
+  padding: 1.5rem;
   font-weight: 700;
 
-  border-bottom: 0.1rem solid black;
+  border-bottom: 0.1rem solid $color__text-input-focus;
 
   display: flex;
   flex-direction: column;
@@ -14,7 +13,7 @@
 
     li {
       padding: 0.5rem;
-      background-color: white;
+      background-color: $color__background-body;
     }
   }
 
@@ -31,19 +30,13 @@
   }
 
   .first-layer {
-    // display: grid;
-    align-items: center;
-    // grid-template-columns: 1fr minmax(10rem, auto) 1fr;
     display: flex;
-    // Getting the logo to center with the secondary navigation is a nightmare.
-    // Put it in the left instead.
-    justify-content: space-between;
-    // gap: 23rem;
+    align-items: center;
+    justify-content: center;
 
     .site-logo {
-      margin-right: 30%;
       img {
-        max-width: 5rem;
+        max-width: 7rem;
       }
       ul {
         margin-bottom: 0;
@@ -70,67 +63,97 @@
     }
   }
 
-  .second-layer {
+  #site-navigation.second-layer {
     margin: 0.3rem auto;
+    div.menu-header-menu-container {
+      ul {
+        #menu-item-507,
+        #menu-item-508 {
+          width: 25%;
+          display: inline-block;
+          padding-top: 2rem;
+
+          a {
+            svg {
+              width: 50px;
+            }
+          }
+        }
+
+        #menu-item-506 {
+          width: 25%;
+          display: inline-block;
+          padding-top: 2rem;
+
+          a {
+            svg {
+              width: 43px;
+              height: 43px;
+            }
+          }
+        }
+      }
+    }
 
     #primary-menu {
       justify-content: center;
       gap: 1.5rem;
     }
-  }
 
-  .nav.main-navigation#site-navigation div.menu-header-menu-container {
-    ul {
-      // #menu-item-507 a {
-      //   color: aqua;
-      // }
+    button.menu-toggle {
+      svg {
+        height: auto;
+        width: 35px;
+        path {
+          d: path(
+            "m11 16.745c0-.414.336-.75.75-.75h9.5c.414 0 .75.336.75.75s-.336.75-.75.75h-9.5c-.414 0-.75-.336-.75-.75zm-9-5c0-.414.336-.75.75-.75h18.5c.414 0 .75.336.75.75s-.336.75-.75.75h-18.5c-.414 0-.75-.336-.75-.75zm4-5c0-.414.336-.75.75-.75h14.5c.414 0 .75.336.75.75s-.336.75-.75.75h-14.5c-.414 0-.75-.336-.75-.75z"
+          );
+        }
+      }
     }
   }
 
   // MOBILE PRIMARY MENU STYLING below
+  // @media screen and (max-width: 800px) {
+  nav.main-navigation#site-navigation {
+    width: 100%;
+    position: absolute;
+    top: 52px;
+    right: 0;
+    z-index: 1000;
 
-  @media screen and (max-width: 700px) {
-    nav.main-navigation#site-navigation {
+    button.menu-toggle {
       display: block;
-      width: 100%;
+      width: 46px;
+      height: 46px;
+      margin: 0.5rem 0;
+      padding: 0 0 0 1.3rem;
+      font-size: 0.9em;
       position: absolute;
-      top: 52px;
-      right: 0;
-      z-index: 1000;
+      right: 1.3rem;
+      z-index: 1100;
+      top: -2rem;
+      border: none;
+      box-shadow: none;
+      text-shadow: none;
+      text-decoration: none;
+      cursor: pointer;
+      background: transparent;
+    }
 
-      button.menu-toggle {
-        display: block;
-        width: 46px;
-        height: 46px;
-        margin: 0.5rem 0;
-        padding: 0 0 0 1.3rem;
-        font-size: 0.9em;
-        position: absolute;
-        right: 1rem;
-        z-index: 1100;
-        top: -2.5rem;
-        border: none;
-        box-shadow: none;
-        text-shadow: none;
-        text-decoration: none;
-        cursor: pointer;
-        background: transparent;
-      }
+    div.menu-header-menu-container {
+      background-color: #32373c;
+      margin: 2.5rem 0;
+      text-align: center;
 
-      div.menu-header-menu-container {
-        background-color: #32373c;
-        margin: 2.5rem 0;
-        text-align: center;
-
-        ul#primary-menu {
-          padding: 1rem 0;
-        }
+      ul#primary-menu {
+        padding: 1rem 0;
 
         li {
           padding: 0.8rem 0;
 
           a {
-            color: white;
+            color: $color__background-body;
           }
         }
       }
@@ -142,7 +165,7 @@
           background-color: #3d3d3d;
 
           a {
-            color: white;
+            color: $color__background-body;
             width: auto;
           }
         }
@@ -150,10 +173,14 @@
     }
 
     // SECONDARY MENU below
-
     div.first-layer {
       .site-logo {
         margin-right: 0;
+      }
+
+      //secondary menu
+      .login-cart-menu {
+        display: block;
       }
 
       button.menu-toggle {
@@ -168,14 +195,73 @@
           font-size: 0.8rem;
 
           li {
-            color: black;
+            color: $color__text-input-focus;
             margin: 0 0.4rem;
           }
 
           a {
-            color: black;
+            color: $color__text-input-focus;
             padding: 0;
             margin: 0;
+          }
+        }
+      }
+    }
+  }
+  // }
+
+  //800px
+  @media (min-width: 50em) {
+    border-bottom: $color__background-body;
+    div.first-layer {
+      display: grid;
+      grid-template-columns: 2fr 1fr 2fr;
+
+      .site-logo {
+        grid-column: 2 / 3;
+        justify-self: center;
+        align-self: center;
+      }
+
+      nav.login-cart-menu {
+        // margin-right: 0;
+        grid-column: 3 / -1;
+        justify-self: end;
+        align-self: center;
+        display: block;
+        div.menu-header-right-menu-container {
+          ul#secondary-menu {
+          }
+        }
+      }
+    }
+
+    nav.main-navigation#site-navigation {
+      button.menu-toggle {
+        display: none;
+      }
+
+      div.menu-header-menu-container {
+        background-color: $color__background-body;
+
+        ul#primary-menu {
+          display: flex;
+          border-bottom: 0.1rem solid $color__text-input-focus;
+
+          #menu-item-506,
+          #menu-item-507,
+          #menu-item-508 {
+            display: none;
+          }
+
+          li a {
+            color: $color__text-input-focus;
+          }
+
+          ul.sub-menu li {
+            background-color: $color__background-body;
+            padding-left: 0.7rem;
+            padding-right: 0.7rem;
           }
         }
       }
