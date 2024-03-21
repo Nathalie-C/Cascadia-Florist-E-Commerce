@@ -17,12 +17,10 @@
   margin: 1.5em 0 0;
 }
 .entry-summary {
-
   @media screen and (min-width: 700px) {
     width: 45%;
     margin-left: 1rem;
   }
-
 }
 .single-product .entry-summary {
   p.price {
@@ -63,5 +61,6 @@
 .woocommerce-breadcrumb {
   display: none;
 }
-
-
+.post-35 .entry-header .entry-title {
+  display: none;
+}
