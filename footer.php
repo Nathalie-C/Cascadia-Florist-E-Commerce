@@ -11,7 +11,7 @@
  */
 
 // output ACF
-$fields = get_fields(96, false);
+$fields = get_fields(96);
 
 if ($fields) {
 ?>
@@ -30,15 +30,15 @@ if ($fields) {
 				?>
 			</nav>
 			<section class="open-hr">
-				<h2><?php the_field('opening_hours'); ?></h2>
-				<p><?php the_field('weekdays_opening_hours'); ?></p>
-				<p><?php the_field('weekends_opening_hours'); ?></p>
+				<h2><?php the_field('opening_hours', 96); ?></h2>
+				<p><?php the_field('weekdays_opening_hours', 96); ?></p>
+				<p><?php the_field('weekends_opening_hours', 96); ?></p>
 			</section>
 			<section class="contact-us">
 				<h2>Contact Us</h2>
-				<p><?php the_field('contact_email'); ?></p>
-				<p><?php the_field('contact_phone'); ?></p>
-				<p class="footer-address"><?php the_field('store_address'); ?></p>
+				<p><?php the_field('contact_email', 96); ?></p>
+				<p><?php the_field('contact_phone', 96); ?></p>
+				<p class="footer-address"><?php the_field('store_address', 96); ?></p>
 			</section>
 		</div>
 		<div class="site-policy">
@@ -46,7 +46,7 @@ if ($fields) {
 			<span class="sep"> | </span>
 			<a href="<?php the_permalink(497); ?>"><?php echo esc_html(get_the_title(497)); ?></a>
 
-			<p>&#169; 2024 Emily He, Jean Lin, Kaia Sun, Nathalie Chang</p>
+			<p class="copyright">&#169; 2024 Emily He, Jean Lin, Kaia Sun, Nathalie Chang</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 <?php } ?>
