@@ -18,7 +18,7 @@
 			<?php
 			wp_nav_menu(array('menu' => 'Footer Menu', 'theme_location' => 'footer'));
 			?>
-			<h4>Cascadia Floral Co.</h4>
+			<!-- <h4>Cascadia Floral Co.</h4> -->
 		</div>
 		<nav class="footer-navigation">
 			<h4>Menu</h4>
