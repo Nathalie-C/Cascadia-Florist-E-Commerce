@@ -113,117 +113,115 @@
         width: 100%;
       }
     }
-  }
 
-  // subscription btn text
-  div.product_cat-subscription {
-    form.cart {
-      button.single_add_to_cart_button {
-        visibility: hidden;
-        padding-left: 0;
+    // subscription btn text
+    div.product_cat-subscription {
+      form.cart {
+        button.single_add_to_cart_button {
+          visibility: hidden;
+          padding-left: 0;
 
-        &::after {
-          content: "Sign up & Add to cart";
-          visibility: visible;
-          display: block;
-          @include btn;
-          cursor: pointer;
+          &::after {
+            content: "Sign up & Add to cart";
+            visibility: visible;
+            display: block;
+            @include btn;
+            cursor: pointer;
+          }
         }
       }
     }
-  }
 
-  //single_variation_wrap
-  div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
-    display: grid;
-    grid-template-areas:
-      " quantity cartBtn cartBtn"
-      ". . wishlist";
-  }
-
-  .quantity {
-    grid-area: quantity;
-  }
-
-  input.input-text.qty.text {
-    width: 5rem;
-    margin-left: 1rem;
-  }
-
-  .single_add_to_cart_button {
-    grid-area: cartBtn;
-    background-color: $color__background-button;
-    color: white;
-    padding: 14px 0;
-  }
-
-  div.woocommerce.wl-button-wrap.wl-row.wl-clear {
-    grid-area: wishlist;
-    background-color: $color__background-button;
-    color: white;
-    margin: 1rem 0;
-    text-align: center;
-
-    //hide wishlist reminder text
-    div.wl-already-in {
-      display: none;
+    //single_variation_wrap
+    div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
+      display: grid;
+      grid-template-areas:
+        " quantity cartBtn cartBtn"
+        ". . wishlist";
     }
 
-    a.wl-add-to.wl-add-to-single.wl-add-but.button.present {
+    .quantity {
+      grid-area: quantity;
+    }
+
+    input.input-text.qty.text {
+      width: 5rem;
+      margin-left: 1rem;
+    }
+
+    .single_add_to_cart_button {
+      grid-area: cartBtn;
+      background-color: $color__background-button;
       color: white;
-      border: solid 0.08rem $color__background-button;
-      border-radius: 0.3rem;
-    }
-  }
-
-  main li {
-    width: 300px;
-  }
-  ul.products {
-    justify-content: center;
-  }
-
-  .price .woocommerce-Price-amount.amount {
-    font-weight: bolder;
-  }
-
-  div.product-addon-totals ul li {
-    width: 100%;
-  }
-
-  .stock {
-    &:empty::before {
-      display: none;
+      padding: 14px 0;
     }
 
-    &.in-stock {
-      color: $woocommerce__color-success;
+    div.woocommerce.wl-button-wrap.wl-row.wl-clear {
+      grid-area: wishlist;
+      background-color: $color__background-button;
+      color: white;
+      margin: 1rem 0;
+      text-align: center;
+
+      //hide wishlist reminder text
+      div.wl-already-in {
+        display: none;
+      }
+
+      a.wl-add-to.wl-add-to-single.wl-add-but.button.present {
+        color: white;
+        border: solid 0.08rem $color__background-button;
+        border-radius: 0.3rem;
+      }
     }
 
-    &.out-of-stock {
-      color: $woocommerce__color-error;
+    main li {
+      width: 300px;
     }
-  }
-
-  //700px
-  @media screen and (min-width: 43.75em) {
-    // single_variation_wrap
-    // wc-pao-addons-container
-    // wc-pao-addon-container  wc-pao-addon wc-pao-addon-381-0 wc-pao-addon-id-1710522084
-    .single_variation_wrap
-      .wc-pao-addons-container
-      div.wc-pao-addon-container.wc-pao-addon.wc-pao-addon-381-0.wc-pao-addon-id-1710522084 {
-      margin: 1.5rem 0;
+    ul.products {
+      justify-content: center;
     }
-  }
 
-  //768px
-  @media (min-width: 48em) {
-    div.product {
+    .price .woocommerce-Price-amount.amount {
+      font-weight: bolder;
+    }
+
+    div.product-addon-totals ul li {
+      width: 100%;
+    }
+
+    .stock {
+      &:empty::before {
+        display: none;
+      }
+
+      &.in-stock {
+        color: $woocommerce__color-success;
+      }
+
+      &.out-of-stock {
+        color: $woocommerce__color-error;
+      }
+    }
+
+    //700px
+    @media screen and (min-width: 43.75em) {
+      // single_variation_wrap
+      // wc-pao-addons-container
+      // wc-pao-addon-container  wc-pao-addon wc-pao-addon-381-0 wc-pao-addon-id-1710522084
+      .single_variation_wrap
+        .wc-pao-addons-container
+        div.wc-pao-addon-container.wc-pao-addon.wc-pao-addon-381-0.wc-pao-addon-id-1710522084 {
+        margin: 1.5rem 0;
+      }
+    }
+
+    //768px
+    @media (min-width: 48em) {
       section.related.products {
         li.product_cat-workshops.product-type-booking,
         li.product_cat-subscription.product-type-variable-subscription {
-          max-width: 33.33%;
+          max-width: 30%;
           width: unset;
         }
       }
