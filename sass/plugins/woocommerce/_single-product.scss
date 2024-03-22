@@ -95,6 +95,24 @@
         }
       }
     }
+
+    // workshop/subscription related products btn
+    section.related.products {
+      ul li {
+        a.product_type_booking.add_to_cart_button,
+        a.product_type_variable-subscription.add_to_cart_button {
+          margin-top: 1rem;
+          @include btn;
+        }
+      }
+
+      li.product_cat-workshops.product-type-booking,
+      li.product_cat-subscription.product-type-variable-subscription {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+    }
   }
 
   // subscription btn text
@@ -173,17 +191,6 @@
     width: 100%;
   }
 
-  @media screen and (min-width: 700px) {
-    // single_variation_wrap
-    // wc-pao-addons-container
-    // wc-pao-addon-container  wc-pao-addon wc-pao-addon-381-0 wc-pao-addon-id-1710522084
-    .single_variation_wrap
-      .wc-pao-addons-container
-      div.wc-pao-addon-container.wc-pao-addon.wc-pao-addon-381-0.wc-pao-addon-id-1710522084 {
-      margin: 1.5rem 0;
-    }
-  }
-
   .stock {
     &:empty::before {
       display: none;
@@ -195,6 +202,31 @@
 
     &.out-of-stock {
       color: $woocommerce__color-error;
+    }
+  }
+
+  //700px
+  @media screen and (min-width: 43.75em) {
+    // single_variation_wrap
+    // wc-pao-addons-container
+    // wc-pao-addon-container  wc-pao-addon wc-pao-addon-381-0 wc-pao-addon-id-1710522084
+    .single_variation_wrap
+      .wc-pao-addons-container
+      div.wc-pao-addon-container.wc-pao-addon.wc-pao-addon-381-0.wc-pao-addon-id-1710522084 {
+      margin: 1.5rem 0;
+    }
+  }
+
+  //768px
+  @media (min-width: 48em) {
+    div.product {
+      section.related.products {
+        li.product_cat-workshops.product-type-booking,
+        li.product_cat-subscription.product-type-variable-subscription {
+          max-width: 33.33%;
+          width: unset;
+        }
+      }
     }
   }
 }
