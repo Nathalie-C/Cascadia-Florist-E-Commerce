@@ -38,9 +38,9 @@ get_header();
                         <?php if ($description) : ?>
                             <p><?php echo esc_html($description); ?></p>
                         <?php endif; ?>
-												<?php if ($view_all) : ?>
-														<a href="<?php echo esc_url($view_all); ?>">View All</a>
-												<?php endif; ?>
+												<?php if ($view_all && is_array($view_all) && isset($view_all['url'])) : ?>
+                <a href="<?php echo esc_url($view_all['url']); ?>">View All</a>
+            <?php endif; ?>
 												</div>
 												<?php if ($image) : ?>
                             <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
