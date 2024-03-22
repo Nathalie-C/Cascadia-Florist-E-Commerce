@@ -81,58 +81,41 @@
     }
 
     // workshop btn text
-    // .entry-summary {
-    //   form.cart {
-    //     button.wc-bookings-booking-form-button {
-    //       visibility: hidden;
-    //       padding-left: 0;
+    form.cart {
+      button.wc-bookings-booking-form-button.single_add_to_cart_button {
+        visibility: hidden;
+        padding-left: 0;
 
-    //       &::after {
-    //         content: "Add to cart";
-    //         visibility: visible;
-    //         display: block;
-    //         // position: absolute;
-    //         background-color: rgb(203, 203, 203);
-    //         padding: 15px 20px;
-    //         border-radius: 10px;
-    //         cursor: pointer;
-    //         // top: 2px;
-    //       }
-    //     }
-    //     // hide wishlist reminder text
-    //     .wl-already-in {
-    //       display: none;
-    //     }
-    //   }
-    // }
+        &::after {
+          content: "Add to cart";
+          visibility: visible;
+          display: block;
+          @include btn;
+          cursor: pointer;
+        }
+      }
+    }
   }
 
   // subscription btn text
-  // div.product_cat-subscription {
-  //   .entry-summary {
-  //     form.cart {
-  //       button.single_add_to_cart_button {
-  //         visibility: hidden;
-  //         padding-left: 0;
+  div.product_cat-subscription {
+    form.cart {
+      button.single_add_to_cart_button {
+        visibility: hidden;
+        padding-left: 0;
 
-  //         &::after {
-  //           content: "Sign up & Add to cart";
-  //           visibility: visible;
-  //           display: block;
-  //           // position: absolute;
-  //           background-color: rgb(203, 203, 203);
-  //           padding: 15px 20px;
-  //           border-radius: 10px;
-  //           cursor: pointer;
-  //           // top: 2px;
-  //         }
-  //       }
-  //     }
+        &::after {
+          content: "Sign up & Add to cart";
+          visibility: visible;
+          display: block;
+          @include btn;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 
-  //   }
-  // }
   //single_variation_wrap
-  // woocommerce-variation-add-to-cart variations_button woocommerce-variation-add-to-cart-enabled
   div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
     display: grid;
     grid-template-areas:
@@ -151,21 +134,26 @@
 
   .single_add_to_cart_button {
     grid-area: cartBtn;
-    background-color: #32373c;
+    background-color: $color__background-button;
     color: white;
     padding: 14px 0;
   }
 
   div.woocommerce.wl-button-wrap.wl-row.wl-clear {
     grid-area: wishlist;
-    background-color: #32373c;
+    background-color: $color__background-button;
     color: white;
     margin: 1rem 0;
     text-align: center;
 
+    //hide wishlist reminder text
+    div.wl-already-in {
+      display: none;
+    }
+
     a.wl-add-to.wl-add-to-single.wl-add-but.button.present {
       color: white;
-      border: solid 0.08rem #32373c;
+      border: solid 0.08rem $color__background-button;
       border-radius: 0.3rem;
     }
   }
@@ -195,18 +183,18 @@
       margin: 1.5rem 0;
     }
   }
-}
 
-.stock {
-  &:empty::before {
-    display: none;
-  }
+  .stock {
+    &:empty::before {
+      display: none;
+    }
 
-  &.in-stock {
-    color: $woocommerce__color-success;
-  }
+    &.in-stock {
+      color: $woocommerce__color-success;
+    }
 
-  &.out-of-stock {
-    color: $woocommerce__color-error;
+    &.out-of-stock {
+      color: $woocommerce__color-error;
+    }
   }
 }

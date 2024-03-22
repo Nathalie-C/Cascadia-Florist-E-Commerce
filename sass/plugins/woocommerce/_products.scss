@@ -20,7 +20,6 @@ ul.products {
       display: block;
       width: 100%;
     }
-
   }
 }
 
@@ -75,7 +74,7 @@ button .product_type_variable .add_to_cart_button,
 div .wp-block-button .wc-block-grid__product-add-to-cart,
 div wp-block-button .wc-block-grid__product-add-to-cart {
   color: white;
-  background-color: black;
+  background-color: $color__background-button;
   border-radius: 3px;
   a,
   a:visited,
