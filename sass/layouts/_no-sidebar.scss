@@ -1,11 +1,97 @@
-.no-sidebar {
+.page-id-35,
+.page-id-58,
+.page-id-2,
+.page-id-94 {
+  main {
+    margin: 0;
+  }
+  main .banner {
+    margin: 0;
+  }
+  article,
+  section .testimonials {
+    margin: 0 1.25rem;
+  }
+  @media screen and (min-width: 50em) {
+    article,
+    section,
+    .testimonials {
+      margin: 0 8.75rem;
+    }
+  }
+}
+.banner {
+  .banner-content {
+    position: relative;
 
-	.site {
-		display: grid;
-		grid-template-columns: auto;
-		grid-template-areas:
-			"header"
-			"main"
-			"footer";
-	}
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      min-height: 25rem;
+      object-fit: cover;
+    }
+
+    .content-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        width: 65%;
+        height: 50%;
+        background-color: #ffffff2b;
+        backdrop-filter: blur(10px);
+        z-index: 1;
+      }
+    }
+
+    h2,
+    p {
+      position: absolute;
+      top: 50%;
+      left: 30%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      color: #000000;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin: 0.5rem;
+    }
+    p {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .banner {
+    .banner-content {
+      img {
+        min-height: 30rem;
+      }
+
+      h2,
+      p {
+        top: 35%;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        top: 50%;
+        font-size: 1.25rem;
+        width: 25rem;
+        display: block;
+      }
+    }
+  }
 }
