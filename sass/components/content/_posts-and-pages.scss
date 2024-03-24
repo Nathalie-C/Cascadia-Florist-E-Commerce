@@ -74,3 +74,47 @@ ul.woocommerce-error{
 div.woocommerce-message{
 	background-color: white;
 }
+
+
+// ----------------- Products by category ------------------
+
+//Home page best sellers and workshops
+.theme-twentytwenty .wc-block-grid.has-4-columns .wc-block-grid__product, .wc-block-grid.has-4-columns .wc-block-grid__product {
+  zoom: 1.2; 
+}
+
+//Subscription packages
+.theme-twentytwenty .wc-block-grid.has-3-columns .wc-block-grid__product, .wc-block-grid.has-3-columns .wc-block-grid__product {
+  zoom: 1.2; 
+}
+
+@media screen and (min-width: 768px) {
+
+  //Home page best sellers and workshops
+  .theme-twentytwenty .wc-block-grid.has-4-columns .wc-block-grid__product, .wc-block-grid.has-4-columns .wc-block-grid__product {
+    zoom: 1.4;
+  }
+  //Subscription packages
+  .theme-twentytwenty .wc-block-grid.has-3-columns .wc-block-grid__product, .wc-block-grid.has-3-columns .wc-block-grid__product {
+    zoom: 1.4; 
+  }
+}
+
+@media screen and (min-width: 1920px) {
+
+  //Home page best sellers and workshops
+  .theme-twentytwenty .wc-block-grid.has-4-columns .wc-block-grid__product, .wc-block-grid.has-4-columns .wc-block-grid__product {
+    zoom: 2.3;
+  }
+  //Subscription packages
+  .theme-twentytwenty .wc-block-grid.has-3-columns .wc-block-grid__product, .wc-block-grid.has-3-columns .wc-block-grid__product {
+    zoom: 2.3; 
+  }
+}
+// ----------------- Products by category ends------------------
+
+// ----------------- Hide Edit link ------------------
+
+.entry-footer {
+  display: none;
+}
