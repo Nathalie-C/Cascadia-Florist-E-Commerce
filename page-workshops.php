@@ -22,7 +22,7 @@ get_header();
 			the_post();
 			?>
 
-              <section class="banner">
+            <section class="banner">
                 <?php if (function_exists('get_field') && get_field('banner')) : ?>
 
                 <?php while (have_rows('banner')) : the_row();
