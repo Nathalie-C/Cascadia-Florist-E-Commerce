@@ -75,16 +75,11 @@ $args = array(
     'post_type'      => 'product',
     'posts_per_page' => -1,
     'tax_query'      => array(
-        'relation' => 'OR',
+        // 'relation' => 'OR',
         array(
             'taxonomy' => 'product_cat',
             'field'    => 'slug',
-            'terms'    => 'seasonal-collection',
-        ),
-        array(
-            'taxonomy' => 'product_cat',
-            'field'    => 'slug',
-            'terms'    => 'best-seller',
+            'terms'    => 'flowers',
         ),
     ),
 );
