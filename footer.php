@@ -10,46 +10,61 @@
  * @package Cascadia_Floral
  */
 
-// output ACF
-$fields = get_fields(96);
-
-if ($fields) {
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<nav class="site-logo">
-				<?php
-				wp_nav_menu(array('menu' => 'Footer Menu', 'theme_location' => 'footer'));
-				?>
-			</nav>
-			<nav class="footer-navigation">
-				<h2>Menu</h2>
-				<?php
-				wp_nav_menu(array('theme_location' => 'footer'));
-				?>
-			</nav>
+<footer id="colophon" class="site-footer">
+	<div class="site-info">
+		<nav class="site-logo">
+			<?php
+			wp_nav_menu(array('menu' => 'Footer Menu', 'theme_location' => 'footer'));
+			?>
+		</nav>
+		<nav class="footer-navigation">
+			<h2>Menu</h2>
+			<?php
+			wp_nav_menu(array('theme_location' => 'footer'));
+			?>
+		</nav>
+		<?php include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+		if (class_exists('ACF') && is_plugin_active('advanced-custom-fields-pro/acf.php')) { ?>
 			<section class="open-hr">
 				<h2><?php the_field('opening_hours', 96); ?></h2>
-				<p class="open-hr-weekdays"><?php the_field('weekdays_opening_hours', 96); ?></p>
-				<p class="open-hr-weekend"><?php the_field('weekends_opening_hours', 96); ?></p>
+				<p class="open-hr-weekdays"><?php if (get_field('weekdays_opening_hours', 96)) {
+																			the_field('weekdays_opening_hours', 96);
+																		} ?></p>
+				<p class="open-hr-weekend"><?php if (get_field('weekends_opening_hours', 96)) {
+																			the_field('weekends_opening_hours', 96);
+																		} ?></p>
 			</section>
 			<section class="contact-us">
 				<h2>Contact Us</h2>
-				<p><?php the_field('contact_email', 96); ?></p>
-				<p class="footer-phone"><?php the_field('contact_phone', 96); ?></p>
-				<p class="footer-address"><?php the_field('store_address', 96); ?></p>
+				<p><?php if (get_field('contact_email', 96)) {
+							the_field('contact_email', 96);
+						} ?></p>
+				<p class="footer-phone"><?php if (get_field('contact_phone', 96)) {
+																	the_field('contact_phone', 96);
+																} ?></p>
+				<p class="footer-address"><?php if (get_field('store_address', 96)) {
+																		the_field('store_address', 96);
+																	} ?></p>
 			</section>
-		</div>
-		<div class="site-policy">
-			<a href="<?php the_permalink(3); ?>"><?php echo esc_html(get_the_title(3)); ?></a>
-			<span class="sep"> | </span>
-			<a href="<?php the_permalink(497); ?>"><?php echo esc_html(get_the_title(497)); ?></a>
+		<?php
+		} else { ?>
+			<section>
+				<p>Please contact hello@cascadiafloral.com for more store information.</p>
+			</section>
+		<?php	}
+		?>
+	</div>
+	<div class="site-policy">
+		<a href="<?php the_permalink(3); ?>"><?php echo esc_html(get_the_title(3)); ?></a>
+		<span class="sep"> | </span>
+		<a href="<?php the_permalink(497); ?>"><?php echo esc_html(get_the_title(497)); ?></a>
 
-			<p class="footer-copyright">&#169; 2024 Emily He, Jean Lin, Kaia Sun, Nathalie Chang</p>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-<?php } ?>
+		<p class="footer-copyright">&#169; 2024 Emily He, Jean Lin, Kaia Sun, Nathalie Chang</p>
+	</div><!-- .site-info -->
+</footer><!-- #colophon -->
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -122,12 +122,12 @@ add_action('after_setup_theme', 'cascadia_floral_content_width', 0);
 function cascadia_floral_scripts()
 {
 
-	wp_enqueue_style( 
+	wp_enqueue_style(
 		'cascadia-floral-googlefonts', //handle (a unique name)
 		'https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Outfit:wght@100..900&display=swap" rel="stylesheet',
 		array(), //dependencies
 		null // Set null if loading multiple Google Fonts from their CDN
-		);
+	);
 
 	wp_enqueue_style('cascadia-floral-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_style_add_data('cascadia-floral-style', 'rtl', 'replace');
@@ -208,14 +208,14 @@ if (class_exists('WooCommerce')) {
 function wedding_form_toggle_shortcode_A()
 {
 	ob_start();
-	?>
+?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
 		<!-- <button class="closeButton">X</button> -->
 		<?php echo do_shortcode('[gravityform id="1" title="true" ajax="true"]'); ?>
 		<button class="closeButton close-bottom">X</button>
 	</div>
-	<?php
+<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_A', 'wedding_form_toggle_shortcode_A');
@@ -223,13 +223,13 @@ add_shortcode('wedding_form_toggle_A', 'wedding_form_toggle_shortcode_A');
 function wedding_form_toggle_shortcode_B()
 {
 	ob_start();
-	?>
+?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="2" title="true" ajax="true"]'); ?>
 		<button class="closeButton close-bottom">X</button>
 	</div>
-	<?php
+<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_B', 'wedding_form_toggle_shortcode_B');
@@ -237,13 +237,13 @@ add_shortcode('wedding_form_toggle_B', 'wedding_form_toggle_shortcode_B');
 function wedding_form_toggle_shortcode_C()
 {
 	ob_start();
-	?>
+?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="3" title="true" ajax="true"]'); ?>
 		<button class="closeButton close-bottom">X</button>
 	</div>
-	<?php
+<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_C', 'wedding_form_toggle_shortcode_C');
@@ -251,13 +251,13 @@ add_shortcode('wedding_form_toggle_C', 'wedding_form_toggle_shortcode_C');
 function wedding_form_toggle_shortcode_D()
 {
 	ob_start();
-	?>
+?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="4" title="true" ajax="true"]'); ?>
 		<button class="closeButton close-bottom">X</button>
 	</div>
-	<?php
+<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_D', 'wedding_form_toggle_shortcode_D');
@@ -265,57 +265,42 @@ add_shortcode('wedding_form_toggle_D', 'wedding_form_toggle_shortcode_D');
 function wedding_form_toggle_shortcode_CUSTOM()
 {
 	ob_start();
-	?>
+?>
 	<button class="toggleFormButton">Inquire for Packages</button>
 	<div class="formContainer hidden">
 		<?php echo do_shortcode('[gravityform id="5" title="true" ajax="true"]'); ?>
 		<button class="closeButton close-bottom">X</button>
 	</div>
-	<?php
+<?php
 	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle_CUSTOM', 'wedding_form_toggle_shortcode_CUSTOM');
 
-// add ACF img to footer menu
-function footer_nav_menu_items($items, $args)
+// add ACF to header and footer
+function header_footer_nav_menu_items($items, $args)
 {
 	// get menu
 	$menu = wp_get_nav_menu_object($args->menu);
 
-	// modify primary only
+	// add ACF img to footer menu
 	if ($args->menu == 'Footer Menu') {
-		// vars
+
 		$logo = get_field('footer_logo', $menu);
-
 		// prepend logo
 		$html_logo = '<a href="' . home_url() . '"><img src="' . $logo['url'] . '" alt="' . $logo['alt'] . '" /></a>';
-
 		// append html
 		$items = $html_logo;
 	}
-	return $items;
-}
-add_filter('wp_nav_menu_items', 'footer_nav_menu_items', 10, 2);
-
-// add ACF img to header menu
-function header_nav_menu_items($items, $args)
-{
-	// get menu
-	$menu = wp_get_nav_menu_object($args->menu);
-
-	// modify primary only
+	// add ACF img to header menu
 	if ($args->menu == 'Header Right Menu') {
-		// vars
-		$logo = get_field('header_logo', $menu);
 
+		$logo = get_field('header_logo', $menu);
 		// prepend logo
 		$html_logo = '<a href="' . home_url() . '"><img src="' . $logo['url'] . '" alt="' . $logo['alt'] . '" /></a>';
-
 		// append html
 		$items = $html_logo;
 	}
+
 	return $items;
 }
-add_filter('wp_nav_menu_items', 'header_nav_menu_items', 10, 2);
-
-
+add_filter('wp_nav_menu_items', 'header_footer_nav_menu_items', 10, 2);

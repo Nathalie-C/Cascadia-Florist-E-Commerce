@@ -11,20 +11,16 @@
     (($columns__margin * ($numberColumns - 1)) / $numberColumns);
 }
 
+// "@include btn" uder the class you want to use
 @mixin btn {
-  background-color: $color__background-button;
-  color: white;
-  padding: 14px;
-  text-align: center;
-  border-radius: 0.1rem;
-}
-
-@mixin related-btn {
-  display: block;
-  color: white;
-  background-color: black;
-  margin: 0.8rem 0;
-  padding: 0.5rem 0;
-  border: black 0.1rem;
   border-radius: 3px;
+  background: $color__background-button;
+  color: $color__background-body;
+  line-height: 1;
+  text-align: center;
+  padding: 0.6em 1em;
+
+  &:hover {
+    background: $color__background-button-hover;
+  }
 }

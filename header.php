@@ -33,9 +33,14 @@
 			<div class="first-layer">
 				<div class="site-logo">
 					<?php
-					wp_nav_menu(array('menu' => 'Header Right Menu', 'theme_location' => 'login-cart'));
+					wp_nav_menu(
+						array(
+							'menu' => 'Header Right Menu',
+							'theme_location' => 'login-cart',
+
+						)
+					);
 					?>
-					<!-- <h3>Cascadia Floral</h3> -->
 				</div>
 				<nav class="main-navigation login-cart-menu">
 					<!-- right(login/cart) -->

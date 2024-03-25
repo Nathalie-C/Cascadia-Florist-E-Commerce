@@ -1,2 +1,26 @@
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
+
+// Media Query Breakpoints
+$tiny-mq: em(320);
+$tiny-m-mq: em(500);
+$small-mq: em(640);
+$medium-mq: em(768);
+$medium-m-mq: em(800);
+$big-mq: em(1024);
+$large-mq: em(1280);
+$huge-mq: em(1920);
+
+//* How to use: *
+// @include mq($medium-mq) {
+//   .class {
+//     padding: 2rem 4rem;
+//   }
+// }
+
+//* Custom media query: *
+// @include mq(1600px) {
+//   .class {
+//     padding: 2rem 4rem;
+//   }
+// }
