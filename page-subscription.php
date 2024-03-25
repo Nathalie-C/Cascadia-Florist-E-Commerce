@@ -55,27 +55,34 @@ get_header();
 			get_template_part( 'template-parts/content', 'page' );
         ?>
 
-        <?php
-        // Check rows exists.
-        if( have_rows('how_it_works') ):
-
-            // Loop through rows.
-            while( have_rows('how_it_works') ) : the_row();?>
+        <section class="instruction-section">
             
-            <section>
-                <h2>
-                    <span class="steps-number"><?php the_sub_field('instruction_number');?>
-                    </span>
-                    <span class="steps-text"><?php the_sub_field('instruction_heading');?>
-                    </span>
-                </h2>
-                    <p><?php the_sub_field('instruction_text');?></p>
-            </section>
+            <?php
+            // Check rows exists.
+            if( have_rows('how_it_works') ):
 
-        <?php endwhile; 
-        else :
-        endif;
-        ?>
+                // Loop through rows.
+                while( have_rows('how_it_works') ) : the_row();?>
+                
+            
+                    <article class="instrcution-article">
+                        <h2 class="instrction-number-heading">
+                            <span class="steps-number"><?php the_sub_field('instruction_number');?>
+                            </span>
+
+                            <span class="steps-title"><?php the_sub_field('instruction_heading');?>
+                            </span>
+                        </h2>
+                            <p class="steps-text"><?php the_sub_field('instruction_text');?></p>
+                    </article>
+                
+
+            <?php endwhile; 
+            else :
+            endif;
+            ?>
+        
+        </section>
 
         <?php
 		endwhile; // End of the loop.
