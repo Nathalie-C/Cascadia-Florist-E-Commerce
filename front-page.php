@@ -39,11 +39,14 @@ get_header();
                             <p><?php echo esc_html($description); ?></p>
                         <?php endif; ?>
 												<?php if ($view_all && is_array($view_all) && isset($view_all['url'])) : ?>
-                <a href="<?php echo esc_url($view_all['url']); ?>">View All</a>
-            <?php endif; ?>
+                        <a href="<?php echo esc_url($view_all['url']); ?>">View All</a>
+                        <?php endif; ?>
 												</div>
-												<?php if ($image) : ?>
-                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+												<?php if ($image) : 
+													 $image_id = $image['id']; 
+													 $image_src = wp_get_attachment_image_src($image_id, 'full');?>
+                            <img src="<?php echo esc_url($image_src[0]); ?>" 
+                            alt="<?php echo esc_attr($image['alt']); ?>">
                         <?php endif; ?>
 
                     </div>
