@@ -25,8 +25,8 @@
 			wp_nav_menu(array('theme_location' => 'footer'));
 			?>
 		</nav>
-		<?php include_once(ABSPATH . 'wp-admin/includes/plugin.php');
-		if (class_exists('ACF') && is_plugin_active('advanced-custom-fields-pro/acf.php')) { ?>
+		<?php
+		if (function_exists('get_field')) { ?>
 			<section class="open-hr">
 				<h2><?php the_field('opening_hours', 96); ?></h2>
 				<p class="open-hr-weekdays"><?php if (get_field('weekdays_opening_hours', 96)) {

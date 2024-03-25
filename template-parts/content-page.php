@@ -28,58 +28,56 @@
 					'before' => '<div class="page-links">' . esc_html__('Pages:', 'cascadia-floral'),
 					'after'  => '</div>',
 				)
-			);
-			// output ACF
-			include_once(ABSPATH . 'wp-admin/includes/plugin.php');
-			if (class_exists('ACF') && is_plugin_active('advanced-custom-fields-pro/acf.php')) { ?>
-				<div class="about-second-section">
-					<section class="store-info">
-						<h2 class="store-information"><?php if (get_field('store_information')) {
-																						the_field('store_information');
-																					} ?></h2>
-						<p><?php if (get_field('store_info_description')) {
-									the_field('store_info_description');
-								} ?></p>
-						<p><?php if (get_field('contact_email')) {
-									the_field('contact_email');
-								} ?></p>
-						<p><?php if (get_field('contact_phone')) {
-									the_field('contact_phone');
-								} ?></p>
-						<p class="store-address"><?php if (get_field('store_address')) {
-																				the_field('store_address');
-																			} ?></p>
-					</section>
-					<section>
-						<h2 class="open-hours"><?php if (get_field('opening_hours')) {
-																			the_field('opening_hours');
-																		} ?></h2>
-						<p><?php if (get_field('opening_hours_description')) {
-									the_field('opening_hours_description');
-								} ?></p>
-						<p><?php if (get_field('weekdays_opening_hours')) {
-									the_field('weekdays_opening_hours');
-								} ?></p>
-						<p><?php if (get_field('weekends_opening_hours')) {
-									the_field('weekends_opening_hours');
-								} ?></p>
-					</section>
-				<?php } else { ?>
-					<section>
+			); ?>
+			<div class="about-second-section">
+				<?php
+				if (function_exists('get_field')) { ?>
+					<div>
+						<section class="store-info">
+							<h2 class="store-information"><?php if (get_field('store_information')) {
+																							the_field('store_information');
+																						} ?></h2>
+							<p><?php if (get_field('store_info_description')) {
+										the_field('store_info_description');
+									} ?></p>
+							<p><?php if (get_field('contact_email')) {
+										the_field('contact_email');
+									} ?></p>
+							<p><?php if (get_field('contact_phone')) {
+										the_field('contact_phone');
+									} ?></p>
+							<p class="store-address"><?php if (get_field('store_address')) {
+																					the_field('store_address');
+																				} ?></p>
+						</section>
+						<section class="store-open-hr">
+							<h2 class="open-hours"><?php if (get_field('opening_hours')) {
+																				the_field('opening_hours');
+																			} ?></h2>
+							<p><?php if (get_field('opening_hours_description')) {
+										the_field('opening_hours_description');
+									} ?></p>
+							<p><?php if (get_field('weekdays_opening_hours')) {
+										the_field('weekdays_opening_hours');
+									} ?></p>
+							<p><?php if (get_field('weekends_opening_hours')) {
+										the_field('weekends_opening_hours');
+									} ?></p>
+						</section>
+					<?php } else { ?>
 						<p>Please contact hello@cascadiafloral.com for more store information.</p>
-					</section>
-				<?php } ?>
-				<div class="store-info-image">
-					<?php
-					$image = get_field('about_store_image');
-					$size = 'full'; // (thumbnail, medium, large, full or custom size)
-					if ($image) {
-						print_r($image);
-						echo wp_get_attachment_image($image, $size);
-					} ?>
-				</div>
-				</div>
-			<?php
+					<?php } ?>
+					</div> <!-- end of div wrapping the store-info -->
+					<div class="store-info-image">
+						<?php
+						$image = get_field('about_store_image');
+						$size = 'large'; // (thumbnail, medium, large, full or custom size)
+						if ($image) {
+							echo wp_get_attachment_image($image, $size);
+						} ?>
+					</div>
+			</div> <!-- end of about-second-section -->
+		<?php
 		} else {
 			// other pages
 			the_content();
@@ -91,7 +89,7 @@
 				)
 			);
 		}
-			?>
+		?>
 	</div><!-- .entry-content -->
 
 	<?php if (get_edit_post_link()) : ?>
