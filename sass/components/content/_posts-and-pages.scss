@@ -65,50 +65,62 @@
   display: none;
 }
 
-ul.woocommerce-error{
-	background-color: #00697b;
-	color: white;
-	list-style-type: none;
+ul.woocommerce-error {
+  background-color: #00697b;
+  color: white;
+  list-style-type: none;
 }
 
-div.woocommerce-message{
-	background-color: white;
+div.woocommerce-message {
+  background-color: white;
 }
-
 
 // ----------------- Products by category ------------------
+// archive pages (all flowers/best sellers/seasonal collection)
+.archive .site {
+  ul.products li {
+    a:nth-child(2) {
+      margin-top: 1rem;
+      @include btn;
+    }
+  }
+}
 
 //Home page best sellers and workshops
-.theme-twentytwenty .wc-block-grid.has-4-columns .wc-block-grid__product, .wc-block-grid.has-4-columns .wc-block-grid__product {
-  zoom: 1.2; 
+.theme-twentytwenty .wc-block-grid.has-4-columns .wc-block-grid__product,
+.wc-block-grid.has-4-columns .wc-block-grid__product {
+  zoom: 1.2;
 }
 
 //Subscription packages
-.theme-twentytwenty .wc-block-grid.has-3-columns .wc-block-grid__product, .wc-block-grid.has-3-columns .wc-block-grid__product {
-  zoom: 1.2; 
+.theme-twentytwenty .wc-block-grid.has-3-columns .wc-block-grid__product,
+.wc-block-grid.has-3-columns .wc-block-grid__product {
+  zoom: 1.2;
 }
 
 @media screen and (min-width: 768px) {
-
   //Home page best sellers and workshops
-  .theme-twentytwenty .wc-block-grid.has-4-columns .wc-block-grid__product, .wc-block-grid.has-4-columns .wc-block-grid__product {
+  .theme-twentytwenty .wc-block-grid.has-4-columns .wc-block-grid__product,
+  .wc-block-grid.has-4-columns .wc-block-grid__product {
     zoom: 1.4;
   }
   //Subscription packages
-  .theme-twentytwenty .wc-block-grid.has-3-columns .wc-block-grid__product, .wc-block-grid.has-3-columns .wc-block-grid__product {
-    zoom: 1.4; 
+  .theme-twentytwenty .wc-block-grid.has-3-columns .wc-block-grid__product,
+  .wc-block-grid.has-3-columns .wc-block-grid__product {
+    zoom: 1.4;
   }
 }
 
 @media screen and (min-width: 1920px) {
-
   //Home page best sellers and workshops
-  .theme-twentytwenty .wc-block-grid.has-4-columns .wc-block-grid__product, .wc-block-grid.has-4-columns .wc-block-grid__product {
+  .theme-twentytwenty .wc-block-grid.has-4-columns .wc-block-grid__product,
+  .wc-block-grid.has-4-columns .wc-block-grid__product {
     zoom: 2.3;
   }
   //Subscription packages
-  .theme-twentytwenty .wc-block-grid.has-3-columns .wc-block-grid__product, .wc-block-grid.has-3-columns .wc-block-grid__product {
-    zoom: 2.3; 
+  .theme-twentytwenty .wc-block-grid.has-3-columns .wc-block-grid__product,
+  .wc-block-grid.has-3-columns .wc-block-grid__product {
+    zoom: 2.3;
   }
 }
 // ----------------- Products by category ends------------------
@@ -123,7 +135,7 @@ div.woocommerce-message{
 
 .steps-number {
   background-color: #fff;
-  border: 2px solid #00697B;
+  border: 2px solid #00697b;
   height: 40px;
   width: 40px;
   font-size: 4rem;
@@ -151,7 +163,6 @@ div.woocommerce-message{
 }
 
 @media screen and (min-width: 768px) {
-  
   .page-id-58 section.instruction-section {
     margin: 2rem;
   }
@@ -169,7 +180,6 @@ div.woocommerce-message{
 }
 
 @media screen and (min-width: 800px) {
-
   .page-id-58 section.instruction-section {
     margin: 2.5rem 8.75rem 3rem 8.75rem;
   }
@@ -177,7 +187,6 @@ div.woocommerce-message{
   .page-id-58 article.instrcution-article {
     margin: 0rem;
   }
-  
 }
 
 // ----------------- Subscription instruction part ends------------------

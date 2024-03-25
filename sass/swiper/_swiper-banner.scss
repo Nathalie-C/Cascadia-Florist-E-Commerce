@@ -19,6 +19,11 @@
           width: 100%;
           height: 100%;
 
+          // btn link
+          a {
+            @include btn;
+          }
+
           &::before {
             content: "";
             position: absolute;
@@ -41,8 +46,6 @@
           left: 50%;
           transform: translate(-50%, -50%);
           z-index: 1;
-          color: #000000;
-          text-align: center;
         }
         h2 {
           font-size: 1.25rem;

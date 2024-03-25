@@ -83,26 +83,28 @@
     // workshop btn text
     form.cart {
       button.wc-bookings-booking-form-button.single_add_to_cart_button {
-        visibility: hidden;
         padding-left: 0;
-
-        &::after {
-          content: "Add to cart";
-          visibility: visible;
-          display: block;
-          @include btn;
-          cursor: pointer;
-        }
+        @include btn;
       }
     }
 
-    // workshop/subscription related products btn
+    // related products btn
     section.related.products {
-      ul li {
-        a.product_type_booking.add_to_cart_button,
-        a.product_type_variable-subscription.add_to_cart_button {
-          margin-top: 1rem;
-          @include btn;
+      ul {
+        li {
+          a.product_type_booking.add_to_cart_button,
+          a.product_type_variable-subscription.add_to_cart_button {
+            margin-top: 1rem;
+            @include btn;
+          }
+        }
+
+        li.product_cat-seasonal-collection,
+        li.product_cat-best-seller {
+          a:nth-child(2) {
+            margin-top: 1rem;
+            @include btn;
+          }
         }
       }
 
@@ -149,29 +151,25 @@
       margin-left: 1rem;
     }
 
+    // add to cart btn
     .single_add_to_cart_button {
       grid-area: cartBtn;
-      background-color: $color__background-button;
-      color: white;
-      padding: 14px 0;
+      @include btn;
+      border: none;
     }
 
     div.woocommerce.wl-button-wrap.wl-row.wl-clear {
       grid-area: wishlist;
-      background-color: $color__background-button;
-      color: white;
       margin: 1rem 0;
-      text-align: center;
 
       //hide wishlist reminder text
       div.wl-already-in {
         display: none;
       }
 
+      // add to wishlist btn
       a.wl-add-to.wl-add-to-single.wl-add-but.button.present {
-        color: white;
-        border: solid 0.08rem $color__background-button;
-        border-radius: 0.3rem;
+        @include btn;
       }
     }
 
@@ -206,9 +204,6 @@
 
     //700px
     @media screen and (min-width: 43.75em) {
-      // single_variation_wrap
-      // wc-pao-addons-container
-      // wc-pao-addon-container  wc-pao-addon wc-pao-addon-381-0 wc-pao-addon-id-1710522084
       .single_variation_wrap
         .wc-pao-addons-container
         div.wc-pao-addon-container.wc-pao-addon.wc-pao-addon-381-0.wc-pao-addon-id-1710522084 {
