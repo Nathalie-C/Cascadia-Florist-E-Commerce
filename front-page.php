@@ -56,13 +56,15 @@ get_header();
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
         </div>
-    <?php endif; ?>
-</section>
+      <?php endif; ?>
+  </section>
 
-<?php
-	
-				get_template_part( 'template-parts/content', 'page' );
+      <section class="content">
+			<h1 class="screen-reader-text"><?php the_title();?> </h1>
+				<?php
+				the_content();
 				?>
+			</section>
 			<section class="testimonials">
 				<h2><?php esc_html_e('What our customers say about us.');?></h2>
 			
