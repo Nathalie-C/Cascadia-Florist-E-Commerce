@@ -210,12 +210,9 @@ function wedding_form_toggle_shortcode($atts) {
         'form_id' => '1',
     ), $atts);
 
-    // Generate a unique identifier based on the form ID
-    $unique_id = uniqid('wedding_form_toggle_');
-
     ob_start();
     ?>
-    <div id="<?php echo $unique_id; ?>">
+    <div>
         <button class="toggleFormButton">Inquire for Packages</button>
         <div class="formContainer hidden">
             <?php echo do_shortcode("[gravityform id='{$a['form_id']}' title='true' ajax='true']"); ?>
