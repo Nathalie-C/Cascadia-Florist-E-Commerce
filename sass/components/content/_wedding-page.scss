@@ -64,6 +64,10 @@
     }
   }
 
+  footer.entry-footer{
+    display: none;
+  }
+
   @media (min-width: 700px) {
     article#post-2.post-2.page.type-page.status-publish.has-post-thumbnail.hentry {
       margin: 1rem auto;

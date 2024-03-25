@@ -160,9 +160,9 @@ function cascadia_floral_scripts()
 		);
 	}
 
-	// Enqueue wedding form JavaScript & css
-	wp_enqueue_script('wedding-form-script', get_template_directory_uri() . '/js/wedding-form.js', array('jquery'), _S_VERSION, true);
-	wp_enqueue_style('wedding-page-style', get_template_directory_uri() . '/wedding-page.css', array('cascadia-floral-style'), _S_VERSION);
+	if (is_page('weddings')) {
+        wp_enqueue_script('wedding-form-script', get_template_directory_uri() . '/js/wedding-form.js', array('jquery'), _S_VERSION, true);
+    }	
 }
 add_action('wp_enqueue_scripts', 'cascadia_floral_scripts');
 
@@ -205,76 +205,28 @@ if (class_exists('WooCommerce')) {
 }
 
 // gravity forms
-function wedding_form_toggle_shortcode_A()
-{
-	ob_start();
-?>
-	<button class="toggleFormButton">Inquire for Packages</button>
-	<div class="formContainer hidden">
-		<!-- <button class="closeButton">X</button> -->
-		<?php echo do_shortcode('[gravityform id="1" title="true" ajax="true"]'); ?>
-		<button class="closeButton close-bottom">X</button>
-	</div>
-<?php
-	return ob_get_clean();
-}
-add_shortcode('wedding_form_toggle_A', 'wedding_form_toggle_shortcode_A');
+function wedding_form_toggle_shortcode($atts) {
+    $a = shortcode_atts(array(
+        'form_id' => '1',
+    ), $atts);
 
-function wedding_form_toggle_shortcode_B()
-{
-	ob_start();
-?>
-	<button class="toggleFormButton">Inquire for Packages</button>
-	<div class="formContainer hidden">
-		<?php echo do_shortcode('[gravityform id="2" title="true" ajax="true"]'); ?>
-		<button class="closeButton close-bottom">X</button>
-	</div>
-<?php
-	return ob_get_clean();
-}
-add_shortcode('wedding_form_toggle_B', 'wedding_form_toggle_shortcode_B');
+    // Generate a unique identifier based on the form ID
+    $unique_id = uniqid('wedding_form_toggle_');
 
-function wedding_form_toggle_shortcode_C()
-{
-	ob_start();
-?>
-	<button class="toggleFormButton">Inquire for Packages</button>
-	<div class="formContainer hidden">
-		<?php echo do_shortcode('[gravityform id="3" title="true" ajax="true"]'); ?>
-		<button class="closeButton close-bottom">X</button>
-	</div>
-<?php
-	return ob_get_clean();
+    ob_start();
+    ?>
+    <div id="<?php echo $unique_id; ?>">
+        <button class="toggleFormButton">Inquire for Packages</button>
+        <div class="formContainer hidden">
+            <?php echo do_shortcode("[gravityform id='{$a['form_id']}' title='true' ajax='true']"); ?>
+            <button class="closeButton close-bottom">X</button>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
 }
-add_shortcode('wedding_form_toggle_C', 'wedding_form_toggle_shortcode_C');
+add_shortcode('wedding_form_toggle', 'wedding_form_toggle_shortcode');
 
-function wedding_form_toggle_shortcode_D()
-{
-	ob_start();
-?>
-	<button class="toggleFormButton">Inquire for Packages</button>
-	<div class="formContainer hidden">
-		<?php echo do_shortcode('[gravityform id="4" title="true" ajax="true"]'); ?>
-		<button class="closeButton close-bottom">X</button>
-	</div>
-<?php
-	return ob_get_clean();
-}
-add_shortcode('wedding_form_toggle_D', 'wedding_form_toggle_shortcode_D');
-
-function wedding_form_toggle_shortcode_CUSTOM()
-{
-	ob_start();
-?>
-	<button class="toggleFormButton">Inquire for Packages</button>
-	<div class="formContainer hidden">
-		<?php echo do_shortcode('[gravityform id="5" title="true" ajax="true"]'); ?>
-		<button class="closeButton close-bottom">X</button>
-	</div>
-<?php
-	return ob_get_clean();
-}
-add_shortcode('wedding_form_toggle_CUSTOM', 'wedding_form_toggle_shortcode_CUSTOM');
 
 // add ACF to header and footer
 function header_footer_nav_menu_items($items, $args)
