@@ -58,53 +58,54 @@ if ( woocommerce_product_loop() ) {
 
 	woocommerce_product_loop_start();
 
-	// if ( wc_get_loop_prop( 'total' ) ) {
-	// 	while ( have_posts() ) {
-	// 		the_post();
-
-	// 		/**
-	// 		 * Hook: woocommerce_shop_loop.
-	// 		 */
-	// 		do_action( 'woocommerce_shop_loop' );
-
-	// 		wc_get_template_part( 'content', 'product' );
-	// 	}
-	// }
-
-$args = array(
-    'post_type'      => 'product',
-    'posts_per_page' => -1,
-    'tax_query'      => array(
-        // 'relation' => 'OR',
-        array(
-            'taxonomy' => 'product_cat',
-            'field'    => 'slug',
-            'terms'    => 'flowers',
-        ),
-    ),
-);
-
-$products = new WP_Query( $args );
-
-if ( $products->have_posts() ) {
-    while ( $products->have_posts() ) {
-        $products->the_post();
-
-        /**
-         * Hook: woocommerce_shop_loop.
-         */
-        do_action( 'woocommerce_shop_loop' );
-
-        wc_get_template_part( 'content', 'product' );
-    }
-}
-
-wp_reset_postdata();
 
 
+	if (is_shop()) {
+		$args = array(
+				'post_type'      => 'product',
+				'posts_per_page' => -1,
+				'tax_query'      => array(
 
+						array(
+								'taxonomy' => 'product_cat',
+								'field'    => 'slug',
+								'terms'    => 'flowers',
+						),
+				),
+		);
+
+		$products = new WP_Query( $args );
+
+		if ( $products->have_posts() ) {
+				while ( $products->have_posts() ) {
+						$products->the_post();
+
+						/**
+						 * Hook: woocommerce_shop_loop.
+						 */
+						do_action( 'woocommerce_shop_loop' );
+
+						wc_get_template_part( 'content', 'product' );
+				}
+		}
+
+
+	}else{
+		if ( wc_get_loop_prop( 'total' ) ) {
+			while ( have_posts() ) {
+				the_post();
+
+				/**
+				 * Hook: woocommerce_shop_loop.
+				 */
+				do_action( 'woocommerce_shop_loop' );
+
+				wc_get_template_part( 'content', 'product' );
+			}
+		}
+	}
+	wp_reset_postdata();
 	woocommerce_product_loop_end();
-
 	/**
 	 * Hook: woocommerce_after_shop_loop.
 	 *
