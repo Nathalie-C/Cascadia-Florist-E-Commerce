@@ -1,7 +1,8 @@
 .page-id-35,
 .page-id-58,
 .page-id-2,
-.page-id-94 {
+.page-id-94,
+.page-id-96 {
   main {
     margin: 0;
   }
@@ -91,6 +92,13 @@
         font-size: 1.25rem;
         width: 25rem;
         display: block;
+      }
+    }
+  }
+  .page-id-96 {
+    .banner-content {
+      h2 {
+        top: 50%;
       }
     }
   }
