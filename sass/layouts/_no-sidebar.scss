@@ -2,7 +2,9 @@
 .page-id-58,
 .page-id-2,
 .page-id-94,
-.page-id-96 {
+.page-id-96,
+.page-id-497,
+.page-id-3 {
   main {
     margin: 0;
   }
@@ -14,10 +16,12 @@
     margin: 0 1.25rem;
   }
   @media screen and (min-width: 50em) {
-    article,
-    section,
-    .testimonials {
-      margin: 0 8.75rem;
+    main {
+      article,
+      section,
+      .testimonials {
+        margin: 0 8.75rem;
+      }
     }
   }
 }

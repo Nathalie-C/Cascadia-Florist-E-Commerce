@@ -68,12 +68,13 @@
     margin-bottom: 0;
   }
 
-  //500px
-  @include mq($tiny-m-mq) {
+  //521px
+  @include mq(32.5625em) {
     .site-info {
-      margin: 0 1.5rem;
+      margin: 0 auto 0 8rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: start;
+      gap: 1rem;
       flex-wrap: wrap;
       text-align: left;
       .site-logo {
@@ -85,33 +86,20 @@
           margin-top: 1.3em;
         }
       }
-
-      .site-logo,
-      .footer-navigation,
-      .open-hr,
-      .contact-us {
-        width: 13.32rem;
-      }
     }
   }
   //596px
   @media (min-width: 37.25em) {
     .site-info {
       margin: 0 3rem;
+      gap: 1.3rem;
     }
   }
 
-  //800px
-  @include mq($medium-m-mq) {
+  //864px
+  @media (min-width: 54em) {
     .site-info {
-      gap: 2rem;
-    }
-  }
-
-  //949px
-  @media (min-width: 59.3125em) {
-    .site-info {
-      // margin: 0 3rem;
+      justify-content: space-between;
     }
   }
   //1117px
