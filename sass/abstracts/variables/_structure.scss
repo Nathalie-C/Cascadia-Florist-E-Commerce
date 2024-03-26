@@ -1,15 +1,21 @@
+// Media Query Mixin (please use breakpoints below)
+@mixin mq($w) {
+  @media (min-width: $w) {
+    @content;
+  }
+}
+
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
 
 // Media Query Breakpoints
-$tiny-mq: em(320);
-$tiny-m-mq: em(500);
-$small-mq: em(640);
-$medium-mq: em(768);
-$medium-m-mq: em(800);
-$big-mq: em(1024);
-$large-mq: em(1280);
-$huge-mq: em(1920);
+$tiny-m-mq: 31.25em; //500px
+$small-mq: 40em; //640px
+$medium-mq: 48em; //768px
+$medium-m-mq: 50em; //800px
+$big-mq: 64em; //1024px
+$large-mq: 80em; //1280px
+$huge-mq: 120em; //1920px
 
 //* How to use: *
 // @include mq($medium-mq) {
@@ -19,7 +25,7 @@ $huge-mq: em(1920);
 // }
 
 //* Custom media query: *
-// @include mq(1600px) {
+// @include mq(40em) {
 //   .class {
 //     padding: 2rem 4rem;
 //   }
