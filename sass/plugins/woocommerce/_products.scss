@@ -3,12 +3,18 @@ ul.products {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 
   li.product {
     list-style: none;
     position: relative;
     margin-bottom: 2em;
     text-align: center;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 
     a,
     a:visited,
