@@ -1,15 +1,10 @@
-.page-id-35,
-.page-id-58,
-.page-id-2,
-.page-id-94,
-.page-id-96,
-.page-id-497,
-.page-id-3 {
+// all pages
+.page {
   main {
     margin: 0;
-  }
-  main .banner {
-    margin: 0;
+    .banner {
+      margin: 0;
+    }
   }
   article,
   section .testimonials {
@@ -25,6 +20,7 @@
     }
   }
 }
+
 .banner {
   .banner-content {
     position: relative;

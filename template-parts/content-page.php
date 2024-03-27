@@ -13,10 +13,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-		if (get_the_ID() !== 96 && get_the_ID() !== 58 && get_the_ID() !== 94) {
-			the_title('<h1 class="entry-title">', '</h1>');
-		}
-
+		the_title('<h1 class="entry-title">', '</h1>');
 		?>
 	</header><!-- .entry-header -->
 
