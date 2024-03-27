@@ -29,7 +29,7 @@ ul.products {
   }
 }
 
-@media screen and (min-width: 48em) {
+@include mq($medium-mq) {
   ul.products {
     li.product {
       @include column-width(3);

@@ -209,7 +209,7 @@
     }
 
     //700px
-    @media screen and (min-width: 43.75em) {
+    @include mq(43.75em) {
       .single_variation_wrap
         .wc-pao-addons-container
         div.wc-pao-addon-container.wc-pao-addon.wc-pao-addon-381-0.wc-pao-addon-id-1710522084 {
@@ -218,7 +218,7 @@
     }
 
     //768px
-    @media (min-width: 48em) {
+    @include mq($medium-mq) {
       section.related.products {
         li.product_cat-workshops.product-type-booking,
         li.product_cat-subscription.product-type-variable-subscription {
@@ -230,15 +230,13 @@
   }
 }
 
-
 // ---------------------- Product image ------------------------------
 
-// @include mq($tiny-m-mq) { 
+// @include mq($tiny-m-mq) {
 
 //will change it to right breakpoint after discussion
 
-  @media screen and (min-width: 43.75em) {
-
+ @include mq(43.75em) {
   .woocommerce-product-gallery {
     width: 50%;
   }
