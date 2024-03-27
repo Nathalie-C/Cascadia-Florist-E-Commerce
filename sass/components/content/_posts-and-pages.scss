@@ -2,6 +2,7 @@
   display: block;
 }
 
+
 .post,
 .page {
   margin: 0;
@@ -38,11 +39,11 @@
   flex-direction: column;
   // justify-content: center;
   align-items: center;
-
+  
   img {
     margin-right: 1rem;
   }
-
+  
   @media screen and (min-width: 760px) {
     display: grid;
     grid-template-areas: "image image image text";
@@ -75,6 +76,17 @@ div.woocommerce-message {
   background-color: white;
 }
 
+// Home page promotion CTA section margin in mobile ------------------------
+
+@media screen and (max-width: 600px) {
+  .home.page-id-35 {
+    .content {
+      .wp-block-media-text.is-stacked-on-mobile {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
 // -------------------------- Products by category -------------------------------
 // archive pages (all flowers/best sellers/seasonal collection)
 .archive .site {
@@ -111,7 +123,7 @@ div.woocommerce-message {
   }
 }
 
-@include mq($huge-mq){
+@include mq($huge-mq) {
   //Home page best sellers and workshops
   .theme-twentytwenty .wc-block-grid.has-4-columns .wc-block-grid__product,
   .wc-block-grid.has-4-columns .wc-block-grid__product {
