@@ -1,6 +1,17 @@
 .page-id-96 {
-  .banner .banner-content img {
-    object-position: 65% 50%;
+  .banner .banner-content {
+    .content-background::before {
+      width: 56%;
+      left: 27%;
+    }
+
+    h2 {
+      left: 27%;
+    }
+
+    img {
+      object-position: 65% 50%;
+    }
   }
 
   // section 1
@@ -73,6 +84,12 @@
 
   // 768px
   @include mq($medium-mq) {
+    .banner .banner-content {
+      .content-background::before {
+        left: 23%;
+      }
+    }
+
     .wp-block-media-text.is-stacked-on-mobile
       figure.wp-block-media-text__media
       img {
