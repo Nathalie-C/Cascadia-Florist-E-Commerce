@@ -9,7 +9,7 @@
     .woocommerce-product-gallery {
       position: relative;
       float: left;
-      width: 50%;
+      // width: 50%;
 
       .woocommerce-product-gallery__trigger {
         display: none;
@@ -79,6 +79,12 @@
         display: none;
       }
     }
+
+    // Product title
+    // .product_title.entry-title {
+    //   font-size: 1.5rem;
+    //   text-align: center;
+    // }
 
     // workshop btn text
     form.cart {
@@ -223,3 +229,28 @@
     }
   }
 }
+
+
+// ---------------------- Product image ------------------------------
+
+// @include mq($tiny-m-mq) { 
+
+//will change it to right breakpoint after discussion
+
+  @media screen and (min-width: 43.75em) {
+
+  .woocommerce-product-gallery {
+    width: 50%;
+  }
+}
+
+// ------------ Subscription single-product image ----------------
+// .woocommerce-product-gallery__image {
+//   zoom: 1.2;
+// }
+
+// @include mq($large-mq) {
+//   .woocommerce-product-gallery__image {
+//     zoom: 1.4;
+//   }
+// }
