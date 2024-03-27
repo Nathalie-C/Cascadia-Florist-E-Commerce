@@ -1,8 +1,10 @@
+$primary-color: #00697b;
+
 $color__background-body: #fff; //white
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: #262b2f; // btn bg
-$color__background-button-hover: #00697b; // btn bg hover
+$color__background-button-hover: $primary-color; // btn bg hover
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
