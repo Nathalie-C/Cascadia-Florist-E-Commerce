@@ -23,4 +23,13 @@
   &:hover {
     background: $color__background-button-hover;
   }
+
+  &:focus,
+  &:active {
+    background: $color__background-button-hover;
+  }
+
+  &:visited {
+    background: $color__background-button;
+  }
 }

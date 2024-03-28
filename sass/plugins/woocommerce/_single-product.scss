@@ -86,7 +86,7 @@
     //   text-align: center;
     // }
 
-    // workshop btn text
+    // workshop btn
     form.cart {
       button.wc-bookings-booking-form-button.single_add_to_cart_button {
         padding-left: 0;
@@ -230,15 +230,13 @@
   }
 }
 
-
 // ---------------------- Product image ------------------------------
 
-// @include mq($tiny-m-mq) { 
+// @include mq($tiny-m-mq) {
 
 //will change it to right breakpoint after discussion
 
-  @media screen and (min-width: 43.75em) {
-
+@media screen and (min-width: 43.75em) {
   .woocommerce-product-gallery {
     width: 50%;
   }

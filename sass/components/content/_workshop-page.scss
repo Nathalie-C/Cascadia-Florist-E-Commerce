@@ -1,0 +1,16 @@
+.page-id-94 {
+}
+
+// single workshop product
+main {
+  div.product_cat-workshops {
+    .summary {
+      form {
+        // hide add to wishlist btn
+        div.woocommerce.wl-button-wrap {
+          display: none;
+        }
+      }
+    }
+  }
+}
