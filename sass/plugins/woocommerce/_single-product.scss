@@ -116,27 +116,9 @@
 
       li.product_cat-workshops.product-type-booking,
       li.product_cat-subscription.product-type-variable-subscription {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-    }
-
-    // subscription btn text
-    div.product_cat-subscription {
-      form.cart {
-        button.single_add_to_cart_button {
-          visibility: hidden;
-          padding-left: 0;
-
-          &::after {
-            content: "Sign up & Add to cart";
-            visibility: visible;
-            display: block;
-            @include btn;
-            cursor: pointer;
-          }
-        }
+        // display: flex;
+        // flex-direction: column;
+        // width: 100%;
       }
     }
 
@@ -144,17 +126,18 @@
     div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
       display: grid;
       grid-template-areas:
-        " quantity cartBtn cartBtn"
-        ". . wishlist";
+        " quantity quantity ."
+        "cartBtn cartBtn wishlist";
     }
 
     .quantity {
       grid-area: quantity;
-    }
 
-    input.input-text.qty.text {
-      width: 5rem;
-      margin-left: 1rem;
+      input {
+        margin-left: 0;
+        width: 100%;
+        padding-left: 0.6rem;
+      }
     }
 
     // add to cart btn
@@ -162,20 +145,24 @@
       grid-area: cartBtn;
       @include btn;
       border: none;
+      margin: 2rem 1rem 0 0;
+      height: 50%;
+      width: 100%;
     }
 
-    div.woocommerce.wl-button-wrap.wl-row.wl-clear {
+    //add to wishlist btn
+    #wl-wrapper.wl-button-wrap {
       grid-area: wishlist;
-      margin: 1rem 0;
+      padding: 0;
+      margin: 1.5rem 0 auto auto;
+
+      a {
+        margin-left: 2rem;
+      }
 
       //hide wishlist reminder text
       div.wl-already-in {
         display: none;
-      }
-
-      // add to wishlist btn
-      a.wl-add-to.wl-add-to-single.wl-add-but.button.present {
-        @include btn;
       }
     }
 
@@ -222,8 +209,8 @@
       section.related.products {
         li.product_cat-workshops.product-type-booking,
         li.product_cat-subscription.product-type-variable-subscription {
-          max-width: 30%;
-          width: unset;
+          // max-width: 30%;
+          // width: unset;
         }
       }
     }

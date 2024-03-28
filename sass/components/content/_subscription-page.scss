@@ -1,68 +1,75 @@
-
 // ----------------- Subscription instruction part ------------------
+.single-product {
+  div.product.product_cat-subscription {
+    form {
+      //subscription single product price
+      .woocommerce-variation.single_variation {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
 
 .steps-number {
-    background-color: #fff;
-    border: 2px solid #00697b;
-    height: 40px;
-    width: 40px;
-    font-size: 4rem;
-    font-weight: 100;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0 1.5rem 0;
+  background-color: #fff;
+  border: 2px solid #00697b;
+  height: 40px;
+  width: 40px;
+  font-size: 4rem;
+  font-weight: 100;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 1.5rem 0;
+}
+
+.instrction-number-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.steps-title {
+  font-weight: 500;
+}
+
+.steps-text {
+  text-align: center;
+  margin: 0 1rem 4rem 1rem;
+}
+
+@include mq($medium-mq) {
+  .page-id-58 section.instruction-section {
+    margin: 2rem;
   }
-  
-  .instrction-number-heading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+  .page-id-58 article.instrcution-article {
+    margin: 1.25rem;
   }
-  
-  .steps-title {
-    font-weight: 500;
-  }
-  
-  .steps-text {
+
+  .instruction-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     text-align: center;
-    margin: 0 1rem 4rem 1rem;
   }
-  
-  @include mq($medium-mq) {
-    .page-id-58 section.instruction-section {
-      margin: 2rem;
-    }
-  
-    .page-id-58 article.instrcution-article {
-      margin: 1.25rem;
-    }
-  
-    .instruction-section {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      text-align: center;
-    }
-  }
-  
-  @include mq($medium-m-mq) {
-    .page-id-58 section.instruction-section {
-      margin: 2.5rem 8.75rem 3rem 8.75rem;
-    }
-  
-    .page-id-58 article.instrcution-article {
-      margin: 0rem;
-    }
+}
+
+@include mq($medium-m-mq) {
+  .page-id-58 section.instruction-section {
+    margin: 2.5rem 8.75rem 3rem 8.75rem;
   }
 
-
-  @include mq($large-mq) {
-    .post-58 h2 {
-        font-size: 1.8rem;
-    }
+  .page-id-58 article.instrcution-article {
+    margin: 0rem;
   }
-  
-  // ----------------- Subscription instruction part ends------------------
-  
+}
+
+@include mq($large-mq) {
+  .post-58 h2 {
+    font-size: 1.8rem;
+  }
+}
+
+// ----------------- Subscription instruction part ends------------------
