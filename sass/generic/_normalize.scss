@@ -32,7 +32,14 @@ main {
   display: block;
   margin: 0 1.25rem;
 }
-@media screen and (min-width: 50em) {
+
+@include mq($medium-m-mq) {
+  main {
+    margin: 0 4.75rem;
+  }
+}
+
+@include mq($large-mq) {
   main {
     margin: 0 8.75rem;
   }
