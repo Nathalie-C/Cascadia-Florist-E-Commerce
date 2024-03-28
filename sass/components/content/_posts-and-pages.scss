@@ -66,13 +66,13 @@
 }
 
 ul.woocommerce-error {
-  background-color: $primary-color;
+  background-color: $woocommerce__color-error;
   color: white;
   list-style-type: none;
 }
 
 div.woocommerce-message {
-  background-color: white;
+  background-color: $woocommerce__color-success;
 }
 
 // Home page promotion CTA section margin in mobile ------------------------

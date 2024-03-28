@@ -9,7 +9,6 @@
     .woocommerce-product-gallery {
       position: relative;
       float: left;
-      // width: 50%;
 
       .woocommerce-product-gallery__trigger {
         display: none;
@@ -205,17 +204,6 @@
     width: 50%;
   }
 }
-
-// ------------ Subscription single-product image ----------------
-// .woocommerce-product-gallery__image {
-//   zoom: 1.2;
-// }
-
-// @include mq($large-mq) {
-//   .woocommerce-product-gallery__image {
-//     zoom: 1.4;
-//   }
-// }
 
 // ---------------------- Related Product Section ------------------------------
 .single-product {
