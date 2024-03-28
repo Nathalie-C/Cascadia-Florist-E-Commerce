@@ -94,34 +94,6 @@
       }
     }
 
-    // related products btn
-    section.related.products {
-      ul {
-        li {
-          a.product_type_booking.add_to_cart_button,
-          a.product_type_variable-subscription.add_to_cart_button {
-            margin-top: 1rem;
-            @include btn;
-          }
-        }
-
-        li.product_cat-seasonal-collection,
-        li.product_cat-best-seller {
-          a:nth-child(2) {
-            margin-top: 1rem;
-            @include btn;
-          }
-        }
-      }
-
-      li.product_cat-workshops.product-type-booking,
-      li.product_cat-subscription.product-type-variable-subscription {
-        // display: flex;
-        // flex-direction: column;
-        // width: 100%;
-      }
-    }
-
     //single_variation_wrap
     div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
       display: grid;
@@ -203,17 +175,6 @@
         margin: 1.5rem 0;
       }
     }
-
-    //768px
-    @include mq($medium-mq) {
-      section.related.products {
-        li.product_cat-workshops.product-type-booking,
-        li.product_cat-subscription.product-type-variable-subscription {
-          // max-width: 30%;
-          // width: unset;
-        }
-      }
-    }
   }
 }
 
@@ -239,3 +200,59 @@
 //     zoom: 1.4;
 //   }
 // }
+
+// ---------------------- Related Product Section ------------------------------
+.single-product {
+  section.related.products {
+    ul {
+      gap: 2rem;
+
+      // btn
+      li {
+        a.product_type_booking.add_to_cart_button,
+        a.product_type_variable-subscription.add_to_cart_button {
+          margin-top: 1rem;
+          @include btn;
+        }
+      }
+
+      li.product_cat-seasonal-collection,
+      li.product_cat-best-seller {
+        a:nth-child(2) {
+          margin-top: 1rem;
+          @include btn;
+        }
+      }
+    }
+
+    h2 {
+      margin-top: 2.3rem;
+      margin-bottom: 2rem;
+    }
+
+    //736px
+    @include mq(46em) {
+      ul {
+        gap: 3rem;
+      }
+    }
+
+    //768px
+    @include mq($medium-mq) {
+      ul {
+        gap: 0;
+      }
+    }
+  }
+
+  //768px  subscription products
+  @include mq($medium-mq) {
+    div.product_cat-subscription {
+      section.related.products {
+        ul {
+          gap: 5rem;
+        }
+      }
+    }
+  }
+}
