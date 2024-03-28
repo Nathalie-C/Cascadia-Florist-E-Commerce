@@ -161,8 +161,8 @@ function cascadia_floral_scripts()
 	}
 
 	if (is_page('weddings')) {
-        wp_enqueue_script('wedding-form-script', get_template_directory_uri() . '/js/wedding-form.js', array('jquery'), _S_VERSION, true);
-    }	
+		wp_enqueue_script('wedding-form-script', get_template_directory_uri() . '/js/wedding-form.js', array('jquery'), _S_VERSION, true);
+	}
 }
 add_action('wp_enqueue_scripts', 'cascadia_floral_scripts');
 
@@ -205,22 +205,23 @@ if (class_exists('WooCommerce')) {
 }
 
 // gravity forms
-function wedding_form_toggle_shortcode($atts) {
-    $a = shortcode_atts(array(
-        'form_id' => '1',
-    ), $atts);
+function wedding_form_toggle_shortcode($atts)
+{
+	$a = shortcode_atts(array(
+		'form_id' => '1',
+	), $atts);
 
-    ob_start();
-    ?>
-    <div>
-        <button class="toggleFormButton">Inquire for Packages</button>
-        <div class="formContainer hidden">
-            <?php echo do_shortcode("[gravityform id='{$a['form_id']}' title='true' ajax='true']"); ?>
-            <button class="closeButton close-bottom">X</button>
-        </div>
-    </div>
-    <?php
-    return ob_get_clean();
+	ob_start();
+?>
+	<div>
+		<button class="toggleFormButton">Inquire for Packages</button>
+		<div class="formContainer hidden">
+			<?php echo do_shortcode("[gravityform id='{$a['form_id']}' title='true' ajax='true']"); ?>
+			<button class="closeButton close-bottom">X</button>
+		</div>
+	</div>
+<?php
+	return ob_get_clean();
 }
 add_shortcode('wedding_form_toggle', 'wedding_form_toggle_shortcode');
 
@@ -253,3 +254,12 @@ function header_footer_nav_menu_items($items, $args)
 	return $items;
 }
 add_filter('wp_nav_menu_items', 'header_footer_nav_menu_items', 10, 2);
+
+/**
+ * Lower Yoast SEO Metabox location
+ */
+function yoast_to_bottom()
+{
+	return 'low';
+}
+add_filter('wpseo_metabox_prio', 'yoast_to_bottom');
