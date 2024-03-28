@@ -80,12 +80,6 @@
       }
     }
 
-    // Product title
-    // .product_title.entry-title {
-    //   font-size: 1.5rem;
-    //   text-align: center;
-    // }
-
     // workshop btn
     form.cart {
       button.wc-bookings-booking-form-button.single_add_to_cart_button {
@@ -168,7 +162,7 @@
     }
 
     //700px
-    @include mq(43.75em) {
+    @include mq($medium-small) {
       .single_variation_wrap
         .wc-pao-addons-container
         div.wc-pao-addon-container.wc-pao-addon.wc-pao-addon-381-0.wc-pao-addon-id-1710522084 {
@@ -206,11 +200,7 @@
 
 // ---------------------- Product image ------------------------------
 
-// @include mq($tiny-m-mq) {
-
-//will change it to right breakpoint after discussion
-
-@include mq(43.75em) {
+@include mq($medium-small) {
   .woocommerce-product-gallery {
     width: 50%;
   }
