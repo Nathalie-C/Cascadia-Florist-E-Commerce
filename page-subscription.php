@@ -21,8 +21,14 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
             get_template_part('template-parts/content', 'banner');
-			get_template_part( 'template-parts/content', 'page' );
+			// get_template_part( 'template-parts/content', 'page' );
         ?>
+        <section class="content">
+			<h1 class="screen-reader-text"><?php the_title();?> </h1>
+				<?php
+				the_content();
+				?>
+		</section>
 
         <section class="instruction-section">
             

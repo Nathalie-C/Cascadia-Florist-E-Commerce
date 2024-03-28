@@ -23,12 +23,14 @@ get_header();
         the_post();
         get_template_part('template-parts/content', 'banner');
 
-        get_template_part('template-parts/content', 'page');
-
-        // If comments are open or we have at least one comment, load up the comment template.
-        if (comments_open() || get_comments_number()) :
-            comments_template();
-        endif;
+        ?>
+        <section class="content">
+			<h1 class="screen-reader-text"><?php the_title();?> </h1>
+				<?php
+				the_content();
+				?>
+			</section>
+        <?php
 
     endwhile; // End of the loop.
     ?>
