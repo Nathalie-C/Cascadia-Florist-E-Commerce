@@ -1,0 +1,222 @@
+/* body */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* btn */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border-radius: 3px;
+  background: #262b2f;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+  padding: 0.6em 1em;
+  border: none;
+
+  &:hover {
+    background: #00697b;
+  }
+
+  &:focus,
+  &:active {
+    background: #00697b;
+  }
+
+  &:visited {
+    background: #262b2f;
+  }
+}
+
+/* fields */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 3px;
+
+  &:focus {
+    color: #111;
+  }
+}
+
+select {
+  border: 1px solid #ccc;
+}
+
+textarea {
+  width: 100%;
+}
+
+/* links */
+a {
+  color: #111;
+  text-decoration: none;
+
+  &:visited {
+    color: #111;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #111;
+  }
+
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+/* lists */
+ul,
+ol {
+  margin: 0 0 1.5em 3em;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+/* media */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+figure {
+  margin: 1em 0;
+}
+
+/* table */
+table {
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+
+/* typography: */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: #404040;
+  font-family: "Outfit", Arial, Helvetica, Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* typography-copy */
+p {
+  margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0 1.5em;
+}
+
+address {
+  margin: 0 0 1.5em;
+}
+
+pre {
+  background: #eee;
+  font-family: "Outfit", Arial, Helvetica, Verdana, sans-serif;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+  font-family: "Outfit", Arial, Helvetica, Verdana, sans-serif;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+mark,
+ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+
+/* headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  font-family: "Castoro Titling", Arial, Helvetica, Verdana, serif;
+}

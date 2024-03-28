@@ -93,6 +93,10 @@ function cascadia_floral_setup()
 			'flex-height' => true,
 		)
 	);
+
+	// theme for block editors
+	add_editor_style();
+	add_theme_support('editor-styles');
 }
 add_action('after_setup_theme', 'cascadia_floral_setup');
 
@@ -263,3 +267,13 @@ function yoast_to_bottom()
 	return 'low';
 }
 add_filter('wpseo_metabox_prio', 'yoast_to_bottom');
+
+// Remove admin menu links for non-Administrator accounts
+// function fwd_remove_admin_links()
+// {
+// 	if (!current_user_can('manage_options')) {
+// 		remove_menu_page('edit.php');           // Remove Posts link
+// 		remove_menu_page('edit-comments.php');  // Remove Comments link
+// 	}
+// }
+// add_action('admin_menu', 'fwd_remove_admin_links');
