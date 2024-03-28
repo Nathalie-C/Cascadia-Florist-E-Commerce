@@ -2,7 +2,6 @@
   display: block;
 }
 
-
 .post,
 .page {
   margin: 0;
@@ -18,7 +17,7 @@
   margin: 1.5em 0 0;
 }
 .entry-summary {
-  @media screen and (min-width: 700px) {
+  @include mq(43.75em) {
     width: 45%;
     margin-left: 1rem;
   }
@@ -39,12 +38,12 @@
   flex-direction: column;
   // justify-content: center;
   align-items: center;
-  
+
   img {
     margin-right: 1rem;
   }
-  
-  @media screen and (min-width: 760px) {
+
+  @include mq(47.5em) {
     display: grid;
     grid-template-areas: "image image image text";
 
@@ -67,7 +66,7 @@
 }
 
 ul.woocommerce-error {
-  background-color: #00697b;
+  background-color: $primary-color;
   color: white;
   list-style-type: none;
 }
@@ -78,15 +77,14 @@ div.woocommerce-message {
 
 // Home page promotion CTA section margin in mobile ------------------------
 
-@media screen and (max-width: 600px) {
-  .home.page-id-35 {
-    .content {
-      .wp-block-media-text.is-stacked-on-mobile {
-        margin-bottom: 2rem;
-      }
+.home.page-id-35 {
+  .content {
+    .wp-block-media-text.is-stacked-on-mobile {
+      margin-bottom: 2.2rem;
     }
   }
 }
+
 // -------------------------- Products by category -------------------------------
 // archive pages (all flowers/best sellers/seasonal collection)
 .archive .site {

@@ -43,12 +43,9 @@ get_header();
                         <?php endif; ?>
 												</div>
 												<?php if ($image) : 
-													 $image_id = $image['id']; 
-													 $image_src = wp_get_attachment_image_src($image_id, 'full');?>
-                            <img src="<?php echo esc_url($image_src[0]); ?>" 
-                            alt="<?php echo esc_attr($image['alt']); ?>">
-                        <?php endif; ?>
-
+														$image_id = $image['id']; 
+														echo wp_get_attachment_image($image_id, 'full', false, array('alt' => esc_attr($image['alt'])));
+												endif; ?>
                     </div>
                 <?php endwhile; ?>
 							</div>

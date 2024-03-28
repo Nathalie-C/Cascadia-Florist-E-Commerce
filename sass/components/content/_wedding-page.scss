@@ -68,7 +68,7 @@
     display: none;
   }
 
-  @media (min-width: 700px) {
+ @include mq(43.75em) {
     article#post-2.post-2.page.type-page.status-publish.has-post-thumbnail.hentry {
       margin: 1rem auto;
       max-width: 1000px;
