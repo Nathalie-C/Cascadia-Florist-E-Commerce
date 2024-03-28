@@ -11,7 +11,7 @@
   section .testimonials {
     margin: 0 1.25rem;
   }
-  @media screen and (min-width: 50em) {
+  @include mq($medium-mq) {
     main {
       article,
       section,
@@ -74,7 +74,7 @@
     }
   }
 }
-@media screen and (min-width: 768px) {
+@include mq($medium-mq) {
   .banner {
     .banner-content {
       img {
