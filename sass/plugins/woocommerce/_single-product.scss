@@ -98,8 +98,8 @@
     div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
       display: grid;
       grid-template-areas:
-        " quantity quantity ."
-        "cartBtn cartBtn wishlist";
+        " quantity ."
+        "cartBtn wishlist";
     }
 
     .quantity {
@@ -184,8 +184,22 @@
       }
     }
 
-    //800px
-    @include mq($medium-m-mq) {
+    //1024px
+    @include mq($big-mq) {
+      // set width of quantity and add to cart btn
+      .quantity input,
+      .single_add_to_cart_button {
+        width: 218.89px;
+      }
+
+      // wishlist btn
+      #wl-wrapper.wl-button-wrap {
+        grid-area: cartBtn;
+
+        a {
+          margin-left: 16.5rem;
+        }
+      }
     }
   }
 }
