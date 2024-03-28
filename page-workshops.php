@@ -20,37 +20,7 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-			?>
-
-            <section class="banner">
-                <?php if (function_exists('get_field') && get_field('banner')) : ?>
-
-                <?php while (have_rows('banner')) : the_row();
-                    $heading = get_sub_field('heading');
-                    $description = get_sub_field('description');
-                    $view_all = get_sub_field('view_all');
-										$image = get_sub_field('image');
-                ?>
-                    <div class="banner-content">
-					            <div class="content-background">
-                         <?php if ($heading) : ?>
-                            <h2><?php echo esc_html($heading); ?></h2>
-                         <?php endif; ?>
-                         <?php if ($description) : ?>
-                            <p><?php echo esc_html($description); ?></p>
-                         <?php endif; ?>
-						             <?php if ($view_all && is_array($view_all) && isset($view_all['url'])) : ?>
-                         <a href="<?php echo esc_url($view_all['url']); ?>">View All</a>
-                       <?php endif; ?>
-					            </div>
-					            <?php if ($image) : ?>
-                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-                        <?php endif; ?>
-                    </div>
-                    <?php endwhile; ?>
-                <?php endif; ?>
-            </section>
-	<?php
+			get_template_part('template-parts/content', 'banner');
 
 			get_template_part( 'template-parts/content', 'page' );
 
