@@ -94,7 +94,7 @@ function cascadia_floral_setup()
 		)
 	);
 
-	// theme for block editors
+	// theme style for block editors (editor-style.css)
 	add_editor_style();
 	add_theme_support('editor-styles');
 }
