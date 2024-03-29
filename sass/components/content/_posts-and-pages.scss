@@ -73,7 +73,14 @@ ul.woocommerce-error {
 
 div.woocommerce-message {
   background-color: #00697b;
+  color: white;
+  padding: .5rem 0 .5rem 1rem;
 }
+
+a.button.wc-forward {
+  color: white;
+}
+
 
 // Home page promotion CTA section margin in mobile ------------------------
 
