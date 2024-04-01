@@ -8,10 +8,10 @@ $color__background-button-hover: $primary-color; // btn bg hover
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
-$color__text-screen: #00697b;
+$color__text-screen: $primary-color;
 $color__text-input: #666;
 $color__text-input-focus: #111; //black
-$color__link: #4169e1; //royalblue
+$color__link: $primary-color; 
 $color__link-visited: #2b2b2b;
 $color__link-hover: #e1c6b8;
 $color__text-main: #404040;
