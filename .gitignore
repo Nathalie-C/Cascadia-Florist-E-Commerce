@@ -101,3 +101,5 @@ package-lock.json
 *.map
 style.css
 woocommerce.css
+cascadia-floral-style.min.css
+cascadia-floral-woocommerce-style.min.css
