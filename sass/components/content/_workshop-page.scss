@@ -32,6 +32,15 @@
       }
     }
 
+    // category list
+    div.wp-block-product-category {
+      li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+
     //601px
     @include mq(37.5625em) {
       div.wp-block-product-category {
