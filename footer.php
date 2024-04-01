@@ -62,6 +62,7 @@
 		<a href="<?php the_permalink(497); ?>"><?php echo esc_html(get_the_title(497)); ?></a>
 
 		<p class="footer-copyright">&#169; 2024 Emily He, Jean Lin, Kaia Sun, Nathalie Chang</p>
+		<p class="footer-edu">For Educational Purposes Only</p>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 
