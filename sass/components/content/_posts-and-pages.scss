@@ -61,9 +61,6 @@
 .woocommerce-breadcrumb {
   display: none;
 }
-.post-35 .entry-header .entry-title {
-  // display: none;
-}
 
 ul.woocommerce-error {
   background-color: #00697b;
@@ -74,13 +71,12 @@ ul.woocommerce-error {
 div.woocommerce-message {
   background-color: #00697b;
   color: white;
-  padding: .5rem 0 .5rem 1rem;
+  padding: 0.5rem 0 0.5rem 1rem;
 }
 
 a.button.wc-forward {
   color: white;
 }
-
 
 // Home page promotion CTA section margin in mobile ------------------------
 
@@ -89,6 +85,10 @@ a.button.wc-forward {
     .wp-block-media-text.is-stacked-on-mobile {
       margin-bottom: 2.2rem;
     }
+  }
+  .wp-block-quote p,
+  .wp-block-quote cite {
+    margin-left: 1rem;
   }
 }
 
