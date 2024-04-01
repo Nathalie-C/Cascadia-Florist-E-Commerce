@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all pages
  *
@@ -15,55 +16,55 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-            get_template_part('template-parts/content', 'banner');
-			// get_template_part( 'template-parts/content', 'page' );
-        ?>
+    <?php
+    while (have_posts()) :
+        the_post();
+        get_template_part('template-parts/content', 'banner');
+        // get_template_part( 'template-parts/content', 'page' );
+    ?>
         <section class="content">
-			<h1 class="screen-reader-text"><?php the_title();?> </h1>
-				<?php
-				the_content();
-				?>
-		</section>
+            <h1 class="screen-reader-text"><?php the_title(); ?> </h1>
+            <?php
+            the_content();
+            ?>
+        </section>
 
         <section class="instruction-section">
-            
+
             <?php
             // Check rows exists.
-            if( have_rows('how_it_works') ):
+            if (have_rows('how_it_works')) :
 
                 // Loop through rows.
-                while( have_rows('how_it_works') ) : the_row();?>
-                
-            
+                while (have_rows('how_it_works')) : the_row(); ?>
+
+
                     <article class="instrcution-article">
                         <h2 class="instrction-number-heading">
-                            <span class="steps-number"><?php the_sub_field('instruction_number');?>
+                            <span class="steps-number"><?php the_sub_field('instruction_number'); ?>
                             </span>
 
-                            <span class="steps-title"><?php the_sub_field('instruction_heading');?>
+                            <span class="steps-title"><?php the_sub_field('instruction_heading'); ?>
                             </span>
                         </h2>
-                            <p class="steps-text"><?php the_sub_field('instruction_text');?></p>
+                        <p class="steps-text"><?php the_sub_field('instruction_text'); ?></p>
                     </article>
-                
 
-            <?php endwhile; 
+
+            <?php endwhile;
             else :
             endif;
             ?>
-        
+
         </section>
 
-        <?php
-		endwhile; // End of the loop.
-		?>
+    <?php
+    endwhile; // End of the loop.
+    ?>
 
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
 get_sidebar();

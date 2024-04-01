@@ -6,6 +6,29 @@
       .woocommerce-variation.single_variation {
         margin-bottom: 1.5rem;
       }
+
+      // add to cart btn
+      button.single_add_to_cart_button {
+        visibility: hidden;
+        padding-left: 0;
+      }
+
+      button.single_add_to_cart_button::before {
+        content: "Add to cart";
+        visibility: visible;
+        display: block;
+        @include btn;
+      }
+
+      button.single_add_to_cart_button:hover::before {
+        background-color: $color__background-button-hover;
+      }
+
+      div#wl-wrapper {
+        a {
+          margin-top: 0.5rem;
+        }
+      }
     }
   }
 }

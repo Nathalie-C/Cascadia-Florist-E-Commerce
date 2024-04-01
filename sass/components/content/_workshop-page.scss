@@ -1,4 +1,145 @@
 .page-id-94 {
+  .site-main {
+    .our-offering {
+      margin: 4.5rem auto;
+    }
+
+    .booking-calendar,
+    .parking-info,
+    .cancellation-policy {
+      margin: 3rem 2rem 2rem 2rem;
+    }
+
+    .cancellation-first,
+    .cancellation-second {
+      margin: auto 2rem;
+    }
+
+    .cancellation-second {
+      margin-top: 1.5rem;
+    }
+
+    .parking-description {
+      display: flex;
+      flex-direction: column;
+      .wp-block-media-text__content {
+        order: -1;
+        margin: auto 2rem 2.2rem 2rem;
+        padding: 0;
+        p {
+          margin: auto 0;
+        }
+      }
+    }
+
+    //601px
+    @include mq(37.5625em) {
+      div.wp-block-product-category {
+        margin: auto 1rem;
+      }
+
+      figure {
+        margin: 2rem 6rem;
+      }
+
+      .cancellation-policy {
+        margin-top: 2rem;
+      }
+    }
+
+    //768px
+    @include mq($medium-mq) {
+      section.content {
+        margin: 0 3.75rem;
+      }
+
+      .our-offering {
+        margin-bottom: 3rem;
+      }
+
+      .banner {
+        p {
+          margin-top: 2rem;
+        }
+      }
+
+      .booking-calendar {
+        margin-top: 2rem;
+      }
+
+      .booking-calendar,
+      .parking-info,
+      .cancellation-policy {
+        text-align: left;
+      }
+
+      p {
+        margin: auto 0;
+      }
+
+      figure {
+        margin-top: 1rem;
+      }
+    }
+
+    //800px
+    @include mq($medium-m-mq) {
+      .parking-description {
+        flex-direction: row;
+
+        figure {
+          margin: 0;
+          img {
+            width: 300px;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    //990px
+    @include mq(61.875em) {
+      .parking-description {
+        margin: auto;
+        max-width: 1000px;
+        .wp-block-media-text__content {
+          margin: 0 3rem auto 0;
+          align-self: unset;
+        }
+
+        figure {
+          img {
+            width: 400px;
+            height: auto;
+          }
+        }
+      }
+
+      .booking-calendar,
+      .parking-info,
+      .cancellation-policy {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cancellation-first,
+      .cancellation-second {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    //1155px
+    @include mq(72.1875em) {
+      div.wp-block-product-category {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
 }
 
 // single workshop product
@@ -10,6 +151,23 @@
           // hide add to wishlist btn
           div.woocommerce.wl-button-wrap {
             display: none;
+          }
+
+          // add to cart btn
+          button.wc-bookings-booking-form-button {
+            visibility: hidden;
+            padding-left: 0;
+          }
+
+          button.wc-bookings-booking-form-button::before {
+            content: "Add to cart";
+            visibility: visible;
+            display: block;
+            @include btn;
+          }
+
+          button.wc-bookings-booking-form-button:hover::before {
+            background-color: $color__background-button-hover;
           }
 
           //800px

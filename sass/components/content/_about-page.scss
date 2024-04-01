@@ -45,8 +45,26 @@
     display: flex;
     flex-direction: column;
 
+    .store-info {
+      .store-email {
+        margin-bottom: 1.2rem;
+      }
+
+      .store-phone {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+    }
+
     .store-open-hr {
       margin: 3.5rem auto;
+      .open-hr-weekday {
+        margin-bottom: 0.9rem;
+      }
+
+      .open-hr-weekend {
+        margin-top: 0;
+      }
     }
 
     .store-info-image img {
@@ -151,6 +169,17 @@
     .wp-block-media-text.is-stacked-on-mobile,
     div.about-second-section {
       gap: 4rem;
+    }
+  }
+
+  // 1315px
+  @include mq(82.1875em) {
+    main {
+      article {
+        max-width: 1035px;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
 }
