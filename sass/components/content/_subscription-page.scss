@@ -35,7 +35,7 @@
 
 .steps-number {
   background-color: #fff;
-  border: 2px solid #00697b;
+  border: 2px solid $primary-color;
   height: 40px;
   width: 40px;
   font-size: 4rem;
@@ -62,7 +62,9 @@
   margin: 0 1rem 4rem 1rem;
 }
 
+
 @include mq($medium-mq) {
+
   .page-id-58 section.instruction-section {
     margin: 2rem;
   }
@@ -80,6 +82,7 @@
 }
 
 @include mq($medium-m-mq) {
+
   .page-id-58 section.instruction-section {
     margin: 2.5rem 8.75rem 3rem 8.75rem;
   }
@@ -90,9 +93,8 @@
 }
 
 @include mq($large-mq) {
+
   .post-58 h2 {
     font-size: 1.8rem;
   }
 }
-
-// ----------------- Subscription instruction part ends------------------
