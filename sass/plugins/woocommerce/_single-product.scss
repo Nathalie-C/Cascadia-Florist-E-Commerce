@@ -1,4 +1,12 @@
 .single-product {
+  //single product notice
+  .woocommerce-notices-wrapper {
+    div.woocommerce-info {
+      background-color: $primary-color;
+      color: $color__background-body;
+    }
+  }
+
   div.product {
     position: relative;
     display: flex;
