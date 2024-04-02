@@ -26,3 +26,8 @@ a.wl-add-to.wl-add-but {
   width: 3.3rem;
   height: 3.3rem;
 }
+
+//cart proceed to checkout btn
+div.wc-block-cart__submit-container a {
+  @include btn;
+}

@@ -22,15 +22,12 @@
   border: none;
   cursor: pointer;
 
-  &:hover {
-    background: $color__background-button-hover;
-  }
-
-  &:focus,
+  &:hover,
   &:active {
     background: $color__background-button-hover;
   }
 
+  &:focus,
   &:visited {
     background: $color__background-button;
   }
