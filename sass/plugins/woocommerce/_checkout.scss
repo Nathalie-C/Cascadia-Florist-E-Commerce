@@ -1,21 +1,117 @@
-@media screen and (min-width: 768px) {
+.page-id-19 .site {
+  //order details after checkout (1st section)
+  ul.woocommerce-order-overview.woocommerce-thankyou-order-details {
+    margin: 2rem auto 3rem 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    list-style: none;
+    border: 2px solid $color__background-hr;
+    // max-width: 300px;
 
-	.col2-set {
+    li {
+      padding: 1em 0;
+      font-size: 1rem;
+      text-transform: uppercase;
+      font-family: $font__heading;
+      font-weight: bolder;
 
-		.form-row-first {
-			float: left;
-			margin-right: $columns__margin;
-		}
+      strong {
+        text-transform: none;
+        font-family: $font__main;
+        font-weight: 400;
+        margin-left: 0.5rem;
+      }
+    }
+  }
 
-		.form-row-last {
-			float: right;
-			margin-right: 0;
-		}
+  div.wc-booking-summary {
+    .wc-booking-summary-number {
+      span {
+        border-radius: 3px;
+        background: $primary-color;
+        color: $color__background-body;
+        line-height: 1;
+        text-align: center;
+        padding: 0.6em 1em;
+        border: none;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
 
-		.form-row-first,
-		.form-row-last {
+  //2nd section
+  table.woocommerce-table--order-details {
+    border-collapse: collapse;
 
-			@include column-width(2);
-		}
-	}
+    tr {
+      border-bottom: 2px solid $color__background-hr;
+    }
+
+    th,
+    td {
+      padding: 1em 0.5em;
+      text-align: left;
+    }
+
+    tfoot {
+      tr {
+        address {
+          margin-top: 1rem;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // 3rd section
+  section.woocommerce-customer-details {
+    h2.woocommerce-column__title {
+      margin-top: 4.5rem;
+    }
+  }
+
+  //640px
+  @include mq($small-mq) {
+    article {
+      margin: 1rem 2rem;
+    }
+  }
+
+  //768px
+  @include mq($medium-mq) {
+    .col2-set {
+      .form-row-first {
+        float: left;
+        margin-right: $columns__margin;
+      }
+
+      .form-row-last {
+        float: right;
+        margin-right: 0;
+      }
+
+      .form-row-first,
+      .form-row-last {
+        @include column-width(2);
+      }
+    }
+
+    .woocommerce-order-details,
+    .woocommerce-customer-details {
+      margin: 0;
+    }
+
+    article {
+      margin: 2rem 5rem;
+    }
+  }
+
+  //1000px
+  @include mq(62.5em) {
+    article {
+      margin: 2rem auto;
+      max-width: 1000px;
+    }
+  }
 }

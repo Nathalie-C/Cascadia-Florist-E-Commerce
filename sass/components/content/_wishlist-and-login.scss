@@ -1,0 +1,319 @@
+// =============== Wishlist section ======================================
+// no whishlist yet
+.page-id-22 {
+  //msg
+  div.woocommerce-info {
+    background-color: $primary-color;
+    color: $color__background-body;
+  }
+
+  div.woocommerce {
+    a {
+      @include text-link;
+    }
+
+    .wl-row {
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+
+      a {
+        @include btn;
+      }
+    }
+
+    .woocommerce-message {
+      padding-right: 1rem;
+      a {
+        color: $color__background-hr;
+        &:hover {
+          color: $color__background-body;
+        }
+      }
+    }
+  }
+
+  td.product-name {
+    strong {
+      a {
+        color: $color__text-input-focus;
+        &:hover {
+          color: $color__background-hr;
+        }
+      }
+    }
+  }
+}
+
+// manage list
+.page-id-26 {
+  .wl-intro {
+    a {
+      @include btn;
+    }
+  }
+
+  div.wl-panel {
+    a {
+      @include text-link;
+    }
+  }
+
+  .woocommerce-message {
+    a {
+      color: $color__background-body;
+      &:hover {
+        color: $color__background-hr;
+      }
+    }
+  }
+
+  table {
+    td.product-purchase {
+      a.wishlist-add-to-cart-button {
+        @include btn;
+        color: $color__background-body;
+      }
+    }
+
+    td.product-name {
+      a {
+        color: $color__text-input-focus;
+        &:hover {
+          color: $color__background-hr;
+        }
+      }
+    }
+  }
+}
+
+//================= Login account page ========================================
+.page-id-20 .site {
+  .woocommerce-info {
+    background-color: $color__background-body;
+    color: $color__text-input-focus;
+
+    a {
+      @include text-link;
+    }
+  }
+
+  .woocommerce-Address {
+    a {
+      @include btn;
+    }
+
+    address {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .u-column2 {
+    header {
+      margin-top: 2.5rem;
+    }
+  }
+
+  .woocommerce-MyAccount-content {
+    .woocommerce-info {
+      margin-bottom: 1.5rem;
+    }
+
+    a.button {
+      @include btn;
+    }
+
+    a.button.wc-forward {
+      background-color: transparent;
+      padding: 0;
+      margin-right: 0;
+      @include text-link;
+    }
+
+    table.woocommerce-MyAccount-orders {
+      tbody {
+        tr {
+          margin-bottom: 1rem;
+        }
+      }
+
+      td.woocommerce-orders-table__cell-order-actions {
+        a.view {
+          background-color: transparent;
+          padding: 0;
+          margin-right: 0;
+          @include text-link;
+        }
+      }
+    }
+
+    .woocommerce-Message {
+      a.woocommerce-Button {
+        margin-right: 1rem;
+      }
+    }
+
+    .woocommerce_account_subscriptions {
+      p {
+        a {
+          background-color: transparent;
+          padding: 0;
+          margin-right: 0;
+          @include text-link;
+        }
+      }
+    }
+
+    table.shop_table.subscription_details {
+      tbody {
+        tr:last-child {
+          td:last-child {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            margin-top: 1rem;
+            a {
+              text-align: left;
+              background-color: transparent;
+              padding: 0;
+              margin-right: 0;
+              margin-bottom: 0.5rem;
+              @include text-link;
+            }
+          }
+        }
+      }
+    }
+
+    table.my_account_bookings {
+      tbody {
+        td.booking-cancel.cancellable {
+          margin-top: 1rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    table.woocommerce-MyAccount-paymentMethods {
+      td.payment-method-actions {
+        margin-top: 1.5rem;
+        a.delete {
+          @include btn;
+        }
+      }
+    }
+  }
+
+  .woocommerce-message {
+    padding-right: 1rem;
+
+    a {
+      color: $color__background-body;
+      &:hover {
+        color: $color__background-hr;
+      }
+    }
+  }
+
+  nav.woocommerce-MyAccount-navigation {
+    ul {
+      padding-left: 0;
+      margin-left: 0;
+      list-style: none;
+
+      li {
+        border-bottom: 1px solid $color__background-hr;
+        padding: 0.875em 0;
+
+        a {
+          padding-left: 0.8rem;
+        }
+      }
+    }
+  }
+
+  form.woocommerce-form-login {
+    button.woocommerce-button.woocommerce-form-login__submit {
+      margin-left: 1.5rem;
+    }
+  }
+
+  ul.woocommerce-error {
+    margin-left: 0;
+
+    li a.showlogin {
+      margin-left: 0.6rem;
+      color: $color__background-body;
+      &:hover {
+        color: $color__background-hr;
+      }
+    }
+  }
+
+  //500px
+  @include mq($tiny-m-mq) {
+    .entry-header,
+    .entry-content {
+      margin: auto 2rem;
+    }
+  }
+
+  //768px
+  @include mq($medium-mq) {
+    article {
+      margin: 0 4rem;
+    }
+
+    .woocommerce {
+      display: flex;
+      gap: 3rem;
+
+      .woocommerce-MyAccount-navigation {
+        width: 70%;
+        max-width: 204px;
+      }
+
+      .woocommerce-MyAccount-content {
+        flex-grow: 1;
+        a.woocommerce-Button {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+    .entry-header,
+    .entry-content {
+      margin: auto 0;
+    }
+
+    .entry-header {
+      margin-top: 2.5rem;
+    }
+
+    section.woocommerce-customer-details {
+      margin: auto 0;
+    }
+  }
+
+  //1000px
+  @include mq(62.5em) {
+    article {
+      margin: 2rem auto;
+      max-width: 1000px;
+    }
+
+    table.my_account_bookings {
+      tbody {
+        td.booking-cancel.cancellable {
+          margin-top: 1rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+
+  //1024px
+  @include mq($big-mq) {
+    article {
+      // margin: 0 5rem;
+    }
+  }
+}
