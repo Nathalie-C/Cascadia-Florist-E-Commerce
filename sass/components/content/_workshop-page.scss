@@ -4,10 +4,13 @@
       margin: 4.5rem auto;
     }
 
-    .booking-calendar,
     .parking-info,
     .cancellation-policy {
       margin: 3rem 2rem 2rem 2rem;
+    }
+
+    .booking-calendar {
+      margin: 3rem 1.5rem;
     }
 
     .cancellation-first,
@@ -41,6 +44,91 @@
       }
     }
 
+    //booking calendar
+    .wc-bookings-availability-header,
+    .wc-bookings-availability-item-subheader {
+      font-family: $font__heading;
+    }
+    .wc-bookings-availability-calendar.wc-bookings-availability-calendar-small {
+      font-family: $font__main;
+    }
+
+    div.wp-block-columns.wp-container-core-columns-layout-1.wp-block-columns-is-layout-flex {
+      // notice msg
+      div.woocommerce-error.notice-empty {
+        background-color: $primary-color;
+        color: $color__background-body;
+        font-family: $font__main;
+      }
+
+      ul.wc-bookings-availability-event-table {
+        padding-left: 0;
+        margin: 1.5rem 0.5rem;
+        min-width: 284px;
+      }
+
+      //list
+      .wc-bookings-availability-item-body {
+        .wc-bookings-availability-item-information {
+          font-size: 1rem;
+          margin-right: 0;
+        }
+        .wp-block-button {
+          button {
+            @include btn;
+            font-size: 1rem;
+            padding: 0.6em 0.5em;
+            min-width: unset;
+          }
+        }
+      }
+    }
+
+    //400px
+    @include mq(25em) {
+      .booking-calendar {
+        margin: 3rem 2rem 2rem 2rem;
+      }
+
+      div.wp-block-columns.wp-container-core-columns-layout-1.wp-block-columns-is-layout-flex {
+        .wc-bookings-availability-calendar-container,
+        ul.wc-bookings-availability-event-table,
+        div.woocommerce-error.notice-empty {
+          margin: auto 1rem;
+        }
+
+        ul.wc-bookings-availability-event-table {
+          max-width: 368px;
+        }
+
+        .wc-bookings-availability-item-information {
+          margin-right: 0;
+        }
+      }
+    }
+
+    //500px
+    @include mq($tiny-m-mq) {
+      div.wp-block-columns.wp-container-core-columns-layout-1.wp-block-columns-is-layout-flex {
+        .wc-bookings-availability-calendar-container,
+        ul.wc-bookings-availability-event-table,
+        div.woocommerce-error.notice-empty {
+          margin: auto 3rem;
+        }
+
+        .wc-bookings-availability-item-body {
+          .wc-bookings-availability-item-information {
+            margin-right: 1rem;
+          }
+          .wp-block-button {
+            button {
+              padding: 0.6em 1em;
+            }
+          }
+        }
+      }
+    }
+
     //601px
     @include mq(37.5625em) {
       div.wp-block-product-category {
@@ -53,6 +141,24 @@
 
       .cancellation-policy {
         margin-top: 2rem;
+      }
+
+      //booking calendar
+      .wc-bookings-availability-header {
+        margin: auto 2.5rem;
+      }
+
+      .components-popover__content {
+        z-index: 100;
+        button.wp-block-button__link.wc-bookings-availability-book-button {
+          @include btn;
+        }
+      }
+
+      div.wp-block-columns.wp-container-core-columns-layout-1.wp-block-columns-is-layout-flex {
+        .wc-bookings-availability-calendar-container {
+          margin: auto 2.5rem;
+        }
       }
     }
 
@@ -126,17 +232,22 @@
 
       .booking-calendar,
       .parking-info,
-      .cancellation-policy {
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
+      .cancellation-policy,
       .cancellation-first,
       .cancellation-second {
         max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
+      }
+
+      //booking calendar
+      div.wp-block-columns.wp-container-core-columns-layout-1.wp-block-columns-is-layout-flex {
+        .wc-bookings-availability-calendar-container,
+        .wc-bookings-availability-header {
+          max-width: 1000px;
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
     }
 
@@ -157,6 +268,30 @@
     div.product_cat-workshops {
       .summary {
         form {
+          // field: date picker
+          .wc-bookings-date-picker .ui-datepicker td.bookable a {
+            background-color: $date-picker-color !important;
+          }
+
+          .wc-bookings-date-picker
+            .ui-datepicker
+            td.bookable-range
+            .ui-state-default {
+            background-color: $date-picker-select-color !important;
+            color: $color__background-body;
+          }
+
+          ul.block-picker {
+            a {
+              background-color: $date-picker-color !important;
+              color: $color__background-body;
+            }
+
+            a.selected {
+              background-color: $date-picker-select-color !important;
+            }
+          }
+
           // hide add to wishlist btn
           div.woocommerce.wl-button-wrap {
             display: none;
