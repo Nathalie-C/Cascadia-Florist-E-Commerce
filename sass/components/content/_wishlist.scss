@@ -1,0 +1,86 @@
+// no whishlist yet
+.page-id-22 {
+  //msg
+  div.woocommerce-info {
+    background-color: $primary-color;
+    color: $color__background-body;
+  }
+
+  div.woocommerce {
+    a {
+      @include text-link;
+    }
+
+    .wl-row {
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+
+      a {
+        @include btn;
+      }
+    }
+
+    .woocommerce-message {
+      padding-right: 1rem;
+      a {
+        color: $color__background-hr;
+        &:hover {
+          color: $color__background-body;
+        }
+      }
+    }
+  }
+
+  td.product-name {
+    strong {
+      a {
+        color: $color__text-input-focus;
+        &:hover {
+          color: $color__background-hr;
+        }
+      }
+    }
+  }
+}
+
+// manage list
+.page-id-26 {
+  .wl-intro {
+    a {
+      @include btn;
+    }
+  }
+
+  div.wl-panel {
+    a {
+      @include text-link;
+    }
+  }
+
+  .woocommerce-message {
+    a {
+      color: $color__background-body;
+      &:hover {
+        color: $color__background-hr;
+      }
+    }
+  }
+
+  table {
+    td.product-purchase {
+      a.wishlist-add-to-cart-button {
+        @include btn;
+        color: $color__background-body;
+      }
+    }
+
+    td.product-name {
+      a {
+        color: $color__text-input-focus;
+        &:hover {
+          color: $color__background-hr;
+        }
+      }
+    }
+  }
+}

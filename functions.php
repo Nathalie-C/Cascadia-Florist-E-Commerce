@@ -259,6 +259,21 @@ function header_footer_nav_menu_items($items, $args)
 }
 add_filter('wp_nav_menu_items', 'header_footer_nav_menu_items', 10, 2);
 
+
+// change testimonial title placeholder:
+function wpb_change_title_text($title)
+{
+	$screen = get_current_screen();
+	//inside if '' change to post type key
+	if ('testimonial' == $screen->post_type) {
+		$title = 'Add testimonial title here';
+	}
+
+	return $title;
+}
+
+add_filter('enter_title_here', 'wpb_change_title_text');
+
 /**
  * Lower Yoast SEO Metabox location
  */
@@ -269,11 +284,11 @@ function yoast_to_bottom()
 add_filter('wpseo_metabox_prio', 'yoast_to_bottom');
 
 // Remove admin menu links for non-Administrator accounts
-// function fwd_remove_admin_links()
-// {
-// 	if (!current_user_can('manage_options')) {
-// 		remove_menu_page('edit.php');           // Remove Posts link
-// 		remove_menu_page('edit-comments.php');  // Remove Comments link
-// 	}
-// }
-// add_action('admin_menu', 'fwd_remove_admin_links');
+function fwd_remove_admin_links()
+{
+	if (!current_user_can('manage_options')) {
+		remove_menu_page('edit.php');           // Remove Posts link
+		remove_menu_page('edit-comments.php');  // Remove Comments link
+	}
+}
+add_action('admin_menu', 'fwd_remove_admin_links');

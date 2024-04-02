@@ -32,3 +32,18 @@
     background: $color__background-button;
   }
 }
+
+//link that don't need btn style
+@mixin text-link {
+  color: $date-picker-select-color;
+
+  &:hover,
+  &:active {
+    color: $date-picker-color;
+  }
+
+  &:focus,
+  &:visited {
+    color: $date-picker-select-color;
+  }
+}
