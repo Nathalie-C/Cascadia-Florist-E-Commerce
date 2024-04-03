@@ -64,6 +64,16 @@
     }
   }
 
+  table.woocommerce-orders-table--subscriptions {
+    tbody {
+      td.woocommerce-orders-table__cell-order-actions {
+        a {
+          @include text-link;
+        }
+      }
+    }
+  }
+
   // 3rd section
   section.woocommerce-customer-details {
     h2.woocommerce-column__title {
