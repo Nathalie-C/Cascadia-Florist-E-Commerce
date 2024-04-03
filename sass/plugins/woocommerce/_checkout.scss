@@ -67,7 +67,8 @@
   table.woocommerce-orders-table--subscriptions {
     tbody {
       td.woocommerce-orders-table__cell-order-actions {
-        a {
+        a,
+        a.view {
           @include text-link;
         }
       }
