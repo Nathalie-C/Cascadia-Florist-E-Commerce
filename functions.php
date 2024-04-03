@@ -300,7 +300,6 @@ add_action('admin_menu', 'fwd_remove_admin_links');
 // function to declare to add the dasboard widget
 function wpdocs_add_dashboard_widgets()
 {
-	wp_add_dashboard_widget("dashboard_widget_welcome", "Welcome To The Florist", "dashboard_welcome_widget_function");
 	wp_add_dashboard_widget("dashboard_widget_tutorial", "Web Management Tutorial", "dashboard_widget_function");
 	// function to add a dashboard widget
 	// 1st paramater is the id you want to set
@@ -319,19 +318,12 @@ function dashboard_widget_function()
 	echo "<a href='" . esc_url('https://cascadiafloral.bcitwebdeveloper.ca/wp-content/uploads/2024/04/web-management-tutorial.pdf') . "'><img width='400' height='315' src='" . esc_url('https://cascadiafloral.bcitwebdeveloper.ca/wp-content/uploads/2024/03/parking-map-1.webp') . "' ></img></a>";
 }
 
-function dashboard_welcome_widget_function()
-{
-	// some echos to output the content
-	echo "<h1>Welcome to Cascadia Florist!</h1>";
-}
-
 // function to setup the remove dashboard setup
 function remove_dashboard_widgets()
 {
 	remove_meta_box("dashboard_primary", "dashboard", "side");
 	remove_meta_box("wpseo-wincher-dashboard-overview", "dashboard", "side");
 	remove_meta_box("dashboard_quick_press", "dashboard", "side");
-	remove_meta_box("dashboard_activity", "dashboard", "side");
 	// function to remove from the dashboard
 	// 1st argument is to declare the id of the widget
 	// 2nd is the place your removing it from hence dashboard
