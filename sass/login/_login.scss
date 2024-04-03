@@ -18,6 +18,13 @@ body.login div#login p#backtoblog a,
 body.login div#login div.privacy-policy-page-link a {
   color: $color__background-screen !important;
 }
+body.login div#login p#nav a:hover,
+body.login div#login p#backtoblog a:hover {
+  color: $primary-color !important;
+  background-color: $color__background-screen;
+  border-radius: 5px;
+  padding: 5px;
+}
 
 body.login div#login form#loginform,
 body.login div#login form#lostpasswordform {
@@ -25,7 +32,14 @@ body.login div#login form#lostpasswordform {
   border-radius: 5px;
   border: $primary-color 1px solid;
 }
-
+body.login div#login #login-message,
+body.login div#login .notice {
+  border: 5px solid;
+  border-left: 0.25rem solid $primary-color;
+  background-color: $primary-color;
+  color: $color__background-screen;
+  border-radius: 5px;
+}
 body.login div#login form#loginform p.submit input#wp-submit,
 body.login div#login form#lostpasswordform p.submit input#wp-submit {
   background: $color__text-input-focus;
