@@ -85,6 +85,10 @@ form.woocommerce-ordering {
   display: flex;
   justify-content: flex-end;
   margin: 0 0 1.2rem 0;
+  .orderby {
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
 }
 
 nav.woocommerce-pagination ul.page-numbers {
