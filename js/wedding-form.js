@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Flag to track if any form has been submitted
     let formSubmitted = false;
 
     document.addEventListener('click', function (e) {
@@ -30,8 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Example: Assuming form submission triggers formSubmitted = true
-    // You should replace this with your actual form submission logic
     document.querySelectorAll('.gform').forEach(function(form) {
         form.addEventListener('submit', function () {
             formSubmitted = true;
