@@ -353,6 +353,10 @@
 .swiper-rtl .swiper-button-prev:after {
   content: "next";
 }
+.banner .swiper-button-prev:after,
+.banner .swiper-button-next:after {
+  color: #fff;
+}
 /* Navigation font end */
 :root {
   /*
