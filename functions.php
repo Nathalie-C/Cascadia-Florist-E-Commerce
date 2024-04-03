@@ -341,3 +341,33 @@ function remove_dashboard_widgets()
 
 add_action("wp_dashboard_setup", "remove_dashboard_widgets");
 // function to modify the dashboard setup and call your function
+
+/* 
+Log In Customization
+*/
+
+function cascadia_floral_login_stylesheet()
+{
+
+	wp_enqueue_style(
+		'custom-login',
+		get_stylesheet_directory_uri() . '/style.css',
+		array(),
+		_S_VERSION,
+	);
+}
+add_action('login_enqueue_scripts', 'cascadia_floral_login_stylesheet');
+
+// Custom logo URL
+function cascadia_floral_login_logo_url()
+{
+	return home_url();
+}
+add_filter('login_headerurl', 'cascadia_floral_login_logo_url');
+
+// Custom title
+function cascadia_floral_login_logo_url_title()
+{
+	return 'Cascadia Floral | Wonderful flowers for all occasions.';
+}
+add_filter('login_headertext', 'cascadia_floral_login_logo_url_title');
