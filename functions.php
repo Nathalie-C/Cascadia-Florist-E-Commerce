@@ -314,7 +314,7 @@ add_action('wp_dashboard_setup', 'wpdocs_add_dashboard_widgets');
 function dashboard_widget_function()
 {
 	// some echos to output the content
-	echo "<p>Please see the document below for how to maintain the website and update the content.</p>";
+	echo "<p>Please click the image below for the tutorial.</p>";
 	echo "<a href='" . esc_url('https://cascadiafloral.bcitwebdeveloper.ca/wp-content/uploads/2024/04/web-management-tutorial.pdf') . "'><img width='400' height='315' src='" . esc_url('https://cascadiafloral.bcitwebdeveloper.ca/wp-content/uploads/2024/03/parking-map-1.webp') . "' ></img></a>";
 }
 
