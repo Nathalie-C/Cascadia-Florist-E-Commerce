@@ -292,3 +292,31 @@ function fwd_remove_admin_links()
 	}
 }
 add_action('admin_menu', 'fwd_remove_admin_links');
+
+/* 
+Log In Customization
+*/
+
+function cascadia_floral_login_stylesheet() {
+
+	wp_enqueue_style( 
+	'custom-login', 
+	get_stylesheet_directory_uri() . '/style.css', 
+	array(), 
+	_S_VERSION, 
+);
+
+}
+add_action( 'login_enqueue_scripts', 'cascadia_floral_login_stylesheet' );
+
+// Custom logo URL
+function cascadia_floral_login_logo_url() {
+	return home_url();
+}
+add_filter( 'login_headerurl', 'cascadia_floral_login_logo_url' );
+
+// Custom title
+function cascadia_floral_login_logo_url_title() {
+	return 'Cascadia Floral | Beautiful Flowers for Every Occasion';
+}
+add_filter( 'login_headertext', 'cascadia_floral_login_logo_url_title' );

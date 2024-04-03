@@ -1,0 +1,48 @@
+body.login div#login h1 a,
+body.login div.login h1 a {
+  background-image: url("images/site-login-logo.png");
+  height: 8rem;
+  width: 8rem;
+  background-size: 8rem 8rem;
+  background-repeat: no-repeat;
+  color: $color__text-input-focus;
+}
+body.login {
+  background-image: url("images/login-bg.jpeg");
+  background-color: #00000075;
+  color: $color__background-screen;
+  background-blend-mode: overlay;
+}
+body.login div#login p#nav a,
+body.login div#login p#backtoblog a,
+body.login div#login div.privacy-policy-page-link a {
+  color: $color__background-screen !important;
+}
+
+body.login div#login form#loginform,
+body.login div#login form#lostpasswordform {
+  background: #ffffff73;
+  border-radius: 5px;
+  border: $primary-color 1px solid;
+}
+
+body.login div#login form#loginform p.submit input#wp-submit,
+body.login div#login form#lostpasswordform p.submit input#wp-submit {
+  background: $color__text-input-focus;
+  color: $color__background-screen;
+  font-weight: 700;
+  border: none;
+}
+
+body.login div#login form#loginform p.submit input#wp-submit:hover,
+body.login div#login form#lostpasswordform p.submit input#wp-submit:hover {
+  background: $primary-color;
+  color: $color__background-screen;
+}
+body.login div#login form#loginform input,
+body.login div#login form#lostpasswordform input {
+  border: $primary-color 2px solid;
+  border-radius: 5px;
+  background-color: $color__background-screen;
+  color: $primary-color;
+}
