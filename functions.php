@@ -317,6 +317,6 @@ add_filter( 'login_headerurl', 'cascadia_floral_login_logo_url' );
 
 // Custom title
 function cascadia_floral_login_logo_url_title() {
-	return 'Cascadia Floral | Beautiful Flowers for Every Occasion';
+	return 'Cascadia Floral | Wonderful flowers for all occasions.';
 }
 add_filter( 'login_headertext', 'cascadia_floral_login_logo_url_title' );
