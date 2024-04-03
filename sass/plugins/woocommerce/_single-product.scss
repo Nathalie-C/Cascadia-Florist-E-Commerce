@@ -4,6 +4,13 @@
     div.woocommerce-info {
       background-color: $primary-color;
       color: $color__background-body;
+
+      a {
+        color: $color__background-body;
+        &:hover {
+          color: $color__background-hr;
+        }
+      }
     }
   }
 

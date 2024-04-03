@@ -283,6 +283,10 @@ function yoast_to_bottom()
 }
 add_filter('wpseo_metabox_prio', 'yoast_to_bottom');
 
+/**
+ * WP Dashboard Setting
+ */
+
 // Remove admin menu links for non-Administrator accounts
 function fwd_remove_admin_links()
 {
@@ -292,3 +296,48 @@ function fwd_remove_admin_links()
 	}
 }
 add_action('admin_menu', 'fwd_remove_admin_links');
+
+// function to declare to add the dasboard widget
+function wpdocs_add_dashboard_widgets()
+{
+	wp_add_dashboard_widget("dashboard_widget_welcome", "Welcome To The Florist", "dashboard_welcome_widget_function");
+	wp_add_dashboard_widget("dashboard_widget_tutorial", "Web Management Tutorial", "dashboard_widget_function");
+	// function to add a dashboard widget
+	// 1st paramater is the id you want to set
+	//2nd parameter is the text or heading
+	// 3rd parameter is the dashboard widget content that you wanna call so
+	// you can actually add content to it
+}
+add_action('wp_dashboard_setup', 'wpdocs_add_dashboard_widgets');
+// modify the wp_dashboard_setup and add call the function your using
+
+// function to modify the content
+function dashboard_widget_function()
+{
+	// some echos to output the content
+	echo "<p>Please see the document below for how to maintain the website and update the content.</p>";
+	echo "<a href='" . esc_url('https://cascadiafloral.bcitwebdeveloper.ca/wp-content/uploads/2024/04/web-management-tutorial.pdf') . "'><img width='400' height='315' src='" . esc_url('https://cascadiafloral.bcitwebdeveloper.ca/wp-content/uploads/2024/03/parking-map-1.webp') . "' ></img></a>";
+}
+
+function dashboard_welcome_widget_function()
+{
+	// some echos to output the content
+	echo "<h1>Welcome to Cascadia Florist!</h1>";
+}
+
+// function to setup the remove dashboard setup
+function remove_dashboard_widgets()
+{
+	remove_meta_box("dashboard_primary", "dashboard", "side");
+	remove_meta_box("wpseo-wincher-dashboard-overview", "dashboard", "side");
+	remove_meta_box("dashboard_quick_press", "dashboard", "side");
+	remove_meta_box("dashboard_activity", "dashboard", "side");
+	// function to remove from the dashboard
+	// 1st argument is to declare the id of the widget
+	// 2nd is the place your removing it from hence dashboard
+	// 3rd argument is either main or side but most widgets which are
+	// accordions are side which is what they are on the dashbaord
+}
+
+add_action("wp_dashboard_setup", "remove_dashboard_widgets");
+// function to modify the dashboard setup and call your function
