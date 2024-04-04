@@ -83,7 +83,8 @@ a.button.wc-forward {
   }
   .wp-block-quote p,
   .wp-block-quote cite {
-    margin-left: 1rem;
+    margin: 0 1rem;
+    padding: 0.5rem;
   }
   .wp-block-button__link.wp-element-button .button-content-details {
     display: none;
