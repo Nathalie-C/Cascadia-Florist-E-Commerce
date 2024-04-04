@@ -241,7 +241,7 @@ function header_footer_nav_menu_items($items, $args)
 
 		$logo = get_field('footer_logo', $menu);
 		// prepend logo
-		$html_logo = '<a href="' . home_url() . '"><img src="' . $logo['url'] . '" alt="' . $logo['alt'] . '" /></a>';
+		$html_logo = '<li><a href="' . home_url() . '"><img src="' . $logo['url'] . '" alt="' . $logo['alt'] . '" /></a></li>';
 		// append html
 		$items = $html_logo;
 	}
@@ -250,7 +250,7 @@ function header_footer_nav_menu_items($items, $args)
 
 		$logo = get_field('header_logo', $menu);
 		// prepend logo
-		$html_logo = '<a href="' . home_url() . '"><img src="' . $logo['url'] . '" alt="' . $logo['alt'] . '" /></a>';
+		$html_logo = '<li><a href="' . home_url() . '"><img src="' . $logo['url'] . '" alt="' . $logo['alt'] . '" /></a></li>';
 		// append html
 		$items = $html_logo;
 	}

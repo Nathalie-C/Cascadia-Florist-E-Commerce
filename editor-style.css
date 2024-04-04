@@ -1,4 +1,85 @@
-/* body */
+@import url("https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Outfit:wght@100..900&display=swap");
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+/* Typography
+--------------------------------------------- */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: #404040;
+  font-family: "Outfit", Arial, Helvetica, Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  font-family: "Castoro Titling", Arial, Helvetica, Verdana, serif;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0 1.5em;
+}
+
+address {
+  margin: 0 0 1.5em;
+}
+
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", courier, monospace;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+  font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+mark,
+ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+
+/* Elements
+--------------------------------------------- */
 html {
   scroll-behavior: smooth;
 }
@@ -11,90 +92,13 @@ body {
   display: none;
 }
 
-/* btn */
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  border-radius: 3px;
-  background: #262b2f;
-  color: #fff;
-  line-height: 1;
-  text-align: center;
-  padding: 0.6em 1em;
-  border: none;
-
-  &:hover {
-    background: #00697b;
-  }
-
-  &:focus,
-  &:active {
-    background: #00697b;
-  }
-
-  &:visited {
-    background: #262b2f;
-  }
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
 }
 
-/* fields */
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 3px;
-
-  &:focus {
-    color: #111;
-  }
-}
-
-select {
-  border: 1px solid #ccc;
-}
-
-textarea {
-  width: 100%;
-}
-
-/* links */
-a {
-  color: #111;
-  text-decoration: none;
-
-  &:visited {
-    color: #111;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: #111;
-  }
-
-  &:hover,
-  &:active {
-    outline: 0;
-  }
-}
-
-/* lists */
 ul,
 ol {
   margin: 0 0 1.5em 3em;
@@ -122,7 +126,7 @@ dd {
   margin: 0 1.5em 1.5em;
 }
 
-/* media */
+/* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
 object {
@@ -138,85 +142,174 @@ figure {
   margin: 1em 0;
 }
 
-/* table */
 table {
   margin: 0 0 1.5em;
   width: 100%;
 }
 
-/* typography: */
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-  color: #404040;
-  font-family: "Outfit", Arial, Helvetica, Verdana, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* typography-copy */
-p {
-  margin-bottom: 1.5em;
-}
-
-dfn,
-cite,
-em,
-i {
-  font-style: italic;
-}
-
-blockquote {
-  margin: 0 1.5em;
-}
-
-address {
-  margin: 0 0 1.5em;
-}
-
-pre {
-  background: #eee;
-  font-family: "Outfit", Arial, Helvetica, Verdana, sans-serif;
-  line-height: 1.6;
-  margin-bottom: 1.6em;
-  max-width: 100%;
-  overflow: auto;
-  padding: 1.6em;
-}
-
-code,
-kbd,
-tt,
-var {
-  font-family: "Outfit", Arial, Helvetica, Verdana, sans-serif;
-}
-
-abbr,
-acronym {
-  border-bottom: 1px dotted #666;
-  cursor: help;
-}
-
-mark,
-ins {
-  background: #fff9c0;
+/* Links
+--------------------------------------------- */
+a {
+  color: #111;
   text-decoration: none;
 }
-
-big {
-  font-size: 125%;
+a:visited {
+  color: #111;
+}
+a:hover,
+a:focus,
+a:active {
+  color: #111;
+}
+a:hover,
+a:active {
+  outline: 0;
 }
 
-/* headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  clear: both;
-  font-family: "Castoro Titling", Arial, Helvetica, Verdana, serif;
+/* Forms
+--------------------------------------------- */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border-radius: 3px;
+  background: #262b2f;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+  padding: 0.6em 1em;
+  border: none;
+  cursor: pointer;
+}
+button:hover,
+button:active,
+input[type="button"]:hover,
+input[type="button"]:active,
+input[type="reset"]:hover,
+input[type="reset"]:active,
+input[type="submit"]:hover,
+input[type="submit"]:active {
+  background: #00697b;
+}
+button:focus,
+button:visited,
+input[type="button"]:focus,
+input[type="button"]:visited,
+input[type="reset"]:focus,
+input[type="reset"]:visited,
+input[type="submit"]:focus,
+input[type="submit"]:visited {
+  background: #262b2f;
+}
+
+a.wp-block-button__link {
+  border-radius: 3px;
+  background: #262b2f;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+  padding: 0.6em 1em;
+  border: none;
+  cursor: pointer;
+}
+a.wp-block-button__link:hover,
+a.wp-block-button__link:active {
+  background: #00697b;
+}
+a.wp-block-button__link:focus,
+a.wp-block-button__link:visited {
+  background: #262b2f;
+}
+
+.related.products li a:nth-child(2).add_to_cart_button {
+  border-radius: 3px;
+  background: #262b2f;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+  padding: 0.6em 1em;
+  border: none;
+  cursor: pointer;
+}
+.related.products li a:nth-child(2).add_to_cart_button:hover,
+.related.products li a:nth-child(2).add_to_cart_button:active {
+  background: #00697b;
+}
+.related.products li a:nth-child(2).add_to_cart_button:focus,
+.related.products li a:nth-child(2).add_to_cart_button:visited {
+  background: #262b2f;
+}
+
+a.wl-add-to.wl-add-but {
+  content: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23101820;%7D%3C/style%3E%3C/defs%3E%3Ctitle/%3E%3Cg data-name='Layer 54' id='Layer_54'%3E%3Cpath class='cls-1' d='M16,28.72a3,3,0,0,1-2.13-.88L3.57,17.54a8.72,8.72,0,0,1-2.52-6.25,8.06,8.06,0,0,1,8.14-8A8.06,8.06,0,0,1,15,5.68l1,1,.82-.82h0a8.39,8.39,0,0,1,11-.89,8.25,8.25,0,0,1,.81,12.36L18.13,27.84A3,3,0,0,1,16,28.72ZM9.15,5.28A6.12,6.12,0,0,0,4.89,7a6,6,0,0,0-1.84,4.33A6.72,6.72,0,0,0,5,16.13l10.3,10.3a1,1,0,0,0,1.42,0L27.23,15.91A6.25,6.25,0,0,0,29,11.11a6.18,6.18,0,0,0-2.43-4.55,6.37,6.37,0,0,0-8.37.71L16.71,8.8a1,1,0,0,1-1.42,0l-1.7-1.7a6.28,6.28,0,0,0-4.4-1.82Z'/%3E%3C/g%3E%3C/svg%3E");
+  display: block;
+  width: 3.3rem;
+  height: 3.3rem;
+}
+
+div.wc-block-cart__submit-container a {
+  border-radius: 3px;
+  background: #262b2f;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+  padding: 0.6em 1em;
+  border: none;
+  cursor: pointer;
+}
+div.wc-block-cart__submit-container a:hover,
+div.wc-block-cart__submit-container a:active {
+  background: #00697b;
+}
+div.wc-block-cart__submit-container a:focus,
+div.wc-block-cart__submit-container a:visited {
+  background: #262b2f;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 3px;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+  color: #111;
+}
+
+select {
+  border: 1px solid #ccc;
+}
+
+textarea {
+  width: 100%;
 }
