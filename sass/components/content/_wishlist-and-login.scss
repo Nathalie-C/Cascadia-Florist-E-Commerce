@@ -83,6 +83,13 @@
         }
       }
     }
+
+    td.check-column::before,
+    td.product-thumbnail::before,
+    td.product-purchase::before,
+    td.product-quantity.ctr::before {
+      content: "";
+    }
   }
 }
 
@@ -315,6 +322,50 @@
   @include mq($big-mq) {
     article {
       // margin: 0 5rem;
+    }
+  }
+}
+
+// view order
+.page-id-20.woocommerce-view-order {
+  strong.wc-booking-summary-number {
+    span {
+      border-radius: 3px;
+      background: $primary-color;
+      color: $color__background-body;
+      line-height: 1;
+      text-align: center;
+      padding: 0.6em 1em;
+      border: none;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .woocommerce-MyAccount-subscriptions {
+    tbody tr.woocommerce-orders-table__row--status-active {
+      td:last-child {
+        &::before {
+          content: "";
+        }
+        a {
+          @include text-link;
+          background-color: transparent;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+// view subscription
+.page-id-20.woocommerce-view-subscription {
+  table.woocommerce-MyAccount-orders {
+    tbody tr.woocommerce-orders-table__row--status-processing {
+      td:last-child {
+        &::before {
+          content: "";
+        }
+      }
     }
   }
 }
