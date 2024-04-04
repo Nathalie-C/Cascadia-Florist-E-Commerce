@@ -63,7 +63,7 @@ get_header();
 				?>
 			</section>
 			<section class="testimonials">
-				<h2><?php esc_html_e('What our customers say about us.');?></h2>
+				<h2><?php esc_html_e('What our customers say about us');?></h2>
 			
 			<?php
 			$args = array(
