@@ -11,12 +11,28 @@
   section .testimonials {
     margin: 0 1.25rem;
   }
+  .testimonials {
+    h2 {
+      text-align: center;
+    }
+  }
+  .faq {
+    text-align: center;
+  }
   @include mq($medium-mq) {
     main {
       article,
       section,
       .testimonials {
         margin: 0 8.75rem;
+      }
+      .testimonials {
+        h2 {
+          text-align: left;
+        }
+      }
+      .faq {
+        text-align: left;
       }
     }
   }
