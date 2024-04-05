@@ -103,7 +103,8 @@
     }
 
     //single_variation_wrap
-    div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
+    div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled,
+    div.woocommerce-variation-add-to-cart.woocommerce-variation-add-to-cart-disabled {
       display: grid;
       grid-template-areas:
         " quantity ."

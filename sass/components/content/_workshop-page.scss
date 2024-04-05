@@ -241,6 +241,12 @@
       }
 
       //booking calendar
+      div.wp-block-group {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       div.wp-block-columns.wp-container-core-columns-layout-1.wp-block-columns-is-layout-flex {
         .wc-bookings-availability-calendar-container,
         .wc-bookings-availability-header {
