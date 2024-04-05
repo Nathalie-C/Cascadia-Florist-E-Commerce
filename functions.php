@@ -315,7 +315,7 @@ function dashboard_widget_function()
 {
 	// some echos to output the content
 	echo "<p>Please click the image below for the tutorial.</p>";
-	echo "<a href='" . esc_url('https://cascadiafloral.bcitwebdeveloper.ca/wp-content/uploads/2024/04/web-management-tutorial.pdf') . "'><img width='400' height='315' src='" . esc_url('https://cascadiafloral.bcitwebdeveloper.ca/wp-content/uploads/2024/04/tutorial-image-1.webp') . "' ></img></a>";
+	echo "<a href='" . esc_url('https://cascadiafloral.bcitwebdeveloper.ca/wp-content/uploads/2024/04/cascadia-floral-web-management-tutorial.pdf') . "'><img width='400' height='315' src='" . esc_url('https://cascadiafloral.bcitwebdeveloper.ca/wp-content/uploads/2024/04/tutorial-image.webp') . "' ></img></a>";
 }
 
 // function to setup the remove dashboard setup
